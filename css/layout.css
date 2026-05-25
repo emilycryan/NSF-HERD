@@ -11,7 +11,7 @@
 /* === Site header (navy NCSES bar) === */
 
 .site-header {
-  background-color: #162e51; /* NCSES navy — matches .site-footer */
+  background-color: var(--color-primary-dark); /* deep navy — matches footer and group headers */
   color: #fff;
   position: relative;
   z-index: 10;
@@ -187,7 +187,7 @@
 /* === Site footer (minimal placeholder) === */
 
 .site-footer {
-  background-color: #162e51; /* NCSES navy — matches .site-header */
+  background-color: var(--color-primary-dark); /* deep navy — matches header and group headers */
   color: #fff;
   text-align: center;
   padding: var(--space-5) var(--space-6);

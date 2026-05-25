@@ -6,9 +6,9 @@
 
 :root {
   /* === USWDS-aligned site chrome === */
-  --color-primary-dark: #162e51;        /* NCSES header navy (USWDS primary-darker) */
+  --color-primary-dark: #1c2434;        /* Deep navy used for header, footer, group bars, primary buttons */
   --color-primary: #005ea2;             /* USWDS primary blue */
-  --color-primary-darker-hover: #0b1c39;
+  --color-primary-darker-hover: #0f1623;
   --color-accent-warm: #ffbe2e;         /* USWDS accent-warm (Search button yellow) */
   --color-accent-warm-dark: #e5a000;
 
@@ -29,7 +29,7 @@
   --color-page-bg: #f6f8fb;             /* gentle page tint */
   --color-nav-bg: #F9FAFB;
   --color-section-header: #F3F3F3;
-  --color-group-header: #1c2434;        /* dark band above each section group */
+  --color-group-header: #1c2434;        /* dark band above each section group (same as primary-dark) */
 
   /* === Strokes === */
   --color-stroke-active: #3B82F6;
