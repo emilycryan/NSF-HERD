@@ -116,6 +116,8 @@ function renderContentBlock(block) {
       return `<div class="content-callout">${block.html || block.text || ''}</div>`;
     case 'heading':
       return `<h4 class="content-heading">${block.text || ''}</h4>`;
+    case 'subheader':
+      return `<h5 class="content-subheader">${block.text || ''}</h5>`;
     case 'paragraph':
       return `<p class="content-paragraph">${block.html || block.text || ''}</p>`;
     case 'definition-list': {
@@ -127,10 +129,112 @@ function renderContentBlock(block) {
       `).join('');
       return `<div class="content-definitions">${items}</div>`;
     }
+    case 'bullet-list': {
+      const items = (block.items || []).map((html) => `<li>${html}</li>`).join('');
+      return `<ul class="content-bullets">${items}</ul>`;
+    }
+    case 'field':
+      return renderField(block);
+    case 'field-row':
+      return renderFieldRow(block);
+    case 'textarea':
+      return renderTextarea(block);
+    case 'contact-card':
+      return renderContactCard(block);
     default:
       console.warn('[render] Unknown content block type:', block.type);
       return '';
   }
+}
+
+function renderInput(input) {
+  const type = input.type || 'text';
+  const fieldId = input.id || '';
+  const prefill = input.prefill;
+  const sizeClass = input.size ? ` form-input--${input.size}` : '';
+  const prefilledClass = prefill ? ' is-prefilled' : '';
+  const value = prefill !== undefined ? ` value="${escapeAttr(prefill)}"` : '';
+  return `<input class="form-input${sizeClass}${prefilledClass}" type="${type}" data-field-id="${fieldId}"${value} />`;
+}
+
+function escapeAttr(str) {
+  return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function renderField(block) {
+  const inputs = (block.inputs || []).map(renderInput).join('');
+  const inline = block.inputs && block.inputs.length > 1 ? ' content-field--inline' : '';
+  return `
+    <div class="content-field${inline}">
+      <label class="content-field__label">${block.label || ''}</label>
+      <div class="content-field__inputs">${inputs}</div>
+    </div>
+  `;
+}
+
+function renderFieldRow(block) {
+  const groups = (block.fields || []).map((f) => {
+    const inputs = (f.inputs || []).map(renderInput).join('');
+    const extPart = f.ext
+      ? `<div class="content-field__ext">
+           <label class="content-field__ext-label">ext.</label>
+           <input class="form-input form-input--small" type="text" data-field-id="${f.ext.id}" />
+         </div>`
+      : '';
+    return `
+      <div class="content-field">
+        <label class="content-field__label">${f.label || ''}</label>
+        <div class="content-field__inputs-with-ext">
+          <div class="content-field__inputs">${inputs}</div>
+          ${extPart}
+        </div>
+      </div>
+    `;
+  }).join('');
+  return `<div class="content-field-row">${groups}</div>`;
+}
+
+function renderTextarea(block) {
+  const id = block.id || '';
+  const max = block.maxLength || 500;
+  return `
+    <div class="content-textarea">
+      <textarea class="form-textarea" data-field-id="${id}" maxlength="${max}"></textarea>
+      <p class="content-textarea__hint">(<span class="content-textarea__remaining" data-counter-for="${id}">${max}</span> characters remaining)</p>
+    </div>
+  `;
+}
+
+function renderContactCard(block) {
+  const p = block.prefix || 'contact';
+  return `
+    <div class="content-contact-card">
+      ${renderField({
+        label: 'First name, last name',
+        inputs: [{ id: `${p}-first-name` }, { id: `${p}-last-name` }]
+      })}
+      ${renderField({
+        label: 'Job title:',
+        inputs: [{ id: `${p}-job-title` }]
+      })}
+      ${renderFieldRow({
+        fields: [
+          { label: 'Email address:', inputs: [{ id: `${p}-email`, type: 'email' }] },
+          { label: 'Phone number:', inputs: [{ id: `${p}-phone` }], ext: { id: `${p}-phone-ext` } }
+        ]
+      })}
+      <div class="content-checkbox-row">
+        <label class="content-checkbox">
+          <input type="checkbox" data-field-id="${p}-all-email" />
+          <span>All email</span>
+        </label>
+        <label class="content-checkbox">
+          <input type="checkbox" data-field-id="${p}-can-log-in" />
+          <span>Can log in</span>
+        </label>
+      </div>
+    </div>
+  `;
 }
 
 function renderAccordion(section) {
@@ -177,6 +281,30 @@ function wireAccordions() {
   });
 }
 
+// Prefilled inputs render with a lighter text color. On the user's first edit,
+// switch them to the standard dark color to mark the value as user-confirmed.
+function wirePrefilledInputs() {
+  document.querySelectorAll('.form-input.is-prefilled, .form-textarea.is-prefilled').forEach((el) => {
+    const drop = () => el.classList.remove('is-prefilled');
+    el.addEventListener('input', drop, { once: true });
+  });
+}
+
+// Live "N characters remaining" counters for textareas with maxlength.
+function wireCharCounters() {
+  document.querySelectorAll('.form-textarea[maxlength]').forEach((textarea) => {
+    const id = textarea.dataset.fieldId;
+    const counter = document.querySelector(`[data-counter-for="${id}"]`);
+    if (!counter) return;
+    const max = parseInt(textarea.getAttribute('maxlength'), 10);
+    const update = () => {
+      counter.textContent = String(max - textarea.value.length);
+    };
+    textarea.addEventListener('input', update);
+    update();
+  });
+}
+
 function showError(message) {
   const main = document.querySelector('.app-main');
   if (main) {
@@ -193,6 +321,8 @@ async function start() {
     renderChangesCard(data);
     renderGroups(data);
     wireAccordions();
+    wirePrefilledInputs();
+    wireCharCounters();
   } catch (err) {
     console.error(err);
     showError('Survey could not be loaded. Please refresh the page.');

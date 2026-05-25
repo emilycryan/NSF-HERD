@@ -67,7 +67,100 @@
           "title": "Contact Information & login accounts",
           "kind": "question",
           "showInSidebar": true,
-          "demoStatus": "warning"
+          "demoStatus": "warning",
+          "content": [
+            { "type": "subheader", "text": "Primary Contact Information" },
+            { "type": "paragraph", "text": "Please complete the contact information for the person responsible for the survey" },
+
+            {
+              "type": "field",
+              "label": "First name, last name:",
+              "inputs": [
+                { "id": "primary-first-name", "prefill": "Emily" },
+                { "id": "primary-last-name", "prefill": "Ryan" }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Job title:",
+              "inputs": [
+                { "id": "primary-job-title", "prefill": "Director" }
+              ]
+            },
+            {
+              "type": "field-row",
+              "fields": [
+                {
+                  "label": "Email address:",
+                  "inputs": [{ "id": "primary-email", "type": "email", "prefill": "Emily.Ryan@icfnext.com" }]
+                },
+                {
+                  "label": "Phone number:",
+                  "inputs": [{ "id": "primary-phone", "prefill": "890-897-7777" }],
+                  "ext": { "id": "primary-phone-ext" }
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Institution name:",
+              "inputs": [{ "id": "primary-institution", "prefill": "Standard Test Reference 53" }]
+            },
+            {
+              "type": "field",
+              "label": "Office/department:",
+              "inputs": [{ "id": "primary-office", "prefill": "Accounting" }]
+            },
+
+            { "type": "subheader", "text": "Mailing Address" },
+            {
+              "type": "field",
+              "label": "Line 1 (building, office number, campus box):",
+              "inputs": [{ "id": "primary-addr-1", "prefill": "1902 Reston Metro Plaza" }]
+            },
+            {
+              "type": "field",
+              "label": "Line 2 (campus street address or P.O. box):",
+              "inputs": [{ "id": "primary-addr-2", "prefill": "PO Box 1234" }]
+            },
+            {
+              "type": "field",
+              "label": "City, state, and ZIP code:",
+              "inputs": [
+                { "id": "primary-city", "prefill": "Reston" },
+                { "id": "primary-state", "prefill": "VA", "size": "small" },
+                { "id": "primary-zip", "prefill": "20190" }
+              ]
+            },
+
+            {
+              "type": "paragraph",
+              "text": "At the end of each survey cycle, we send a thank-you letter to the president/chancellor of each institution that completes the survey. In that letter, we acknowledge the person listed as the primary contact. If there are other individuals who should also be thanked in the letter, please let us know in the box below. Please limit to 2 individuals, and provide first and last names and job titles."
+            },
+            {
+              "type": "textarea",
+              "id": "primary-thank-you-names",
+              "maxLength": 500
+            },
+
+            { "type": "subheader", "text": "Other Contact Information" },
+            {
+              "type": "paragraph",
+              "text": "List individuals who should be copied on all e-mails about the survey or can create a login account."
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Check <strong>All Email</strong> box, if this person should be copied on all e-mails.",
+                "Check <strong>Can Log In</strong> box, if this person can create a login account. After you save the information on this page, this person will receive an e-mail allowing them to create their own password.",
+                "Job Title should include information about office/department as appropriate (e.g., VP of Sponsored Programs, Department of Finance Manager, Analyst II in Grants Management)."
+              ]
+            },
+
+            { "type": "contact-card", "prefix": "other-1" },
+            { "type": "contact-card", "prefix": "other-2" },
+            { "type": "contact-card", "prefix": "other-3" }
+          ]
         }
       ]
     },

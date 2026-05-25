@@ -488,3 +488,192 @@
   font-style: italic;
   font-size: var(--text-sm);
 }
+
+/* =====================================================================
+ * Form blocks used inside accordion content
+ * subheader, field, field-row, textarea, bullet-list, contact-card
+ * ===================================================================== */
+
+.content-subheader {
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin: var(--space-5) 0 var(--space-2) 0;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.usa-accordion__content > .content-subheader:first-child,
+.content-callout + .content-subheader {
+  margin-top: 0;
+}
+
+.content-bullets {
+  margin: 0 0 var(--space-4) 0;
+  padding-left: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  line-height: 1.55;
+}
+
+/* ---- Field (label + one or more inputs sharing the label) ---- */
+
+.content-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+  min-width: 0;
+  flex: 1;
+}
+
+.content-field__label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.content-field__inputs {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.content-field__inputs-with-ext {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.content-field__ext {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.content-field__ext-label {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+/* Row of multiple labeled field groups laid out horizontally */
+.content-field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+@media (max-width: 640px) {
+  .content-field-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Inputs ---- */
+
+.form-input {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  font-family: inherit;
+  line-height: 1.4;
+  flex: 1;
+  min-width: 0;
+}
+
+.form-input--small {
+  width: 4rem;
+  flex: 0 0 auto;
+}
+
+.form-input::placeholder {
+  color: var(--color-placeholder);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-stroke-active);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* Auto-populated text appears lighter so the user can see what was
+ * prefilled vs. what they have entered themselves. The class is removed
+ * on the first input event (wirePrefilledInputs in app.js). */
+.form-input.is-prefilled,
+.form-textarea.is-prefilled {
+  color: var(--color-text-subtle);
+}
+
+/* ---- Textarea ---- */
+
+.content-textarea {
+  margin: var(--space-2) 0 var(--space-4) 0;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 5rem;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--text-base);
+  font-family: inherit;
+  line-height: 1.4;
+  resize: vertical;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--color-stroke-active);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.content-textarea__hint {
+  margin: var(--space-1) 0 0 0;
+  text-align: right;
+  font-size: var(--text-xs);
+  color: var(--color-text-subtle);
+}
+
+/* ---- Contact card ---- */
+
+.content-contact-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin: var(--space-3) 0;
+}
+
+.content-checkbox-row {
+  display: flex;
+  gap: var(--space-5);
+  margin-top: var(--space-2);
+}
+
+.content-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.content-checkbox input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+  accent-color: var(--color-info);
+  cursor: pointer;
+}
