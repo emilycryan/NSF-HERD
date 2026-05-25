@@ -11,7 +11,7 @@
 /* === Site header (navy NCSES bar) === */
 
 .site-header {
-  background-color: var(--color-primary-dark);
+  background-color: #162e51; /* NCSES navy — matches .site-footer */
   color: #fff;
   position: relative;
   z-index: 10;
@@ -187,11 +187,12 @@
 /* === Site footer (minimal placeholder) === */
 
 .site-footer {
-  background-color: var(--color-primary-dark);
+  background-color: #162e51; /* NCSES navy — matches .site-header */
   color: #fff;
   text-align: center;
-  padding: var(--space-5);
+  padding: var(--space-5) var(--space-6);
   font-size: var(--text-sm);
+  margin-top: var(--space-6);
 }
 
 /* === Responsive (basic) === */
