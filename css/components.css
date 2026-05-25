@@ -81,7 +81,7 @@
   font-weight: 700;
   padding: 0 var(--space-5) var(--space-3);
   border-bottom: 1px solid var(--color-card-border);
-  margin: 0;
+  margin: 0 0 var(--space-2);
 }
 
 .sidebar-list {
@@ -97,7 +97,7 @@
   grid-template-columns: auto 1fr auto;
   gap: var(--space-3);
   align-items: start;
-  padding: var(--space-3) var(--space-5);
+  padding: var(--space-2) var(--space-5);
   font-size: var(--text-sm);
   color: var(--color-text-muted);
   background: none;
@@ -136,7 +136,7 @@
 }
 
 .sidebar-submit {
-  margin: var(--space-4) var(--space-5) 0;
+  margin: var(--space-3) var(--space-5) 0;
   padding: var(--space-3) var(--space-4);
   background-color: var(--color-disabled-bg);
   color: var(--color-text-disabled);
@@ -159,8 +159,8 @@
 .dashboard-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-8);
-  margin-bottom: var(--space-2);
+  gap: var(--space-6);
+  margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
@@ -173,7 +173,7 @@
 .dashboard-section__heading {
   font-size: var(--text-lg);
   font-weight: 700;
-  margin: 0 0 var(--space-4) 0;
+  margin: 0 0 var(--space-3) 0;
 }
 
 .dashboard-list {
@@ -182,7 +182,7 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-3);
 }
 
 .dashboard-item {
@@ -297,13 +297,14 @@
   background-color: var(--color-group-header);
   color: #fff;
   border-radius: var(--radius-md);
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-3) var(--space-5);
   font-weight: 700;
   font-size: var(--text-base);
-  margin-top: var(--space-5);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
 }
 
-.group-header:first-child {
+#groups-container > .group-header:first-child {
   margin-top: 0;
 }
 
@@ -312,8 +313,12 @@
  * ===================================================================== */
 
 .usa-accordion {
-  margin-top: var(--space-3);
+  margin: 0;
   background: none;
+}
+
+.usa-accordion + .usa-accordion {
+  margin-top: var(--space-2);
 }
 
 .usa-accordion__heading {
@@ -330,13 +335,13 @@
   color: var(--color-text) !important;
   font-size: var(--text-base) !important;
   font-weight: 500 !important;
-  padding: var(--space-4) var(--space-5) !important;
+  padding: var(--space-3) var(--space-5) !important;
   border: 1px solid var(--color-card-border) !important;
   border-radius: var(--radius-md) !important;
   background-image: none !important;
   text-align: left;
   position: relative;
-  margin: 0 0 var(--space-2) 0;
+  margin: 0;
 }
 
 .usa-accordion__button:hover {
