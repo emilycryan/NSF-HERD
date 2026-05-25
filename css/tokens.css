@@ -1,0 +1,86 @@
+/* Design tokens for the NSF HERD survey prototype.
+ * Colors come from the official HERD Survey Styles guide.
+ * USWDS-aligned tokens (--color-primary-dark, --color-accent-warm) match the
+ * National Center for Science and Engineering Statistics (NCSES) site chrome.
+ */
+
+:root {
+  /* === USWDS-aligned site chrome === */
+  --color-primary-dark: #162e51;        /* NCSES header navy (USWDS primary-darker) */
+  --color-primary: #005ea2;             /* USWDS primary blue */
+  --color-primary-darker-hover: #0b1c39;
+  --color-accent-warm: #ffbe2e;         /* USWDS accent-warm (Search button yellow) */
+  --color-accent-warm-dark: #e5a000;
+
+  /* === Status / role colors (from styles doc) === */
+  --color-success: #10B981;             /* completed */
+  --color-error: #EF4444;               /* review */
+  --color-warning: #F59E0B;             /* warning */
+  --color-info: #3B82F6;                /* primary accent for survey UI */
+
+  /* Pale variants for banner backgrounds */
+  --color-success-bg: #F0FDF4;
+  --color-error-bg: #FEF2F2;
+  --color-warning-bg: #FEF9C3;
+  --color-info-bg: #EFF6FF;
+
+  /* === Surfaces === */
+  --color-surface: #FFFFFF;
+  --color-page-bg: #f6f8fb;             /* gentle page tint */
+  --color-nav-bg: #F9FAFB;
+  --color-section-header: #F3F3F3;
+  --color-group-header: #1c2434;        /* dark band above each section group */
+
+  /* === Strokes === */
+  --color-stroke-active: #3B82F6;
+  --color-bullet: #60A5FA;
+  --color-input-border: #D4D4D4;
+  --color-card-border: #e6e8ec;
+
+  /* === Text === */
+  --color-text: #000000;
+  --color-text-muted: #333333;
+  --color-text-subtle: #5e6573;
+  --color-placeholder: #ADAEBC;
+  --color-text-disabled: #9CA5B8;
+
+  /* === Disabled states === */
+  --color-disabled-bg: #D1D9E2;
+  --color-disabled-field-bg: #F9FAFB;
+
+  /* === Spacing scale (4px base) === */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* === Type === */
+  --font-sans: "Source Sans 3", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Merriweather", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  /* === Radii & shadows === */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+
+  /* === Layout dimensions === */
+  --header-height: 64px;
+  --sidebar-width: 280px;
+  --content-max-width: 1280px;
+}

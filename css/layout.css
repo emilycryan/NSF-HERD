@@ -1,0 +1,216 @@
+/* App-shell layout. Custom CSS Grid layered on top of USWDS so we get
+ * USWDS components inside our own page chrome.
+ */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === Site header (navy NCSES bar) === */
+
+.site-header {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+.site-header__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-3) var(--space-6);
+  min-height: var(--header-height);
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+  color: #fff;
+}
+
+.site-brand__logo {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.site-brand__title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.site-brand__title .small {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  opacity: 0.85;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.site-nav {
+  display: flex;
+  gap: var(--space-5);
+  justify-content: center;
+}
+
+.site-nav__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  padding: var(--space-2) 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.site-nav__link:hover {
+  text-decoration: underline;
+}
+
+.site-nav__caret {
+  font-size: 0.625rem;
+  opacity: 0.7;
+}
+
+.site-search {
+  background-color: var(--color-accent-warm);
+  color: var(--color-text);
+  border: none;
+  padding: var(--space-3) var(--space-5);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+.site-search:hover {
+  background-color: var(--color-accent-warm-dark);
+}
+
+/* === Page title band (light gray section under the header) === */
+
+.page-title-band {
+  background-color: var(--color-page-bg);
+  border-bottom: 1px solid var(--color-card-border);
+  padding: var(--space-8) 0 var(--space-6);
+}
+
+.page-title-band__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin: 0 0 var(--space-3) 0;
+  line-height: 1.15;
+}
+
+.page-title__divider {
+  color: var(--color-text-subtle);
+  font-weight: 400;
+  margin: 0 var(--space-2);
+}
+
+.page-title__year {
+  font-weight: 400;
+}
+
+.page-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-end;
+}
+
+/* === Main content area: two-column (sidebar + main) === */
+
+.app-body {
+  flex: 1;
+  background-color: var(--color-page-bg);
+}
+
+.app-body__inner {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: var(--space-6);
+  display: grid;
+  grid-template-columns: var(--sidebar-width) 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+/* Sidebar is a card that sticks while the main scrolls */
+.app-sidebar {
+  position: sticky;
+  top: var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) 0;
+  box-shadow: var(--shadow-sm);
+  max-height: calc(100vh - var(--space-8));
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  min-width: 0; /* allow flex children to shrink */
+}
+
+/* === Site footer (minimal placeholder) === */
+
+.site-footer {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  text-align: center;
+  padding: var(--space-5);
+  font-size: var(--text-sm);
+}
+
+/* === Responsive (basic) === */
+
+@media (max-width: 1024px) {
+  .app-body__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .app-sidebar {
+    position: static;
+    max-height: none;
+  }
+
+  .site-header__inner {
+    grid-template-columns: auto auto;
+  }
+
+  .site-nav {
+    display: none;
+  }
+}

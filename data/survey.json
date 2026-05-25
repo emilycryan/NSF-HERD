@@ -1,0 +1,77 @@
+{
+  "title": "FY 2024 Survey",
+  "fullTitle": "Higher Education Research and Development (HERD) Survey",
+  "year": "2024",
+  "dueDate": "January 31, 2025",
+  "surveyStatus": "Not Submitted",
+  "completedCount": 1,
+  "totalSidebarSections": 18,
+  "changesNote": "Question 16: the format of the question was changed to present responses as columns rather than rows, like question 15. No other changes were made to the question.",
+  "issues": [
+    { "severity": "review", "title": "Review", "detail": "Contact, Q1" },
+    { "severity": "completed", "title": "Unexplained Trend Variances", "detail": "None" },
+    { "severity": "completed", "title": "Unexplained Data Quality Issues", "detail": "None" }
+  ],
+  "groups": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "sections": [
+        {
+          "id": "definitions",
+          "title": "Definitions & Instructions",
+          "kind": "info",
+          "showInSidebar": false
+        },
+        {
+          "id": "contact-info",
+          "title": "Contact Information & login accounts",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "warning"
+        }
+      ]
+    },
+    {
+      "id": "rd-expenditures",
+      "title": "R&D Expenditures by source and type",
+      "sections": [
+        { "id": "q1", "number": 1, "title": "R&D expenditures by source of funds", "kind": "question", "showInSidebar": true, "demoStatus": "review" },
+        { "id": "q2", "number": 2, "title": "Foreign funding for R&D", "kind": "question", "showInSidebar": true, "demoStatus": "completed" },
+        { "id": "q3", "number": 3, "title": "Contracts & grants", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q4", "number": 4, "title": "R&D at medical schools", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q5", "number": 5, "title": "Clinical trial R&D", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q6", "number": 6, "title": "Types of R&D: basic research, applied research and experimental development", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" }
+      ]
+    },
+    {
+      "id": "pass-through",
+      "title": "Pass-through",
+      "sections": [
+        { "id": "q7", "number": 7, "title": "Subrecipient R&D expenditures", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q8", "number": 8, "title": "R&D expenditures passed through", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" }
+      ]
+    },
+    {
+      "id": "federal-agencies",
+      "title": "Federal Agencies",
+      "sections": [
+        { "id": "q9", "number": 9, "title": "R&D expenditures by field and federal agency source", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q10", "number": 10, "title": "Other federal agency sources", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q11", "number": 11, "title": "R&D expenditures by field and nonfederal agency source", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q12", "number": 12, "title": "Cost elements of R&D", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q13", "number": 13, "title": "Capitalization thresholds", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q14", "number": 14, "title": "R&D equipment expenditures by field", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q15", "number": 15, "title": "Headcount by R&D function", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other",
+      "sections": [
+        { "id": "q16", "number": 16, "title": "FTE by R&D function", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        { "id": "q17", "number": 17, "title": "Fiscal year", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+/* Component styles for the survey landing page.
+ * Loaded after USWDS so we can override its defaults where needed.
+ */
+
+/* =====================================================================
+ * Status badges (4 states: not-started, completed, warning, review)
+ * Used in the sidebar and in the legend at the top of the dashboard.
+ * ===================================================================== */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  font-size: 0.625rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.status-badge--not-started {
+  background-color: transparent;
+  border: 1.5px solid var(--color-input-border);
+  color: transparent;
+}
+
+.status-badge--completed {
+  background-color: var(--color-success);
+}
+
+.status-badge--review {
+  background-color: var(--color-error);
+}
+
+/* Warning is rendered as a yellow triangle, not a circle, to match the wireframe. */
+.status-badge--warning {
+  background-color: transparent;
+  border-radius: 0;
+  width: 1.1rem;
+  height: 1rem;
+  position: relative;
+  color: transparent;
+}
+
+.status-badge--warning::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 0.55rem solid transparent;
+  border-right: 0.55rem solid transparent;
+  border-bottom: 1rem solid var(--color-warning);
+}
+
+.status-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4) var(--space-6);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.status-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* =====================================================================
+ * Sidebar — Survey Progress
+ * ===================================================================== */
+
+.sidebar-header {
+  font-size: var(--text-base);
+  font-weight: 700;
+  padding: 0 var(--space-5) var(--space-3);
+  border-bottom: 1px solid var(--color-card-border);
+  margin: 0;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.sidebar-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-3);
+  align-items: start;
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  border-left: 3px solid transparent;
+  width: 100%;
+  text-align: left;
+  line-height: 1.35;
+  cursor: pointer;
+}
+
+.sidebar-item:hover {
+  background-color: var(--color-section-header);
+}
+
+.sidebar-item[aria-current="true"] {
+  background-color: var(--color-info-bg);
+  border-left-color: var(--color-stroke-active);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.sidebar-item__number {
+  color: var(--color-text-subtle);
+  font-weight: 500;
+  min-width: 1.5rem;
+}
+
+.sidebar-item__label {
+  min-width: 0;
+  word-break: break-word;
+}
+
+.sidebar-item__status {
+  margin-top: 2px;
+}
+
+.sidebar-submit {
+  margin: var(--space-4) var(--space-5) 0;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-disabled-bg);
+  color: var(--color-text-disabled);
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.sidebar-submit:not([disabled]) {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =====================================================================
+ * Dashboard cards (Key Information + Issues & Variances)
+ * ===================================================================== */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-2);
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+.dashboard-section__heading {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin: 0 0 var(--space-4) 0;
+}
+
+.dashboard-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.dashboard-item {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr;
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.dashboard-item__icon {
+  color: var(--color-text-subtle);
+  font-size: var(--text-base);
+  line-height: 1.25;
+}
+
+.dashboard-item__label {
+  color: var(--color-text-subtle);
+  font-size: var(--text-sm);
+  margin: 0;
+}
+
+.dashboard-item__value {
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.dashboard-item__value--inline {
+  font-weight: 400;
+}
+
+.dashboard-item__value--inline strong {
+  font-weight: 700;
+}
+
+/* =====================================================================
+ * Submit info banner (just above the "Survey Changes" callout)
+ * ===================================================================== */
+
+.submit-banner {
+  background-color: var(--color-info-bg);
+  border: 1px solid #d8e6fb;
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.submit-banner__text {
+  color: var(--color-text);
+  margin: 0;
+  font-size: var(--text-sm);
+}
+
+.submit-banner__button {
+  background-color: var(--color-disabled-bg);
+  color: var(--color-text-disabled);
+  border: none;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.submit-banner__button:not([disabled]) {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =====================================================================
+ * Survey Changes summary box
+ * (Uses our own card styling rather than USWDS .usa-summary-box because
+ * the wireframe uses a softer blue tint.)
+ * ===================================================================== */
+
+.changes-card {
+  background-color: var(--color-info-bg);
+  border: 1px solid #d8e6fb;
+  border-left: 4px solid var(--color-stroke-active);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+}
+
+.changes-card__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin: 0 0 var(--space-3) 0;
+}
+
+.changes-card__subtitle {
+  font-size: var(--text-base);
+  font-weight: 700;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.changes-card__body {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* =====================================================================
+ * Group headers (dark bands that separate section groups)
+ * ===================================================================== */
+
+.group-header {
+  background-color: var(--color-group-header);
+  color: #fff;
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  font-weight: 700;
+  font-size: var(--text-base);
+  margin-top: var(--space-5);
+}
+
+.group-header:first-child {
+  margin-top: 0;
+}
+
+/* =====================================================================
+ * Accordion drawers (override USWDS .usa-accordion to match wireframe)
+ * ===================================================================== */
+
+.usa-accordion {
+  margin-top: var(--space-3);
+  background: none;
+}
+
+.usa-accordion__heading {
+  margin: 0;
+}
+
+.usa-accordion__button {
+  display: grid !important;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-3);
+  align-items: center;
+  width: 100%;
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  font-size: var(--text-base) !important;
+  font-weight: 500 !important;
+  padding: var(--space-4) var(--space-5) !important;
+  border: 1px solid var(--color-card-border) !important;
+  border-radius: var(--radius-md) !important;
+  background-image: none !important;
+  text-align: left;
+  position: relative;
+  margin: 0 0 var(--space-2) 0;
+}
+
+.usa-accordion__button:hover {
+  background-color: var(--color-section-header) !important;
+}
+
+.usa-accordion__button[aria-expanded="true"] {
+  border-radius: var(--radius-md) var(--radius-md) 0 0 !important;
+}
+
+.accordion-number {
+  font-weight: 500;
+  color: var(--color-text);
+  min-width: 1.75rem;
+}
+
+.accordion-chevron {
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-text-subtle);
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.usa-accordion__button[aria-expanded="true"] .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+.usa-accordion__content {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-card-border) !important;
+  border-top: none !important;
+  border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
+  padding: var(--space-5) !important;
+  margin-top: -1 * var(--space-2);
+}
+
+/* =====================================================================
+ * Bottom submit area
+ * ===================================================================== */
+
+.main-submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-4);
+}
+
+.main-submit__button {
+  background-color: var(--color-primary-dark);
+  color: #fff;
+  border: none;
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: var(--text-base);
+  cursor: pointer;
+}
+
+.main-submit__button:hover {
+  background-color: var(--color-primary-darker-hover);
+}
+
+.main-submit__button:disabled {
+  background-color: var(--color-disabled-bg);
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
