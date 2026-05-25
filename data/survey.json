@@ -21,7 +21,46 @@
           "id": "definitions",
           "title": "Definitions & Instructions",
           "kind": "info",
-          "showInSidebar": false
+          "showInSidebar": false,
+          "content": [
+            {
+              "type": "callout",
+              "html": "This survey collects data on research and development (R&D) activities at higher education institutions. Please report R&D activities and expenditures for your institution's <strong>2024 fiscal year</strong>."
+            },
+            {
+              "type": "heading",
+              "text": "Fiscal year (FY)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Please report data for your institution's 2024 fiscal year."
+            },
+            {
+              "type": "heading",
+              "text": "Research and Development (R&D)"
+            },
+            {
+              "type": "paragraph",
+              "text": "R&D activity is creative and systematic work undertaken in order to increase the stock of knowledge — including knowledge of humankind, culture, and society — and to devise new applications of available knowledge. R&D covers three activities: basic research, applied research, and experimental development."
+            },
+            {
+              "type": "definition-list",
+              "items": [
+                {
+                  "term": "Basic research",
+                  "text": "is experimental or theoretical work undertaken primarily to acquire new knowledge of the underlying foundations of phenomena and observable facts, without any particular application or use in view."
+                },
+                {
+                  "term": "Applied research",
+                  "text": "is original investigation undertaken in order to acquire new knowledge. It is directed primarily towards a specific, practical aim or objective."
+                },
+                {
+                  "term": "Experimental development",
+                  "text": "is systematic work, drawing on knowledge gained from research and practical experience and producing additional knowledge, which is directed to producing new products or processes or to improving existing products or processes."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "contact-info",

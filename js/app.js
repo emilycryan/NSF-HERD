@@ -103,6 +103,36 @@ function renderGroups(data) {
   }
 }
 
+function renderContentBlocks(blocks) {
+  if (!Array.isArray(blocks) || blocks.length === 0) {
+    return `<p class="content-placeholder">Content for this section will be added as the survey is built out.</p>`;
+  }
+  return blocks.map(renderContentBlock).join('');
+}
+
+function renderContentBlock(block) {
+  switch (block.type) {
+    case 'callout':
+      return `<div class="content-callout">${block.html || block.text || ''}</div>`;
+    case 'heading':
+      return `<h4 class="content-heading">${block.text || ''}</h4>`;
+    case 'paragraph':
+      return `<p class="content-paragraph">${block.html || block.text || ''}</p>`;
+    case 'definition-list': {
+      const items = (block.items || []).map((item) => `
+        <div class="content-definition">
+          <p class="content-definition__term">${item.term || ''}</p>
+          <p class="content-definition__text">${item.text || ''}</p>
+        </div>
+      `).join('');
+      return `<div class="content-definitions">${items}</div>`;
+    }
+    default:
+      console.warn('[render] Unknown content block type:', block.type);
+      return '';
+  }
+}
+
 function renderAccordion(section) {
   const wrapper = document.createElement('div');
   wrapper.className = 'usa-accordion';
@@ -123,7 +153,7 @@ function renderAccordion(section) {
       </button>
     </h3>
     <div id="${contentId}" class="usa-accordion__content" hidden>
-      <p>Content for "${section.title}" will be added as the survey is built out.</p>
+      ${renderContentBlocks(section.content)}
     </div>
   `;
   return wrapper;
