@@ -6,10 +6,12 @@ A front-end prototype of the NSF HERD (Higher Education Research and Development
 
 This prototype simulates the full survey experience end-to-end:
 
-- Multi-step wizard with 15+ sections and 100+ questions
-- Heavy conditional branching (sections shown/hidden based on prior answers)
-- Question types: short/long text, radio, checkbox, dropdown, date, number
-- Answers persist across steps via `localStorage` (simulated; real persistence is for the dev team)
+- 17 sections presented as a sectioned form with a persistent side nav and accordion drawers
+- Top status pane showing overall progress; side nav shows per-section completion
+- Light conditional branching (Q4 medical school, Q5 clinical trials, Q10 agency listing)
+- Dominant pattern: currency inputs in tables and large matrices (R&D fields × federal agencies) with live auto-totals
+- Cross-question "should match" hints when sums diverge
+- Answers persist via `localStorage` (simulated; real persistence is for the dev team)
 - "Submit" simulates success without sending data anywhere
 
 The goal is **clean, well-organized front-end code** that a dev team can lift patterns from.
@@ -32,24 +34,27 @@ The app loads `data/survey.json` via `fetch()`, which browsers block on the `fil
 
 ```
 NSF-HERD/
-├── index.html              # shell only: header, wizard frame, footer
+├── index.html              # shell: header, side nav, status pane, section container
 ├── README.md               # this file
 ├── css/
-│   ├── tokens.css          # colors, spacing, type scale
+│   ├── tokens.css          # design tokens from styles doc (colors, spacing, type)
 │   ├── base.css            # reset, typography, page layout
-│   ├── components.css      # buttons, inputs, cards, progress bar
-│   └── wizard.css          # step layout, navigation, transitions
+│   ├── components.css      # buttons, currency input, text input, accordion, status banner
+│   └── layout.css          # app shell: side nav, status pane, drawer transitions
 ├── js/
-│   ├── app.js              # entry: wires everything up
+│   ├── app.js              # entry: loads JSON, initializes shell
 │   ├── state.js            # answer storage (localStorage)
-│   ├── render.js           # renders a step from JSON
-│   ├── navigation.js       # next/back/jump logic
+│   ├── sections.js         # active section, side nav, status updates
+│   ├── render.js           # renders a section's questions from JSON
+│   ├── matrix.js           # currency matrix renderer (Q9, Q11, Q14)
+│   ├── calc.js             # row/column totals + cross-question match hints
 │   └── branching.js        # showIf rule evaluation
 ├── data/
-│   └── survey.json         # the whole survey: steps, questions, branching rules
+│   └── survey.json         # full survey: sections, questions, rules, totals
 ├── assets/
 │   ├── fonts/
 │   └── images/
+├── reference/              # local-only (gitignored); FY2024 PDF + styles doc
 └── docs/
     └── superpowers/
         └── specs/          # design documents

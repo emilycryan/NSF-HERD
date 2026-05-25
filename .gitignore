@@ -14,3 +14,6 @@
 .env
 .env.local
 scratch/
+
+# Reference materials (kept locally, not committed)
+reference/
