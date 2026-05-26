@@ -168,7 +168,142 @@
       "id": "rd-expenditures",
       "title": "R&D Expenditures by source and type",
       "sections": [
-        { "id": "q1", "number": 1, "title": "R&D expenditures by source of funds", "kind": "question", "showInSidebar": true, "demoStatus": "review" },
+        {
+          "id": "q1",
+          "number": 1,
+          "title": "R&D expenditures by source of funds",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "review",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 1.",
+              "text": "How much of your total expenditures for research and development (R&D) came from the following sources in FY 2024?",
+              "definition": { "label": "See definition of R&D", "tag": "PDF", "href": "#" }
+            },
+            {
+              "type": "callout",
+              "html": "<ul class=\"content-bullets\"><li>In rows a, b, c, d, and f: Include both <strong>direct</strong> and <strong>recovered indirect costs</strong> (reimbursement of F&amp;A costs from external sponsors).</li><li>Report the <strong>original source</strong> of funds, when possible.</li><li>Funds coming through your institution's 501(c)3 should be reported based on the original funding source (e.g., restricted gifts in row f; unrestricted gifts in row e).</li><li>Include all fields of R&D (e.g., sciences, engineering, humanities, education, law, arts). See full listing in Question 9.</li></ul>"
+            },
+            {
+              "type": "currency-header",
+              "title": "R&D expenditures",
+              "subtitle": "(Dollars in thousands)",
+              "hint": "(for example, report $25,342 as $25)"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "a.",
+              "label": "U.S. federal government",
+              "description": [
+                "Any agency of the United States government.",
+                "Include federal funds passed through from another institution. Funds from FFRDCs should be treated as direct federal funding."
+              ],
+              "id": "q1-a"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "b.",
+              "label": "State and local government",
+              "description": [
+                "Any state, county, municipality, or other local government entity in the United States, including state health agencies.",
+                "Include state funds that support R&D at agricultural and other experiment stations.",
+                "Public institutions should report state appropriations restricted for R&D activities here rather than in row e, Institutional funds."
+              ],
+              "id": "q1-b"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "c.",
+              "label": "Business",
+              "description": [
+                "Domestic or foreign for-profit organizations. Report funds from a company's nonprofit foundation in row d."
+              ],
+              "id": "q1-c"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "d.",
+              "label": "Nonprofit organizations",
+              "description": [
+                "Domestic or foreign nonprofit foundations and organizations, except universities and colleges. Funds from other universities and colleges should be reported in row f."
+              ],
+              "id": "q1-d"
+            },
+            {
+              "type": "currency-group",
+              "prefix": "e.",
+              "label": "Institutional funds",
+              "id": "q1-e",
+              "children": [
+                {
+                  "type": "currency-row",
+                  "prefix": "1.",
+                  "label": "Institutionally financed research",
+                  "description": [
+                    "Separately accounted for R&D funded by your institution. Do not include estimated research time. Exclude institution research administration and support (e.g., office of sponsored programs) or other indirect costs."
+                  ],
+                  "id": "q1-e1",
+                  "confidential": true
+                },
+                {
+                  "type": "currency-row",
+                  "prefix": "2.",
+                  "label": "Cost sharing",
+                  "description": [
+                    "Include committed cost sharing other than unrecovered indirect costs."
+                  ],
+                  "id": "q1-e2",
+                  "confidential": true
+                },
+                {
+                  "type": "currency-row",
+                  "prefix": "3.",
+                  "label": "Unrecovered indirect costs",
+                  "description": [
+                    "Calculate for externally funded R&D only (preferably on a project-specific basis) using the appropriate cost rate — on-campus, off-campus, etc."
+                  ],
+                  "bullets": [
+                    "First, multiply the negotiated rate by the corresponding base.",
+                    "Second, subtract recovered indirect costs."
+                  ],
+                  "id": "q1-e3",
+                  "confidential": true
+                },
+                {
+                  "type": "currency-row",
+                  "prefix": "4.",
+                  "label": "Total institutional funds",
+                  "id": "q1-e4"
+                }
+              ]
+            },
+            {
+              "type": "currency-row",
+              "prefix": "f.",
+              "label": "All other sources",
+              "description": [
+                "Other sources not reported above, such as funds from foreign governments, foreign or U.S. universities, and gifts designated by the donors for research."
+              ],
+              "id": "q1-f"
+            },
+            { "type": "divider" },
+            {
+              "type": "currency-row",
+              "prefix": "g.",
+              "label": "Total",
+              "id": "q1-g"
+            },
+            {
+              "type": "comments",
+              "label": "Comments:",
+              "id": "q1-comments",
+              "maxLength": 1000
+            },
+            { "type": "action-bar" }
+          ]
+        },
         { "id": "q2", "number": 2, "title": "Foreign funding for R&D", "kind": "question", "showInSidebar": true, "demoStatus": "completed" },
         { "id": "q3", "number": 3, "title": "Contracts & grants", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
         { "id": "q4", "number": 4, "title": "R&D at medical schools", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },

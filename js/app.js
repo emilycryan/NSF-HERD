@@ -141,6 +141,25 @@ function renderContentBlock(block) {
       return renderTextarea(block);
     case 'contact-card':
       return renderContactCard(block);
+    case 'question-intro':
+      return renderQuestionIntro(block);
+    case 'currency-header':
+      return renderCurrencyHeader(block);
+    case 'currency-row':
+      return renderCurrencyRow(block);
+    case 'currency-group':
+      return renderCurrencyGroup(block);
+    case 'divider':
+      return `<hr class="q-divider" />`;
+    case 'comments':
+      return renderComments(block);
+    case 'action-bar':
+      return `
+        <div class="action-bar">
+          <button type="button" class="action-bar__cancel">Cancel</button>
+          <button type="button" class="action-bar__save">Save</button>
+        </div>
+      `;
     default:
       console.warn('[render] Unknown content block type:', block.type);
       return '';
@@ -200,6 +219,97 @@ function renderTextarea(block) {
   return `
     <div class="content-textarea">
       <textarea class="form-textarea" data-field-id="${id}" maxlength="${max}"></textarea>
+      <p class="content-textarea__hint">(<span class="content-textarea__remaining" data-counter-for="${id}">${max}</span> characters remaining)</p>
+    </div>
+  `;
+}
+
+// ====== Question content blocks ======
+
+function renderQuestionIntro(block) {
+  const number = block.number || '';
+  const text = block.text || '';
+  const def = block.definition;
+  const defHtml = def
+    ? `<p class="question-intro__definition">
+         <a href="${def.href || '#'}">${def.label || ''}</a>
+         <span class="question-intro__definition-tag">(${def.tag || 'PDF'})</span>
+       </p>`
+    : '';
+  return `
+    <header class="question-intro">
+      <span class="question-intro__number">${number}</span>
+      <p class="question-intro__text">${text}</p>
+      ${defHtml}
+    </header>
+  `;
+}
+
+function renderCurrencyHeader(block) {
+  const subtitle = block.subtitle ? `<p class="currency-header__subtitle">${block.subtitle}</p>` : '';
+  const hint = block.hint ? `<p class="currency-header__hint">${block.hint}</p>` : '';
+  return `
+    <div class="currency-header">
+      <p class="currency-header__title">${block.title || ''}</p>
+      ${subtitle}
+      ${hint}
+    </div>
+  `;
+}
+
+function renderCurrencyInput(id) {
+  const fieldId = id || '';
+  return `
+    <div class="currency-input">
+      <input type="text" inputmode="numeric" data-field-id="${fieldId}" aria-label="Amount in thousands of dollars" />
+    </div>
+  `;
+}
+
+function renderCurrencyRow(block) {
+  const prefix = block.prefix ? `${block.prefix} ` : '';
+  const descriptions = (block.description || [])
+    .map((para) => `<p class="currency-row__description">${para}</p>`)
+    .join('');
+  const bullets = (block.bullets && block.bullets.length)
+    ? `<ul class="currency-row__bullets">${block.bullets.map((b) => `<li>${b}</li>`).join('')}</ul>`
+    : '';
+  const confidential = block.confidential
+    ? `<p class="currency-row__confidential">(Confidential)</p>`
+    : '';
+  return `
+    <div class="currency-row" data-row-id="${block.id || ''}">
+      <div class="currency-row__text">
+        <p class="currency-row__label">${prefix}${block.label || ''}</p>
+        ${descriptions}
+        ${bullets}
+      </div>
+      <div class="currency-row__input">
+        ${renderCurrencyInput(block.id)}
+        ${confidential}
+      </div>
+    </div>
+  `;
+}
+
+function renderCurrencyGroup(block) {
+  const prefix = block.prefix ? `${block.prefix} ` : '';
+  const children = (block.children || []).map(renderCurrencyRow).join('');
+  return `
+    <div class="currency-group" data-group-id="${block.id || ''}">
+      <p class="currency-group__label">${prefix}${block.label || ''}</p>
+      <div class="currency-group__children">${children}</div>
+    </div>
+  `;
+}
+
+function renderComments(block) {
+  const id = block.id || '';
+  const max = block.maxLength || 1000;
+  return `
+    <div class="comments-block">
+      <label class="comments-block__label" for="${id}">${block.label || 'Comments:'}</label>
+      <textarea id="${id}" class="form-textarea" data-field-id="${id}" maxlength="${max}"></textarea>
       <p class="content-textarea__hint">(<span class="content-textarea__remaining" data-counter-for="${id}">${max}</span> characters remaining)</p>
     </div>
   `;
