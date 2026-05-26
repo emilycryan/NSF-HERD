@@ -18,3 +18,6 @@ scratch/
 
 # Reference materials (kept locally, not committed)
 reference/
+
+# Superpowers brainstorming sessions (mockups)
+.superpowers/

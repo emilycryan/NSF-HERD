@@ -95,7 +95,7 @@
 .sidebar-item {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  gap: var(--space-3);
+  gap: var(--space-2);
   align-items: start;
   padding: var(--space-2) var(--space-5);
   font-size: var(--text-sm);
@@ -123,7 +123,7 @@
 .sidebar-item__number {
   color: var(--color-text-subtle);
   font-weight: 500;
-  min-width: 1.5rem;
+  min-width: 1.25rem;
 }
 
 .sidebar-item__label {
@@ -268,9 +268,12 @@
  * ===================================================================== */
 
 .changes-card {
-  background-color: var(--color-info-bg);
-  border: 1px solid #d8e6fb;
-  border-left: 4px solid var(--color-stroke-active);
+  /* Yellow, not blue: info-blue is reserved for genuine data-mismatch alerts
+   * (cross-question totals, validation hints). This card is a "draw attention"
+   * surface, which is what warning-yellow is for. */
+  background-color: var(--color-warning-bg);
+  border: 1px solid #FDE68A;
+  border-left: 4px solid var(--color-warning);
   border-radius: var(--radius-md);
   padding: var(--space-5) var(--space-6);
 }
@@ -332,7 +335,7 @@
 .usa-accordion__button {
   display: grid !important;
   grid-template-columns: auto 1fr auto;
-  gap: var(--space-3);
+  gap: var(--space-2);
   align-items: center;
   width: 100%;
   background-color: var(--color-surface) !important;
@@ -359,7 +362,7 @@
 .accordion-number {
   font-weight: 500;
   color: var(--color-text);
-  min-width: 1.75rem;
+  min-width: 1.5rem;
 }
 
 .accordion-chevron {
@@ -381,6 +384,56 @@
   border-radius: 0 0 var(--radius-md) var(--radius-md) !important;
   padding: var(--space-5) !important;
   margin-top: -1 * var(--space-2);
+}
+
+/* State emphasis: open drawers lift, closed drawers recede.
+ * Driven by the inner button's aria-expanded so we can style the
+ * whole wrapper as a single unit via :has(). De-emphasis uses real
+ * color tokens, not opacity, so contrast stays WCAG-AA on closed drawers. */
+
+.usa-accordion {
+  transition: box-shadow 0.15s ease;
+}
+
+.usa-accordion__button {
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease !important;
+}
+
+/* Open: wrapper carries a drop shadow; button + content panel share a slightly
+ * darker border to look like a single raised card; title text gains weight. */
+.usa-accordion:has(button[aria-expanded="true"]) {
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.10);
+  border-radius: var(--radius-md);
+}
+
+.usa-accordion:has(button[aria-expanded="true"]) .usa-accordion__button {
+  border-color: #d2d6de !important;
+  color: var(--color-primary-dark) !important;
+  font-weight: 600 !important;
+}
+
+.usa-accordion:has(button[aria-expanded="true"]) .usa-accordion__content {
+  border-color: #d2d6de !important;
+}
+
+/* Closed: only the button is visible. Quiet gray surface + subtle text.
+ * #5e6573 on #f3f5f8 ≈ 5.05:1, comfortably above the WCAG AA 4.5:1 floor. */
+.usa-accordion:has(button[aria-expanded="false"]) .usa-accordion__button {
+  background-color: #f3f5f8 !important;
+  border-color: #e0e3e8 !important;
+  color: var(--color-text-subtle) !important;
+}
+
+.usa-accordion:has(button[aria-expanded="false"]) .accordion-number {
+  color: var(--color-text-subtle);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .usa-accordion,
+  .usa-accordion__button { transition: none !important; }
 }
 
 /* =====================================================================
