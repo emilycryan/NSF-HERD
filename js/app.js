@@ -151,6 +151,8 @@ function renderContentBlock(block) {
       return renderCurrencyGroup(block);
     case 'divider':
       return `<hr class="q-divider" />`;
+    case 'footnote':
+      return `<p class="content-footnote"><sup>1</sup> ${block.text || ''}</p>`;
     case 'comments':
       return renderComments(block);
     case 'action-bar':
@@ -248,6 +250,18 @@ function renderQuestionIntro(block) {
 function renderCurrencyHeader(block) {
   const subtitle = block.subtitle ? `<p class="currency-header__subtitle">${block.subtitle}</p>` : '';
   const hint = block.hint ? `<p class="currency-header__hint">${block.hint}</p>` : '';
+  if (block.lead) {
+    return `
+      <div class="currency-header currency-header--split">
+        <p class="currency-header__lead">${block.lead}</p>
+        <div class="currency-header__main">
+          <p class="currency-header__title">${block.title || ''}</p>
+          ${subtitle}
+          ${hint}
+        </div>
+      </div>
+    `;
+  }
   return `
     <div class="currency-header">
       <p class="currency-header__title">${block.title || ''}</p>
@@ -257,12 +271,19 @@ function renderCurrencyHeader(block) {
   `;
 }
 
-function renderCurrencyInput(id) {
+function renderCurrencyInput(id, opts = {}) {
   const fieldId = id || '';
+  const isTotal = !!opts.total;
+  const sumOf = Array.isArray(opts.sumOf) ? opts.sumOf.join(',') : '';
+  const totalClass = isTotal ? ' is-total' : '';
+  const sumAttr = sumOf ? ` data-sum-of="${escapeAttr(sumOf)}"` : '';
+  // Totals are computed from other fields: lock them and skip the tab order.
+  const lockAttrs = isTotal ? ' readonly aria-readonly="true" tabindex="-1"' : '';
   return `
     <div class="currency-input">
-      <input type="text" inputmode="numeric" data-field-id="${fieldId}" aria-label="Amount in thousands of dollars" />
+      <input type="text" inputmode="decimal" class="currency-input__field${totalClass}" data-field-id="${fieldId}"${sumAttr}${lockAttrs} aria-label="Amount in thousands of dollars" />
     </div>
+    <p class="currency-input__error" data-error-for="${fieldId}" hidden>Enter a number using digits and an optional decimal point.</p>
   `;
 }
 
@@ -285,7 +306,7 @@ function renderCurrencyRow(block) {
         ${bullets}
       </div>
       <div class="currency-row__input">
-        ${renderCurrencyInput(block.id)}
+        ${renderCurrencyInput(block.id, { total: block.total, sumOf: block.sumOf })}
         ${confidential}
       </div>
     </div>
@@ -415,6 +436,80 @@ function wireCharCounters() {
   });
 }
 
+// ====== Numeric validation + auto-totaling for currency questions ======
+
+// Parse a currency field's raw string into a number.
+// Empty counts as "no entry" (valid). Commas are accepted as separators.
+// Whole numbers and decimals are valid; anything else is rejected.
+function parseAmount(raw) {
+  const cleaned = String(raw == null ? '' : raw).replace(/,/g, '').trim();
+  if (cleaned === '') return { empty: true, valid: true, value: 0 };
+  const looksNumeric = /^(\d+(\.\d*)?|\.\d+)$/.test(cleaned);
+  const value = Number(cleaned);
+  if (!looksNumeric || !Number.isFinite(value)) {
+    return { empty: false, valid: false, value: NaN };
+  }
+  return { empty: false, valid: true, value };
+}
+
+// Format a numeric total for display: thousands separators, up to 2 decimals.
+function formatAmount(n) {
+  if (!Number.isFinite(n)) return '';
+  const rounded = Math.round(n * 100) / 100;
+  return rounded.toLocaleString('en-US', { maximumFractionDigits: 2 });
+}
+
+// Recompute every read-only total from its data-sum-of source list.
+// Totals are walked in document order so a nested subtotal (e.g. Q1 row e.4,
+// "Total institutional funds") is resolved before a grand total that sums it.
+// A total stays blank until at least one of its sources holds a valid value.
+function recomputeTotals() {
+  document.querySelectorAll('.currency-input__field.is-total[data-sum-of]').forEach((totalEl) => {
+    const ids = totalEl.dataset.sumOf.split(',').map((s) => s.trim()).filter(Boolean);
+    let sum = 0;
+    let hasEntry = false;
+    for (const id of ids) {
+      const src = document.querySelector(`.currency-input__field[data-field-id="${id}"]`);
+      if (!src) continue;
+      const parsed = parseAmount(src.value);
+      if (!parsed.empty && parsed.valid) {
+        sum += parsed.value;
+        hasEntry = true;
+      }
+    }
+    totalEl.value = hasEntry ? formatAmount(sum) : '';
+  });
+}
+
+// Validate currency inputs on blur and keep each question's total fields in
+// sync. Read-only total fields are skipped — they are driven by recomputeTotals.
+function wireCurrencyCalc() {
+  document.querySelectorAll('.currency-input__field:not(.is-total)').forEach((el) => {
+    const errorEl = document.querySelector(`.currency-input__error[data-error-for="${el.dataset.fieldId}"]`);
+    // Clear a prior error the moment the user starts correcting the value.
+    el.addEventListener('input', () => {
+      if (!el.classList.contains('is-invalid')) return;
+      el.classList.remove('is-invalid');
+      el.removeAttribute('aria-invalid');
+      if (errorEl) errorEl.hidden = true;
+    });
+    // Validate and re-total once focus leaves the field.
+    el.addEventListener('blur', () => {
+      const invalid = !parseAmount(el.value).valid;
+      el.classList.toggle('is-invalid', invalid);
+      if (invalid) {
+        el.setAttribute('aria-invalid', 'true');
+      } else {
+        el.removeAttribute('aria-invalid');
+      }
+      if (errorEl) errorEl.hidden = !invalid;
+      recomputeTotals();
+    });
+  });
+  // Seed totals from any values already present on load.
+  recomputeTotals();
+}
+
 function showError(message) {
   const main = document.querySelector('.app-main');
   if (main) {
@@ -433,6 +528,7 @@ async function start() {
     wireAccordions();
     wirePrefilledInputs();
     wireCharCounters();
+    wireCurrencyCalc();
   } catch (err) {
     console.error(err);
     showError('Survey could not be loaded. Please refresh the page.');

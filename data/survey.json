@@ -275,7 +275,9 @@
                   "type": "currency-row",
                   "prefix": "4.",
                   "label": "Total institutional funds",
-                  "id": "q1-e4"
+                  "id": "q1-e4",
+                  "total": true,
+                  "sumOf": ["q1-e1", "q1-e2", "q1-e3"]
                 }
               ]
             },
@@ -293,7 +295,9 @@
               "type": "currency-row",
               "prefix": "g.",
               "label": "Total",
-              "id": "q1-g"
+              "id": "q1-g",
+              "total": true,
+              "sumOf": ["q1-a", "q1-b", "q1-c", "q1-d", "q1-e4", "q1-f"]
             },
             {
               "type": "comments",
@@ -304,7 +308,96 @@
             { "type": "action-bar" }
           ]
         },
-        { "id": "q2", "number": 2, "title": "Foreign funding for R&D", "kind": "question", "showInSidebar": true, "demoStatus": "completed" },
+        {
+          "id": "q2",
+          "number": 2,
+          "title": "Foreign funding for R&D",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "completed",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 2.",
+              "text": "How much of the total R&D expenditures reported in Question 1, row g, originated from the following foreign sources?"
+            },
+            {
+              "type": "callout",
+              "html": "<ul class=\"content-bullets\"><li>Expenditures funded by domestic sources that passed through a foreign source should <strong>not</strong> be reported on this question.</li></ul>"
+            },
+            {
+              "type": "currency-header",
+              "lead": "Source of funds",
+              "title": "R&D expenditures",
+              "subtitle": "(Dollars in thousands)"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "a.",
+              "label": "Foreign government",
+              "description": [
+                "All levels of foreign government, including national, regional, municipality, or other local government."
+              ],
+              "id": "q2-a"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "b.",
+              "label": "Business",
+              "description": [
+                "Foreign for-profit organizations. Projects sponsored by a U.S. location of a foreign company are <strong>not</strong> considered foreign. Report funds from a company's nonprofit foundation in row c."
+              ],
+              "id": "q2-b"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "c.",
+              "label": "Nonprofit organizations",
+              "description": [
+                "Foreign nonprofit foundations and organizations, except higher education institutions. Funds from foreign universities should be reported in row d."
+              ],
+              "id": "q2-c"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "d.",
+              "label": "Higher education",
+              "description": [
+                "Foreign colleges and universities and units owned, operated, and controlled by such institutions."
+              ],
+              "id": "q2-d"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "e.",
+              "label": "All other sources",
+              "description": [
+                "Include international governmental organizations located in the U.S., such as the United Nations, the World Bank, and the International Monetary Fund and all other entities sending funds to the U.S. from a location outside the U.S. and its territories."
+              ],
+              "id": "q2-e"
+            },
+            { "type": "divider" },
+            {
+              "type": "currency-row",
+              "prefix": "f.",
+              "label": "Total<sup>1</sup>",
+              "id": "q2-f",
+              "total": true,
+              "sumOf": ["q2-a", "q2-b", "q2-c", "q2-d", "q2-e"]
+            },
+            {
+              "type": "footnote",
+              "text": "The column total is automatically generated on the Web survey."
+            },
+            {
+              "type": "comments",
+              "label": "Comments:",
+              "id": "q2-comments",
+              "maxLength": 1000
+            },
+            { "type": "action-bar" }
+          ]
+        },
         { "id": "q3", "number": 3, "title": "Contracts & grants", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
         { "id": "q4", "number": 4, "title": "R&D at medical schools", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
         { "id": "q5", "number": 5, "title": "Clinical trial R&D", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
