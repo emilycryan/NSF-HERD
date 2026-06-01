@@ -4,7 +4,9 @@
 
 /* =====================================================================
  * Status badges (4 states: not-started, completed, warning, review)
- * Used in the sidebar and in the legend at the top of the dashboard.
+ * The colored variants (completed/warning/review) carry an icon and now
+ * appear only in the legend at the top of the dashboard. The sidebar and
+ * the issues list use the neutral default circle (status-badge--not-started).
  * ===================================================================== */
 
 .status-badge {
@@ -29,10 +31,18 @@
 
 .status-badge--completed {
   background-color: var(--color-success);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.7rem;
 }
 
 .status-badge--review {
   background-color: var(--color-error);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Crect x='10' y='4' width='4' height='10.5' rx='2'/%3E%3Ccircle cx='12' cy='19' r='2.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 0.62rem;
 }
 
 /* Warning is rendered as a yellow triangle, not a circle, to match the wireframe. */
@@ -55,6 +65,22 @@
   border-left: 0.55rem solid transparent;
   border-right: 0.55rem solid transparent;
   border-bottom: 1rem solid var(--color-warning);
+}
+
+/* Exclamation inside the warning triangle. Dark navy for legibility —
+ * white on amber (#F59E0B) would fail contrast. Sits in the triangle's
+ * wider lower half. */
+.status-badge--warning::after {
+  content: "!";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.01rem;
+  text-align: center;
+  font-size: 0.6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--color-primary-dark);
 }
 
 .status-legend {

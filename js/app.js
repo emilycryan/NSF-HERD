@@ -43,7 +43,7 @@ function renderPageHeader(data) {
   document.getElementById('due-date').textContent = data.dueDate;
   document.getElementById('survey-status').textContent = data.surveyStatus;
   document.getElementById('progress-text').innerHTML =
-    `You've completed <strong>${data.completedCount} out of ${data.totalSidebarSections}</strong> questions.`;
+    `<strong>${data.completedCount} of ${data.totalSidebarSections}</strong> completed`;
 }
 
 function renderSidebar(data) {
@@ -54,12 +54,13 @@ function renderSidebar(data) {
   for (const section of items) {
     const li = document.createElement('li');
     const numberText = section.number ? String(section.number) + '.' : '';
-    const status = section.demoStatus || 'not-started';
+    // The sidebar shows a uniform neutral indicator by design; per-section
+    // status colors live only in the legend at the top of the dashboard.
     li.innerHTML = `
       <button class="sidebar-item" type="button" data-section-id="${section.id}">
         <span class="sidebar-item__number">${numberText}</span>
         <span class="sidebar-item__label">${section.title}</span>
-        <span class="sidebar-item__status">${statusBadge(status)}</span>
+        <span class="sidebar-item__status"><span class="status-badge status-badge--not-started" aria-hidden="true"></span></span>
       </button>
     `;
     list.appendChild(li);
