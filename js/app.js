@@ -541,6 +541,44 @@ function recomputeTotals() {
   });
 }
 
+// Evaluate one showIf condition. Reads the trigger field's live value (parsed
+// the same way currency inputs are) and compares it per the operator. Returns
+// true when the dependent block should be visible. Unknown operators fail
+// closed (block stays hidden) and warn, rather than silently revealing.
+function evaluateShowIf(field, op, value) {
+  const src = document.querySelector(`[data-field-id="${field}"]`);
+  if (!src) return false;
+  const parsed = parseAmount(src.value);
+  switch (op) {
+    case 'gt':
+      return !parsed.empty && parsed.valid && parsed.value > Number(value);
+    default:
+      console.warn('[conditionals] Unknown showIf op:', op);
+      return false;
+  }
+}
+
+// Show or hide every conditional block from its data-showif-* attributes.
+// When a block hides, its checkboxes are cleared so a later re-show starts
+// fresh ("hide and clear"). Idempotent: safe to call on every blur and on load.
+function refreshConditionals() {
+  document.querySelectorAll('[data-showif-field]').forEach((el) => {
+    const show = evaluateShowIf(
+      el.dataset.showifField,
+      el.dataset.showifOp,
+      el.dataset.showifValue
+    );
+    if (show) {
+      el.removeAttribute('hidden');
+    } else {
+      el.setAttribute('hidden', '');
+      el.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+        cb.checked = false;
+      });
+    }
+  });
+}
+
 // Validate currency inputs on blur and keep each question's total fields in
 // sync. Read-only total fields are skipped — they are driven by recomputeTotals.
 function wireCurrencyCalc() {
@@ -564,6 +602,7 @@ function wireCurrencyCalc() {
       }
       if (errorEl) errorEl.hidden = !invalid;
       recomputeTotals();
+      refreshConditionals();
     });
   });
   // Seed totals from any values already present on load.
@@ -589,6 +628,7 @@ async function start() {
     wirePrefilledInputs();
     wireCharCounters();
     wireCurrencyCalc();
+    refreshConditionals();
   } catch (err) {
     console.error(err);
     showError('Survey could not be loaded. Please refresh the page.');
