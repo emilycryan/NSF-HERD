@@ -343,18 +343,21 @@ function renderCheckboxQuestion(block) {
 
   const rows = items.map((item) => {
     const prefix = item.prefix ? `${item.prefix} ` : '';
+    const labelId = `${item.id}-label`;
+    const descId = `${item.id}-desc`;
     const desc = item.description
-      ? `<p class="checkbox-question__description">${item.description}</p>`
+      ? `<p class="checkbox-question__description" id="${descId}">${item.description}</p>`
       : '';
+    const describedBy = item.description ? ` aria-describedby="${descId}"` : '';
     return `
       <label class="checkbox-question__row" for="${item.id}">
         <div class="checkbox-question__text-cell">
-          <p class="checkbox-question__label">${prefix}${item.label || ''}</p>
+          <p class="checkbox-question__label" id="${labelId}">${prefix}${item.label || ''}</p>
           ${desc}
         </div>
         <div class="checkbox-question__check">
           <input type="checkbox" id="${item.id}" data-field-id="${item.id}"
-                 aria-label="Included: ${escapeAttr(item.label || '')}" />
+                 aria-labelledby="${labelId}"${describedBy} />
         </div>
       </label>
     `;
@@ -545,6 +548,8 @@ function recomputeTotals() {
 // the same way currency inputs are) and compares it per the operator. Returns
 // true when the dependent block should be visible. Unknown operators fail
 // closed (block stays hidden) and warn, rather than silently revealing.
+// `field` is an author-controlled id (alphanumerics/hyphens only) interpolated
+// directly into a querySelector selector.
 function evaluateShowIf(field, op, value) {
   const src = document.querySelector(`[data-field-id="${field}"]`);
   if (!src) return false;
@@ -628,7 +633,7 @@ async function start() {
     wirePrefilledInputs();
     wireCharCounters();
     wireCurrencyCalc();
-    refreshConditionals();
+    refreshConditionals(); // Seed conditional visibility from initial field values.
   } catch (err) {
     console.error(err);
     showError('Survey could not be loaded. Please refresh the page.');
