@@ -249,6 +249,27 @@
                   "footnoteRef": "1"
                 },
                 {
+                  "type": "checkbox-question",
+                  "number": "Question 1.1.",
+                  "text": "Did you include the following types of funding in your responses to Question 1, row e1?",
+                  "columns": { "left": "Type of funding", "right": "Included" },
+                  "showIf": { "field": "q1-e1", "op": "gt", "value": 0 },
+                  "items": [
+                    { "prefix": "a.", "label": "Competitively awarded internal grants for research",
+                      "description": "Expenditures for organized research projects, involving a proposal or statement of work with expected research outcomes.",
+                      "id": "q1-1-a" },
+                    { "prefix": "b.", "label": "Startup packages/bridge funding/seed funding",
+                      "description": "Expenditures from funds provided to faculty members to begin or continue their research while seeking external sponsors.",
+                      "id": "q1-1-b" },
+                    { "prefix": "c.", "label": "Other departmental funds designated for research",
+                      "description": "Expenditures for research from other departmental or central accounts which do not match the descriptions provided in rows a or b.",
+                      "id": "q1-1-c" },
+                    { "prefix": "d.", "label": "Tuition assistance for student research personnel",
+                      "description": "University tuition assistance, waivers, or remission provided to students working on organized research. Please check \"Included\" even if these funds are reported as part of the expenditures included under rows a, b, or c.",
+                      "id": "q1-1-d" }
+                  ]
+                },
+                {
                   "type": "currency-row",
                   "prefix": "2.",
                   "label": "Cost sharing",

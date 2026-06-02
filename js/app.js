@@ -150,6 +150,8 @@ function renderContentBlock(block) {
       return renderCurrencyRow(block);
     case 'currency-group':
       return renderCurrencyGroup(block);
+    case 'checkbox-question':
+      return renderCheckboxQuestion(block);
     case 'divider':
       return `<hr class="q-divider" />`;
     case 'footnote':
@@ -331,6 +333,54 @@ function renderCurrencyGroup(block) {
       <p class="currency-group__label">${prefix}${block.label || ''}</p>
       <div class="currency-group__children">${children}</div>
     </div>
+  `;
+}
+
+function renderCheckboxQuestion(block) {
+  const items = block.items || [];
+  const cols = block.columns || {};
+  const headingId = `cq-${items[0] ? items[0].id : 'q'}-heading`;
+
+  const rows = items.map((item) => {
+    const prefix = item.prefix ? `${item.prefix} ` : '';
+    const desc = item.description
+      ? `<p class="checkbox-question__description">${item.description}</p>`
+      : '';
+    return `
+      <label class="checkbox-question__row" for="${item.id}">
+        <div class="checkbox-question__text-cell">
+          <p class="checkbox-question__label">${prefix}${item.label || ''}</p>
+          ${desc}
+        </div>
+        <div class="checkbox-question__check">
+          <input type="checkbox" id="${item.id}" data-field-id="${item.id}"
+                 aria-label="Included: ${escapeAttr(item.label || '')}" />
+        </div>
+      </label>
+    `;
+  }).join('');
+
+  // A showIf condition renders the block hidden and carries the rule as
+  // data-* attributes; refreshConditionals() reveals it when the rule is met.
+  const cond = block.showIf;
+  const condAttrs = cond && cond.field
+    ? ` data-showif-field="${escapeAttr(cond.field)}"`
+      + ` data-showif-op="${escapeAttr(cond.op || 'gt')}"`
+      + ` data-showif-value="${escapeAttr(String(cond.value))}" hidden`
+    : '';
+
+  return `
+    <section class="checkbox-question" role="group" aria-labelledby="${headingId}" aria-live="polite"${condAttrs}>
+      <header class="checkbox-question__header" id="${headingId}">
+        <span class="checkbox-question__number">${block.number || ''}</span>
+        <p class="checkbox-question__text">${block.text || ''}</p>
+      </header>
+      <div class="checkbox-question__columns">
+        <span>${cols.left || ''}</span>
+        <span>${cols.right || ''}</span>
+      </div>
+      ${rows}
+    </section>
   `;
 }
 
