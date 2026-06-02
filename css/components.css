@@ -959,7 +959,7 @@
   line-height: 1.3;
 }
 
-/* "Confidential" annotation under the input — small, right-aligned, with info glyph. */
+/* "Confidential" annotation under the input — small, right-aligned. */
 .currency-row__confidential {
   margin: var(--space-1) 0 0;
   font-size: var(--text-xs);
@@ -967,13 +967,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 4px;
-}
-
-.currency-row__confidential::after {
-  content: "ⓘ";
-  font-size: var(--text-sm);
-  color: var(--color-text-subtle);
 }
 
 /* ---- Currency group: parent row (no input) with indented numbered children ---- */
@@ -1017,6 +1010,13 @@
   font-size: var(--text-xs);
   color: var(--color-text-subtle);
   line-height: 1.4;
+}
+
+/* Inline footnote reference marker (e.g. the ¹ in "(Confidential¹)" or after a
+   total label). Sits lighter and smaller than its surrounding text. */
+.footnote-ref {
+  font-size: 0.7em;
+  font-weight: 400;
 }
 
 /* ---- Comments block ---- */

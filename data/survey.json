@@ -1,12 +1,12 @@
 {
-  "title": "FY 2026 Survey",
+  "title": "FY 2025 Survey",
   "fullTitle": "Higher Education Research and Development (HERD) Survey",
-  "year": "2026",
-  "dueDate": "January 31, 2027",
+  "year": "2025",
+  "dueDate": "January 30, 2026",
   "surveyStatus": "Not Submitted",
   "completedCount": 0,
   "totalSidebarSections": 18,
-  "changesNote": "Question 16: the format of the question was changed to present responses as columns rather than rows, like question 15. No other changes were made to the question.",
+  "changesNote": "There were no changes to this questionnaire from the FY 2024 version.",
   "issues": [
     { "severity": "not-started", "title": "Review", "detail": "None" },
     { "severity": "not-started", "title": "Unexplained Trend Variances", "detail": "None" },
@@ -25,7 +25,7 @@
           "content": [
             {
               "type": "callout",
-              "html": "This survey collects data on research and development (R&D) activities at higher education institutions. Please report R&D activities and expenditures for your institution's <strong>2026 fiscal year</strong>."
+              "html": "This survey collects data on research and development (R&D) activities at higher education institutions. Please report R&D activities and expenditures for your institution's <strong>2025 fiscal year</strong>."
             },
             {
               "type": "heading",
@@ -33,7 +33,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Please report data for your institution's 2026 fiscal year."
+              "text": "Please report data for your institution's 2025 fiscal year."
             },
             {
               "type": "heading",
@@ -179,7 +179,7 @@
             {
               "type": "question-intro",
               "number": "Question 1.",
-              "text": "How much of your total expenditures for research and development (R&D) came from the following sources in FY 2026?",
+              "text": "How much of your total expenditures for research and development (R&D) came from the following sources in FY 2025?",
               "definition": { "label": "See definition of R&D", "tag": "PDF", "href": "#" }
             },
             {
@@ -245,7 +245,8 @@
                     "Separately accounted for R&D funded by your institution. Do not include estimated research time. Exclude institution research administration and support (e.g., office of sponsored programs) or other indirect costs."
                   ],
                   "id": "q1-e1",
-                  "confidential": true
+                  "confidential": true,
+                  "footnoteRef": "1"
                 },
                 {
                   "type": "currency-row",
@@ -255,7 +256,8 @@
                     "Include committed cost sharing other than unrecovered indirect costs."
                   ],
                   "id": "q1-e2",
-                  "confidential": true
+                  "confidential": true,
+                  "footnoteRef": "1"
                 },
                 {
                   "type": "currency-row",
@@ -269,7 +271,8 @@
                     "Second, subtract recovered indirect costs."
                   ],
                   "id": "q1-e3",
-                  "confidential": true
+                  "confidential": true,
+                  "footnoteRef": "1"
                 },
                 {
                   "type": "currency-row",
@@ -277,7 +280,8 @@
                   "label": "Total institutional funds",
                   "id": "q1-e4",
                   "total": true,
-                  "sumOf": ["q1-e1", "q1-e2", "q1-e3"]
+                  "sumOf": ["q1-e1", "q1-e2", "q1-e3"],
+                  "footnoteRef": "2"
                 }
               ]
             },
@@ -297,7 +301,18 @@
               "label": "Total",
               "id": "q1-g",
               "total": true,
-              "sumOf": ["q1-a", "q1-b", "q1-c", "q1-d", "q1-e4", "q1-f"]
+              "sumOf": ["q1-a", "q1-b", "q1-c", "q1-d", "q1-e4", "q1-f"],
+              "footnoteRef": "2"
+            },
+            {
+              "type": "footnote",
+              "marker": "1",
+              "text": "This item is confidential. Please see the confidentiality statement on page 4."
+            },
+            {
+              "type": "footnote",
+              "marker": "2",
+              "text": "Totals for rows e4 and g are automatically generated on the Web survey."
             },
             {
               "type": "comments",

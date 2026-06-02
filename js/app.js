@@ -153,7 +153,7 @@ function renderContentBlock(block) {
     case 'divider':
       return `<hr class="q-divider" />`;
     case 'footnote':
-      return `<p class="content-footnote"><sup>1</sup> ${block.text || ''}</p>`;
+      return `<p class="content-footnote"><sup>${block.marker || '1'}</sup> ${block.text || ''}</p>`;
     case 'comments':
       return renderComments(block);
     case 'action-bar':
@@ -290,6 +290,13 @@ function renderCurrencyInput(id, opts = {}) {
 
 function renderCurrencyRow(block) {
   const prefix = block.prefix ? `${block.prefix} ` : '';
+  // An optional footnote reference decorates the (Confidential) note on
+  // confidential rows, otherwise it sits after the row label. The matching
+  // footnote text is rendered by `footnote` blocks at the foot of the question.
+  const ref = block.footnoteRef
+    ? `<sup class="footnote-ref">${block.footnoteRef}</sup>`
+    : '';
+  const labelRef = block.confidential ? '' : ref;
   const descriptions = (block.description || [])
     .map((para) => `<p class="currency-row__description">${para}</p>`)
     .join('');
@@ -297,12 +304,12 @@ function renderCurrencyRow(block) {
     ? `<ul class="currency-row__bullets">${block.bullets.map((b) => `<li>${b}</li>`).join('')}</ul>`
     : '';
   const confidential = block.confidential
-    ? `<p class="currency-row__confidential">(Confidential)</p>`
+    ? `<p class="currency-row__confidential">(Confidential${ref})</p>`
     : '';
   return `
     <div class="currency-row" data-row-id="${block.id || ''}">
       <div class="currency-row__text">
-        <p class="currency-row__label">${prefix}${block.label || ''}</p>
+        <p class="currency-row__label">${prefix}${block.label || ''}${labelRef}</p>
         ${descriptions}
         ${bullets}
       </div>
