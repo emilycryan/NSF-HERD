@@ -323,7 +323,9 @@ function renderCurrencyRow(block) {
 
 function renderCurrencyGroup(block) {
   const prefix = block.prefix ? `${block.prefix} ` : '';
-  const children = (block.children || []).map(renderCurrencyRow).join('');
+  // Children are dispatched through the general block renderer so a group can
+  // hold a non-currency-row child (e.g. the Q1.1 checkbox question under e1).
+  const children = (block.children || []).map(renderContentBlock).join('');
   return `
     <div class="currency-group" data-group-id="${block.id || ''}">
       <p class="currency-group__label">${prefix}${block.label || ''}</p>
