@@ -152,6 +152,18 @@ function renderContentBlock(block) {
       return renderCurrencyGroup(block);
     case 'checkbox-question':
       return renderCheckboxQuestion(block);
+    case 'yesno-question':
+      return renderYesNoQuestion(block);
+    case 'subquestion':
+      return renderSubquestion(block);
+    case 'group':
+      return renderGroup(block);
+    case 'currency-matrix':
+      return renderCurrencyMatrix(block);
+    case 'table':
+      return renderTable(block);
+    case 'modal':
+      return renderModal(block);
     case 'divider':
       return `<hr class="q-divider" />`;
     case 'footnote':
@@ -241,10 +253,13 @@ function renderQuestionIntro(block) {
          <span class="question-intro__definition-tag">(${def.tag || 'PDF'})</span>
        </p>`
     : '';
+  // Text is optional: a multi-part question (e.g. Q4) uses the intro for just
+  // the "Question N." number, with the prose living in its lettered sub-parts.
+  const textHtml = text ? `<p class="question-intro__text">${text}</p>` : '';
   return `
     <header class="question-intro">
       <span class="question-intro__number">${number}</span>
-      <p class="question-intro__text">${text}</p>
+      ${textHtml}
       ${defHtml}
     </header>
   `;
@@ -384,6 +399,163 @@ function renderCheckboxQuestion(block) {
       </div>
       ${rows}
     </section>
+  `;
+}
+
+// Yes/No branch question (e.g. Q4 part A). The selected radio value can gate a
+// following block via a disableIf/showIf rule (op "eq"). Both radios share the
+// block id as their `name` and `data-field-id` so the group reads as one field.
+function renderYesNoQuestion(block) {
+  const prefix = block.prefix ? `${block.prefix} ` : '';
+  const id = block.id || '';
+  const labelId = `${id}-label`;
+  const options = block.options || [
+    { label: 'Yes', value: 'yes' },
+    { label: 'No', value: 'no' }
+  ];
+  const opts = options.map((opt) => `
+    <label class="yesno-question__option">
+      <input type="radio" name="${id}" value="${escapeAttr(opt.value)}" data-field-id="${id}" />
+      <span>${opt.label || ''}</span>
+    </label>
+  `).join('');
+  return `
+    <section class="yesno-question" role="radiogroup" aria-labelledby="${labelId}">
+      <p class="yesno-question__text" id="${labelId}">${prefix}${block.text || ''}</p>
+      <div class="yesno-question__options">${opts}</div>
+    </section>
+  `;
+}
+
+// Serialize a disableIf rule into the data-* attributes refreshConditionals()
+// reads. Any wrapper element (subquestion, group) can carry it.
+function disableIfAttrs(cond) {
+  return cond && cond.field
+    ? ` data-disableif-field="${escapeAttr(cond.field)}"`
+      + ` data-disableif-op="${escapeAttr(cond.op || 'eq')}"`
+      + ` data-disableif-value="${escapeAttr(String(cond.value))}"`
+    : '';
+}
+
+// A lettered sub-part (e.g. Q4 part B) that wraps its own child blocks. An
+// optional disableIf rule greys the surface and disables its inputs when met —
+// unlike showIf, the block stays visible. refreshConditionals() applies it.
+function renderSubquestion(block) {
+  const prefix = block.prefix ? `${block.prefix} ` : '';
+  const description = block.description
+    ? `<p class="subquestion__description">${block.description}</p>`
+    : '';
+  const children = (block.content || []).map(renderContentBlock).join('');
+  return `
+    <section class="subquestion" data-subquestion-id="${block.id || ''}"${disableIfAttrs(block.disableIf)}>
+      <p class="subquestion__label">${prefix}${block.text || ''}</p>
+      ${description}
+      <div class="subquestion__content">${children}</div>
+    </section>
+  `;
+}
+
+// An unlabeled wrapper that groups arbitrary child blocks under one disableIf
+// rule (e.g. Q5 greys its clinical-trials definition AND part B together when
+// "No" is chosen). The radios that drive the rule stay outside the group.
+function renderGroup(block) {
+  const children = (block.content || []).map(renderContentBlock).join('');
+  return `<div class="content-group" data-group-id="${block.id || ''}"${disableIfAttrs(block.disableIf)}>${children}</div>`;
+}
+
+// Multi-column currency table (e.g. Q5 part B: Federal / Nonfederal / Total).
+// One CSS grid holds a centered caption spanning the input columns, a
+// column-header row, then one data row per item. Total columns reuse
+// renderCurrencyInput's is-total + data-sum-of, so recomputeTotals() drives
+// them exactly like the single-column totals in Q1–Q3.
+function renderCurrencyMatrix(block) {
+  const columns = block.columns || [];
+  const rows = block.rows || [];
+  const n = columns.length;
+  const gridCols = `minmax(0, 1.4fr) repeat(${n}, minmax(88px, 1fr))`;
+
+  const captionTitle = block.caption ? `<span class="currency-matrix__caption-title">${block.caption}</span>` : '';
+  const captionSub = block.captionSub ? `<span class="currency-matrix__caption-sub">${block.captionSub}</span>` : '';
+  const captionRow = (block.caption || block.captionSub)
+    ? `<div class="currency-matrix__spacer"></div>`
+      + `<div class="currency-matrix__caption" style="grid-column: span ${n};">${captionTitle}${captionSub}</div>`
+    : '';
+
+  // The col-1 header cell carries an optional "lead" label (e.g. "Type of
+  // research"); otherwise it is an empty spacer aligning the column headers.
+  const leadCell = block.lead
+    ? `<div class="currency-matrix__lead">${block.lead}</div>`
+    : `<div class="currency-matrix__spacer"></div>`;
+  const headRow = leadCell + columns.map((c) => {
+    const ref = c.footnoteRef ? `<sup class="footnote-ref">${c.footnoteRef}</sup>` : '';
+    const num = c.prefix ? `<span class="currency-matrix__colhead-num">${c.prefix}</span>` : '';
+    return `<div class="currency-matrix__colhead">${num}<span class="currency-matrix__colhead-label">${c.label || ''}${ref}</span></div>`;
+  }).join('');
+
+  const dataRows = rows.map((r) => {
+    // A totals row (e.g. row d) sets separatorBefore to draw a full-width rule.
+    const sep = r.separatorBefore ? `<div class="currency-matrix__divider"></div>` : '';
+    const desc = r.description ? `<p class="currency-matrix__row-desc">${r.description}</p>` : '';
+    const cells = (r.cells || []).map((cell) =>
+      `<div class="currency-matrix__cell">${renderCurrencyInput(cell.id, { total: cell.total, sumOf: cell.sumOf })}</div>`
+    ).join('');
+    return `${sep}<div class="currency-matrix__rowlabel"><p class="currency-matrix__row-title">${r.label || ''}</p>${desc}</div>${cells}`;
+  }).join('');
+
+  return `
+    <div class="currency-matrix" style="grid-template-columns: ${gridCols};">
+      ${captionRow}
+      ${headRow}
+      ${dataRows}
+    </div>
+  `;
+}
+
+// Generic bordered data table (e.g. the Q6 "Examples" grid shown in a modal).
+// `caption` renders as a full-width title row; `columns` are header cells;
+// `rows` is an array of cell-arrays. All cell text is author-controlled HTML.
+function renderTable(block) {
+  const columns = block.columns || [];
+  const rows = block.rows || [];
+  const colspan = columns.length || 1;
+  const titleRow = block.caption
+    ? `<tr class="data-table__title"><th colspan="${colspan}" scope="colgroup">${block.caption}</th></tr>`
+    : '';
+  const headRow = columns.length
+    ? `<tr>${columns.map((c) => `<th scope="col">${c}</th>`).join('')}</tr>`
+    : '';
+  const body = rows
+    .map((r) => `<tr>${r.map((cell) => `<td>${cell}</td>`).join('')}</tr>`)
+    .join('');
+  return `
+    <table class="data-table">
+      <thead>${titleRow}${headRow}</thead>
+      <tbody>${body}</tbody>
+    </table>
+  `;
+}
+
+// Reusable modal: a native <dialog> opened by any element with
+// data-modal-target="<id>". showModal() supplies the dimmed backdrop, focus
+// trap, and Esc-to-close; wireModals() adds the X button and click-outside.
+// The close affordance (X) sits top-left per the survey design. Drop a
+// `modal` block + a matching trigger anywhere to reuse it.
+function renderModal(block) {
+  const id = block.id || '';
+  const label = block.label || block.title || 'Dialog';
+  const children = (block.content || []).map(renderContentBlock).join('');
+  return `
+    <dialog class="modal" id="modal-${id}" aria-label="${escapeAttr(label)}">
+      <div class="modal__panel">
+        <button type="button" class="modal__close" data-modal-close aria-label="Close ${escapeAttr(label)}">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+            <line x1="6" y1="6" x2="18" y2="18" />
+            <line x1="18" y1="6" x2="6" y2="18" />
+          </svg>
+        </button>
+        <div class="modal__body">${children}</div>
+      </div>
+    </dialog>
   `;
 }
 
@@ -551,6 +723,12 @@ function recomputeTotals() {
 // `field` is an author-controlled id (alphanumerics/hyphens only) interpolated
 // directly into a querySelector selector.
 function evaluateShowIf(field, op, value) {
+  // Radio groups (op "eq"): compare the currently-checked option's value.
+  // Nothing checked yet → the rule is unmet.
+  if (op === 'eq') {
+    const checked = document.querySelector(`[data-field-id="${field}"]:checked`);
+    return !!checked && checked.value === String(value);
+  }
   const src = document.querySelector(`[data-field-id="${field}"]`);
   if (!src) return false;
   const parsed = parseAmount(src.value);
@@ -582,6 +760,34 @@ function refreshConditionals() {
       });
     }
   });
+
+  // disableIf blocks stay visible but grey out and disable their inputs when
+  // the rule is met (e.g. Q4 part B when "No medical school" is selected). A
+  // gated field is cleared as it disables, so a hidden value can't be
+  // ambiguously submitted (same intent as showIf's hide-and-clear).
+  let clearedAny = false;
+  document.querySelectorAll('[data-disableif-field]').forEach((el) => {
+    const disable = evaluateShowIf(
+      el.dataset.disableifField,
+      el.dataset.disableifOp,
+      el.dataset.disableifValue
+    );
+    el.classList.toggle('is-disabled', disable);
+    el.querySelectorAll('input, textarea, select').forEach((field) => {
+      field.disabled = disable;
+      if (disable && field.value !== '') {
+        field.value = '';
+        field.classList.remove('is-invalid');
+        field.removeAttribute('aria-invalid');
+        const errEl = document.querySelector(`.currency-input__error[data-error-for="${field.dataset.fieldId}"]`);
+        if (errEl) errEl.hidden = true;
+        clearedAny = true;
+      }
+    });
+  });
+  // A cleared field may feed a computed total (e.g. Q5 part B's row total),
+  // so refresh totals once after the pass.
+  if (clearedAny) recomputeTotals();
 }
 
 // Validate currency inputs on blur and keep each question's total fields in
@@ -614,6 +820,39 @@ function wireCurrencyCalc() {
   recomputeTotals();
 }
 
+// Branch triggers (Yes/No radios) re-evaluate conditionals on change. Currency
+// fields already re-evaluate on blur via wireCurrencyCalc, so this covers the
+// non-currency trigger inputs that gate a showIf/disableIf block.
+function wireConditionalTriggers() {
+  document.querySelectorAll('input[type="radio"][data-field-id]').forEach((radio) => {
+    radio.addEventListener('change', refreshConditionals);
+  });
+}
+
+// Wire the reusable modal pattern. Modals are relocated to <body> so a
+// collapsed accordion (display:none ancestor) can't suppress the dialog's top
+// layer. Triggers open by id; the X button and a click on the dimmed backdrop
+// close. Esc is handled natively by <dialog>.
+function wireModals() {
+  document.querySelectorAll('.modal').forEach((dlg) => {
+    if (dlg.parentElement !== document.body) document.body.appendChild(dlg);
+    dlg.querySelectorAll('[data-modal-close]').forEach((btn) => {
+      btn.addEventListener('click', () => dlg.close());
+    });
+    // The dialog fills the viewport; a click landing on the dialog itself
+    // (not its inner panel) is on the backdrop, so dismiss.
+    dlg.addEventListener('click', (e) => {
+      if (e.target === dlg) dlg.close();
+    });
+  });
+  document.querySelectorAll('[data-modal-target]').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const dlg = document.getElementById(`modal-${trigger.getAttribute('data-modal-target')}`);
+      if (dlg && typeof dlg.showModal === 'function') dlg.showModal();
+    });
+  });
+}
+
 function showError(message) {
   const main = document.querySelector('.app-main');
   if (main) {
@@ -633,6 +872,8 @@ async function start() {
     wirePrefilledInputs();
     wireCharCounters();
     wireCurrencyCalc();
+    wireConditionalTriggers();
+    wireModals();
     refreshConditionals(); // Seed conditional visibility from initial field values.
   } catch (err) {
     console.error(err);

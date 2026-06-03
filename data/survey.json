@@ -434,18 +434,509 @@
             { "type": "action-bar" }
           ]
         },
-        { "id": "q3", "number": 3, "title": "Contracts & grants", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
-        { "id": "q4", "number": 4, "title": "R&D at medical schools", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
-        { "id": "q5", "number": 5, "title": "Clinical trial R&D", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
-        { "id": "q6", "number": 6, "title": "Types of R&D: basic research, applied research and experimental development", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" }
+        {
+          "id": "q3",
+          "number": 3,
+          "title": "Contracts & grants",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 3.",
+              "text": "Of the total R&D expenditures that were externally funded (all sources other than the institutional funds reported in Question 1, row e4), how much was received under each of the following types of agreements?"
+            },
+            {
+              "type": "currency-header",
+              "lead": "Type of agreement",
+              "title": "R&D expenditures",
+              "subtitle": "(Dollars in thousands)"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "a.",
+              "label": "Contracts <span class=\"currency-row__label-note\">(including direct or prime contracts and subcontracts)</span>",
+              "description": [
+                "Contracts are legal commitments in which a good or service is provided by your institution that benefits the sponsor. The sponsor specifies the deliverables and gains the rights to results."
+              ],
+              "id": "q3-a"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "b.",
+              "label": "Grants, reimbursements, and all other agreements",
+              "description": [
+                "Include all other agreements in which payments are received but no good or service other than periodic reporting is required in exchange."
+              ],
+              "id": "q3-b"
+            },
+            { "type": "divider" },
+            {
+              "type": "currency-row",
+              "prefix": "c.",
+              "label": "Total<sup>1</sup>",
+              "description": [
+                "Should match Question 1, row g minus Question 1, row e4"
+              ],
+              "id": "q3-c",
+              "total": true,
+              "sumOf": ["q3-a", "q3-b"]
+            },
+            {
+              "type": "footnote",
+              "text": "The column total is automatically generated on the Web survey."
+            },
+            {
+              "type": "comments",
+              "label": "Comments:",
+              "id": "q3-comments",
+              "maxLength": 1000
+            },
+            { "type": "action-bar" }
+          ]
+        },
+        {
+          "id": "q4",
+          "number": 4,
+          "title": "R&D at medical schools",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 4."
+            },
+            {
+              "type": "yesno-question",
+              "prefix": "A.",
+              "text": "Did your institution have a medical school (that is, a school that awards the MD or DO degree) in FY 2025?",
+              "id": "q4-a"
+            },
+            {
+              "type": "subquestion",
+              "prefix": "B.",
+              "text": "Of the total R&D expenditures reported in Question 1, row g, how much was expended for R&D projects in your medical school?",
+              "description": "Include projects that are assigned to the medical school or to research centers that are organizationally part of the medical school.",
+              "id": "q4-b-group",
+              "disableIf": { "field": "q4-a", "op": "eq", "value": "no" },
+              "content": [
+                {
+                  "type": "currency-header",
+                  "title": "R&D expenditures",
+                  "subtitle": "(Dollars in thousands)"
+                },
+                {
+                  "type": "currency-row",
+                  "label": "Total R&D expenditures in the university's medical school",
+                  "id": "q4-b"
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "label": "Comments:",
+              "id": "q4-comments",
+              "maxLength": 1000
+            },
+            { "type": "action-bar" }
+          ]
+        },
+        {
+          "id": "q5",
+          "number": 5,
+          "title": "Clinical trial R&D",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            { "type": "question-intro", "number": "Question 5." },
+            {
+              "type": "yesno-question",
+              "prefix": "A.",
+              "text": "Did your institution conduct any clinical trials in FY 2025?",
+              "id": "q5-a"
+            },
+            {
+              "type": "group",
+              "id": "q5-b-group",
+              "disableIf": { "field": "q5-a", "op": "eq", "value": "no" },
+              "content": [
+                {
+                  "type": "paragraph",
+                  "html": "<strong>Clinical trials</strong> are research studies designed to answer specific questions about the effects of drugs, vaccines, medical devices, tests, treatments, and other therapies for patients. Clinical trials are used to determine safety and effectiveness."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "For reference, the National Institutes of Health (NIH) categorizes human clinical trials into the following four phases."
+                },
+                { "type": "paragraph", "html": "Please <strong>include:</strong>" },
+                {
+                  "type": "bullet-list",
+                  "items": [
+                    "Phase I uses a small group of human patients (20–80) to evaluate safety and identify side effects.",
+                    "Phase II uses a larger group (100–300) to test effectiveness and further evaluate safety.",
+                    "Phase III uses a large group (1,000–3,000) to confirm effectiveness, monitor side effects, compare to commonly used treatments, and collect safety information."
+                  ]
+                },
+                { "type": "paragraph", "html": "Please <strong>exclude:</strong>" },
+                {
+                  "type": "bullet-list",
+                  "items": [
+                    "Phase IV is a post-market study that collects more information on risks, benefits, and optimal use."
+                  ]
+                },
+                {
+                  "type": "subquestion",
+                  "prefix": "B.",
+                  "text": "Of the total R&D expenditures reported in Question 1, row g, how much was expended for Phase I, Phase II, and Phase III clinical trials with human patients?",
+                  "id": "q5-b",
+                  "content": [
+                    {
+                      "type": "currency-matrix",
+                      "caption": "R&D expenditures",
+                      "captionSub": "(Dollars in thousands)",
+                      "columns": [
+                        { "prefix": "(1)", "label": "Federal" },
+                        { "prefix": "(2)", "label": "Nonfederal" },
+                        { "prefix": "(3)", "label": "Total", "footnoteRef": "1" }
+                      ],
+                      "rows": [
+                        {
+                          "label": "Human clinical trials",
+                          "description": "Trials with human patients",
+                          "cells": [
+                            { "id": "q5-b-federal" },
+                            { "id": "q5-b-nonfederal" },
+                            { "id": "q5-b-total", "total": true, "sumOf": ["q5-b-federal", "q5-b-nonfederal"] }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "footnote",
+                      "marker": "1",
+                      "text": "The row total is automatically generated on the Web survey."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "comments",
+              "label": "Comments:",
+              "id": "q5-comments",
+              "maxLength": 1000
+            },
+            { "type": "action-bar" }
+          ]
+        },
+        {
+          "id": "q6",
+          "number": 6,
+          "title": "Types of R&D: basic research, applied research and experimental development",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 6.",
+              "text": "What amounts of your FY 2025 R&D expenditures were for basic research, applied research, and experimental development?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "If possible, these categories defining the type of R&D should be coded at the individual project level by the principal investigator. Estimates are acceptable if necessary.",
+                "<button type=\"button\" class=\"modal-link\" data-modal-target=\"q6-examples\">Click for examples</button>"
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "lead": "Type of research",
+              "caption": "R&D expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "columns": [
+                { "prefix": "(1)", "label": "Federal" },
+                { "prefix": "(2)", "label": "Nonfederal" },
+                { "prefix": "(3)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                {
+                  "label": "a. Basic research",
+                  "description": "Experimental or theoretical work undertaken primarily to acquire new knowledge of the underlying foundations of phenomena and observable facts, without any particular application or use in view.",
+                  "cells": [
+                    { "id": "q6-a-federal" },
+                    { "id": "q6-a-nonfederal" },
+                    { "id": "q6-a-total", "total": true, "sumOf": ["q6-a-federal", "q6-a-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "b. Applied research",
+                  "description": "Original investigation undertaken in order to acquire new knowledge. It is directed primarily towards a specific, practical aim or objective.",
+                  "cells": [
+                    { "id": "q6-b-federal" },
+                    { "id": "q6-b-nonfederal" },
+                    { "id": "q6-b-total", "total": true, "sumOf": ["q6-b-federal", "q6-b-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "c. Experimental development",
+                  "description": "Systematic work, drawing on knowledge gained from research and practical experience and producing additional knowledge, which is directed to producing new products or processes or to improving existing products or processes.",
+                  "cells": [
+                    { "id": "q6-c-federal" },
+                    { "id": "q6-c-nonfederal" },
+                    { "id": "q6-c-total", "total": true, "sumOf": ["q6-c-federal", "q6-c-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "d. Total<sup class=\"footnote-ref\">1</sup>",
+                  "description": "Column 1 total should match Question 1, row a.<br />Column 3 total should match Question 1, row g.",
+                  "separatorBefore": true,
+                  "cells": [
+                    { "id": "q6-d-federal", "total": true, "sumOf": ["q6-a-federal", "q6-b-federal", "q6-c-federal"] },
+                    { "id": "q6-d-nonfederal", "total": true, "sumOf": ["q6-a-nonfederal", "q6-b-nonfederal", "q6-c-nonfederal"] },
+                    { "id": "q6-d-total", "total": true, "sumOf": ["q6-d-federal", "q6-d-nonfederal"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "footnote",
+              "marker": "1",
+              "text": "Row and column totals are automatically generated on the Web survey."
+            },
+            {
+              "type": "comments",
+              "label": "Comments:",
+              "id": "q6-comments",
+              "maxLength": 1000
+            },
+            { "type": "action-bar" },
+            {
+              "type": "modal",
+              "id": "q6-examples",
+              "label": "Examples",
+              "content": [
+                {
+                  "type": "table",
+                  "caption": "Examples",
+                  "columns": ["Basic research", "Applied research", "Experimental development"],
+                  "rows": [
+                    [
+                      "A researcher is studying the properties of human blood to determine what affects coagulation.",
+                      "A researcher is conducting research on how a new chicken pox vaccine affects blood coagulation.",
+                      "A researcher is conducting clinical trials to test a newly developed chicken pox vaccine for young children."
+                    ],
+                    [
+                      "A researcher is studying the properties of molecules under various heat and cold conditions.",
+                      "A researcher is investigating the properties of particular substances under various heat and cold conditions with the objective of finding longer-lasting components for highway pavement.",
+                      "A researcher is working with state transportation officials to conduct tests of a newly developed highway pavement under various types of heat and cold conditions."
+                    ],
+                    [
+                      "A researcher is investigating the effect of different types of manipulatives on the way first graders learn mathematical strategy by changing manipulatives and then measuring what students have learned through standardized instruments.",
+                      "A researcher is studying the implementation of a specific math curriculum to determine what teachers needed to know to implement the curriculum successfully.",
+                      "A researcher is developing and testing software and support tools, based on fieldwork, to improve mathematics cognition for student special education."
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
     {
       "id": "pass-through",
       "title": "Pass-through",
       "sections": [
-        { "id": "q7", "number": 7, "title": "Subrecipient R&D expenditures", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
-        { "id": "q8", "number": 8, "title": "R&D expenditures passed through", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" }
+        {
+          "id": "q7",
+          "number": 7,
+          "title": "Subrecipient R&D expenditures",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 7.",
+              "text": "How much of your R&D expenditures reported in Question 1 did your institution receive as a subrecipient?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "The <strong>subrecipient</strong> for an award carries out the work but receives the funds from a pass-through entity rather than directly from the original funding source. Subrecipients tend to be the co-authors of publications, writers of technical reports discussing findings, inventors, etc.",
+                "Do <strong>not</strong> include contractor or vendor relationships. A contractor or vendor receives payment for goods and services provided. See 2 CFR Part 200 Subpart D Section 331.",
+                "Please report the original source of funds in columns (1) and (2) and the pass-through source in rows a–d. <strong>Examples</strong>:<ul class=\"content-subbullets\"><li>Your university receives federal funds from another university as a subaward (row a, column 1).</li><li>Your university receives federal funds from a company as a subaward (row b, column 1).</li></ul>",
+                "Funds received directly from an FFRDC should be treated as direct federal funding and not included on this question."
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "lead": "Entity passing funds to your institution",
+              "caption": "Originating source of R&D expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "columns": [
+                { "prefix": "(1)", "label": "Federal" },
+                { "prefix": "(2)", "label": "Nonfederal" },
+                { "prefix": "(3)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                {
+                  "label": "a. U.S. higher education institutions",
+                  "description": "Colleges and universities and units owned, operated, and controlled by such institutions",
+                  "cells": [
+                    { "id": "q7-a-federal" },
+                    { "id": "q7-a-nonfederal" },
+                    { "id": "q7-a-total", "total": true, "sumOf": ["q7-a-federal", "q7-a-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "b. Businesses",
+                  "description": "For-profit organizations",
+                  "cells": [
+                    { "id": "q7-b-federal" },
+                    { "id": "q7-b-nonfederal" },
+                    { "id": "q7-b-total", "total": true, "sumOf": ["q7-b-federal", "q7-b-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "c. Nonprofit organizations",
+                  "description": "Nonprofit foundations and organizations",
+                  "cells": [
+                    { "id": "q7-c-federal" },
+                    { "id": "q7-c-nonfederal" },
+                    { "id": "q7-c-total", "total": true, "sumOf": ["q7-c-federal", "q7-c-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "d. Other",
+                  "description": "State and local governments, foreign institutions including foreign universities/colleges, and others",
+                  "cells": [
+                    { "id": "q7-d-federal" },
+                    { "id": "q7-d-nonfederal" },
+                    { "id": "q7-d-total", "total": true, "sumOf": ["q7-d-federal", "q7-d-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "e. Total<sup class=\"footnote-ref\">1</sup>",
+                  "separatorBefore": true,
+                  "cells": [
+                    { "id": "q7-e-federal", "total": true, "sumOf": ["q7-a-federal", "q7-b-federal", "q7-c-federal", "q7-d-federal"] },
+                    { "id": "q7-e-nonfederal", "total": true, "sumOf": ["q7-a-nonfederal", "q7-b-nonfederal", "q7-c-nonfederal", "q7-d-nonfederal"] },
+                    { "id": "q7-e-total", "total": true, "sumOf": ["q7-e-federal", "q7-e-nonfederal"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "footnote",
+              "marker": "1",
+              "text": "Row and column totals are automatically generated on the Web survey."
+            },
+            {
+              "type": "comments",
+              "label": "Comments:",
+              "id": "q7-comments",
+              "maxLength": 1000
+            },
+            { "type": "action-bar" }
+          ]
+        },
+        {
+          "id": "q8",
+          "number": 8,
+          "title": "R&D expenditures passed through",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 8.",
+              "text": "How much of the R&D expenditures reported in Question 1 did your institution pass through to subrecipients?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Do <strong>not</strong> include contractor or vendor relationships. A contractor or vendor receives payment for goods and services provided. See 2 CFR Part 200 Subpart D Section 331.",
+                "Please report the original source of funds in columns (1) and (2) and the entity receiving the funds in rows a–d. <strong>Examples</strong>:<ul class=\"content-subbullets\"><li>Your institution passed through federal funds to another university (row a, column 1).</li><li>Your institution passed through funds from a company to another university (row a, column 2).</li></ul>"
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "lead": "Entity receiving funds from your institution",
+              "caption": "Originating source of R&D expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "columns": [
+                { "prefix": "(1)", "label": "Federal" },
+                { "prefix": "(2)", "label": "Nonfederal" },
+                { "prefix": "(3)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                {
+                  "label": "a. U.S. higher education institutions",
+                  "description": "Colleges and universities and units owned, operated, and controlled by such institutions",
+                  "cells": [
+                    { "id": "q8-a-federal" },
+                    { "id": "q8-a-nonfederal" },
+                    { "id": "q8-a-total", "total": true, "sumOf": ["q8-a-federal", "q8-a-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "b. Businesses",
+                  "description": "For-profit organizations",
+                  "cells": [
+                    { "id": "q8-b-federal" },
+                    { "id": "q8-b-nonfederal" },
+                    { "id": "q8-b-total", "total": true, "sumOf": ["q8-b-federal", "q8-b-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "c. Nonprofit organizations",
+                  "description": "Nonprofit foundations and organizations",
+                  "cells": [
+                    { "id": "q8-c-federal" },
+                    { "id": "q8-c-nonfederal" },
+                    { "id": "q8-c-total", "total": true, "sumOf": ["q8-c-federal", "q8-c-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "d. Other",
+                  "description": "State and local governments, foreign institutions including foreign universities/colleges, and others",
+                  "cells": [
+                    { "id": "q8-d-federal" },
+                    { "id": "q8-d-nonfederal" },
+                    { "id": "q8-d-total", "total": true, "sumOf": ["q8-d-federal", "q8-d-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "e. Total<sup class=\"footnote-ref\">1</sup>",
+                  "separatorBefore": true,
+                  "cells": [
+                    { "id": "q8-e-federal", "total": true, "sumOf": ["q8-a-federal", "q8-b-federal", "q8-c-federal", "q8-d-federal"] },
+                    { "id": "q8-e-nonfederal", "total": true, "sumOf": ["q8-a-nonfederal", "q8-b-nonfederal", "q8-c-nonfederal", "q8-d-nonfederal"] },
+                    { "id": "q8-e-total", "total": true, "sumOf": ["q8-e-federal", "q8-e-nonfederal"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "footnote",
+              "marker": "1",
+              "text": "Row and column totals are automatically generated on the Web survey."
+            },
+            {
+              "type": "comments",
+              "label": "Comments:",
+              "id": "q8-comments",
+              "maxLength": 1000
+            },
+            { "type": "action-bar" }
+          ]
+        }
       ]
     },
     {
