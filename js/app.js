@@ -160,6 +160,10 @@ function renderContentBlock(block) {
       return renderGroup(block);
     case 'currency-matrix':
       return renderCurrencyMatrix(block);
+    case 'entry-list':
+      return renderEntryList(block);
+    case 'headcount-matrix':
+      return renderHeadcountMatrix(block);
     case 'table':
       return renderTable(block);
     case 'modal':
@@ -200,9 +204,12 @@ function escapeAttr(str) {
 function renderField(block) {
   const inputs = (block.inputs || []).map(renderInput).join('');
   const inline = block.inputs && block.inputs.length > 1 ? ' content-field--inline' : '';
+  // A label-less field (e.g. Q17's month input, where the question itself is
+  // the label) skips the <label> rather than rendering an empty one.
+  const labelHtml = block.label ? `<label class="content-field__label">${block.label}</label>` : '';
   return `
     <div class="content-field${inline}">
-      <label class="content-field__label">${block.label || ''}</label>
+      ${labelHtml}
       <div class="content-field__inputs">${inputs}</div>
     </div>
   `;
@@ -292,14 +299,20 @@ function renderCurrencyHeader(block) {
 function renderCurrencyInput(id, opts = {}) {
   const fieldId = id || '';
   const isTotal = !!opts.total;
+  // A "count" input (headcount, e.g. Q15) reuses the validation + auto-total
+  // machinery but drops the "$" adornment and uses a numeric input mode.
+  const plain = opts.symbol === false;
   const sumOf = Array.isArray(opts.sumOf) ? opts.sumOf.join(',') : '';
   const totalClass = isTotal ? ' is-total' : '';
+  const wrapClass = plain ? ' currency-input--plain' : '';
   const sumAttr = sumOf ? ` data-sum-of="${escapeAttr(sumOf)}"` : '';
   // Totals are computed from other fields: lock them and skip the tab order.
   const lockAttrs = isTotal ? ' readonly aria-readonly="true" tabindex="-1"' : '';
+  const inputmode = opts.inputmode || (plain ? 'numeric' : 'decimal');
+  const ariaLabel = opts.ariaLabel || (plain ? 'Value' : 'Amount in thousands of dollars');
   return `
-    <div class="currency-input">
-      <input type="text" inputmode="decimal" class="currency-input__field${totalClass}" data-field-id="${fieldId}"${sumAttr}${lockAttrs} aria-label="Amount in thousands of dollars" />
+    <div class="currency-input${wrapClass}">
+      <input type="text" inputmode="${inputmode}" class="currency-input__field${totalClass}" data-field-id="${fieldId}"${sumAttr}${lockAttrs} aria-label="${ariaLabel}" />
     </div>
     <p class="currency-input__error" data-error-for="${fieldId}" hidden>Enter a number using digits and an optional decimal point.</p>
   `;
@@ -340,12 +353,18 @@ function renderCurrencyRow(block) {
 
 function renderCurrencyGroup(block) {
   const prefix = block.prefix ? `${block.prefix} ` : '';
+  // Optional description paragraphs sit between the group label and its children
+  // (e.g. Q12 "b. Software purchases" describes the category before rows 1–2).
+  const descriptions = (block.description || [])
+    .map((para) => `<p class="currency-group__description">${para}</p>`)
+    .join('');
   // Children are dispatched through the general block renderer so a group can
   // hold a non-currency-row child (e.g. the Q1.1 checkbox question under e1).
   const children = (block.children || []).map(renderContentBlock).join('');
   return `
     <div class="currency-group" data-group-id="${block.id || ''}">
       <p class="currency-group__label">${prefix}${block.label || ''}</p>
+      ${descriptions}
       <div class="currency-group__children">${children}</div>
     </div>
   `;
@@ -492,12 +511,15 @@ function renderCurrencyMatrix(block) {
     return `<div class="currency-matrix__colhead">${num}<span class="currency-matrix__colhead-label">${c.label || ''}${ref}</span></div>`;
   }).join('');
 
+  // `plain` matrices hold counts/FTEs, not dollars: drop the "$" and use a
+  // decimal input mode (e.g. Q16 FTEs, "round to 1 decimal place").
+  const cellExtra = block.plain ? { symbol: false, inputmode: 'decimal' } : {};
   const dataRows = rows.map((r) => {
     // A totals row (e.g. row d) sets separatorBefore to draw a full-width rule.
     const sep = r.separatorBefore ? `<div class="currency-matrix__divider"></div>` : '';
     const desc = r.description ? `<p class="currency-matrix__row-desc">${r.description}</p>` : '';
     const cells = (r.cells || []).map((cell) =>
-      `<div class="currency-matrix__cell">${renderCurrencyInput(cell.id, { total: cell.total, sumOf: cell.sumOf })}</div>`
+      `<div class="currency-matrix__cell">${renderCurrencyInput(cell.id, Object.assign({ total: cell.total, sumOf: cell.sumOf }, cellExtra))}</div>`
     ).join('');
     return `${sep}<div class="currency-matrix__rowlabel"><p class="currency-matrix__row-title">${r.label || ''}</p>${desc}</div>${cells}`;
   }).join('');
@@ -509,6 +531,99 @@ function renderCurrencyMatrix(block) {
       ${dataRows}
     </div>
   `;
+}
+
+// Write-in list (e.g. Q10: "list up to 10 agencies" + an amount each). A 3-column
+// grid: letter prefix, a write-in name field OR a fixed label, and a currency
+// amount. Rows with `nameId` render a text input; rows with `label` render
+// static text (+ optional description). Amount cells reuse renderCurrencyInput,
+// so a `total` row (sumOf the amount ids) is driven by recomputeTotals().
+function renderEntryList(block) {
+  const rows = block.rows || [];
+  const lead = `<div class="entry-list__lead">${block.lead || ''}</div>`;
+  const captionTitle = block.caption ? `<span class="entry-list__caption-title">${block.caption}</span>` : '';
+  const captionSub = block.captionSub ? `<span class="entry-list__caption-sub">${block.captionSub}</span>` : '';
+  const caption = `<div class="entry-list__caption">${captionTitle}${captionSub}</div>`;
+
+  const rowsHtml = rows.map((r) => {
+    const prefix = `<span class="entry-list__prefix">${r.prefix || ''}</span>`;
+    let nameCell;
+    if (r.nameId) {
+      nameCell = `<div class="entry-list__name">${renderInput({ id: r.nameId })}</div>`;
+    } else {
+      const ref = r.footnoteRef ? `<sup class="footnote-ref">${r.footnoteRef}</sup>` : '';
+      const desc = r.description ? `<p class="entry-list__desc">${r.description}</p>` : '';
+      const labelCls = r.total ? 'entry-list__label entry-list__label--total' : 'entry-list__label';
+      nameCell = `<div class="entry-list__name"><p class="${labelCls}">${r.label || ''}${ref}</p>${desc}</div>`;
+    }
+    const amountCell = `<div class="entry-list__amount">${renderCurrencyInput(r.amountId, { total: r.total, sumOf: r.sumOf })}</div>`;
+    return `${prefix}${nameCell}${amountCell}`;
+  }).join('');
+
+  return `
+    <div class="entry-list">
+      ${lead}
+      ${caption}
+      ${rowsHtml}
+    </div>
+  `;
+}
+
+// Headcount matrix (Q15): a sectioned table of integer counts. Sections A–D
+// each render a heading (optionally "(Confidential)") then rows; most rows have
+// columns a/b/c (entered) + d (auto total a+b+c). A "researchersOnly" section
+// (D) shows only column a plus a note spanning the other columns. Count cells
+// reuse renderCurrencyInput({symbol:false}) so validation + recomputeTotals
+// apply without the "$". Built as a <table> so section headers and the note
+// use native colspan/rowspan.
+function renderHeadcountMatrix(block) {
+  const columns = block.columns || [];
+  const sections = block.sections || [];
+  const colCount = columns.length;          // data columns (a,b,c,d)
+  const span = colCount + 1;                // + the row-label column
+
+  const headCells = columns.map((c) => {
+    const ref = c.footnoteRef ? `<sup class="footnote-ref">${c.footnoteRef}</sup>` : '';
+    return `<th scope="col"><span class="headcount-matrix__colnum">${c.prefix || ''}</span>${c.label || ''}${ref}</th>`;
+  }).join('');
+  const thead = `<thead><tr><td class="headcount-matrix__corner"></td>${headCells}</tr></thead>`;
+
+  const countCell = (id, opts) => `<td class="headcount-matrix__cell">${renderCurrencyInput(id, Object.assign({ symbol: false, ariaLabel: 'Headcount' }, opts))}</td>`;
+
+  const body = sections.map((sec) => {
+    let html = '';
+    if (sec.heading) {
+      const conf = sec.confidential
+        ? ` <span class="headcount-matrix__confidential">(Confidential<sup class="footnote-ref">1</sup>)</span>`
+        : '';
+      html += `<tr class="headcount-matrix__section"><th colspan="${span}" scope="colgroup">${sec.heading}${conf}</th></tr>`;
+    }
+
+    const rows = sec.rows || [];
+    if (sec.researchersOnly) {
+      // Sub-header over column a + a note spanning the remaining columns and all
+      // rows below it (rowspan = subhead row + data rows).
+      const note = sec.note
+        ? `<td class="headcount-matrix__note" colspan="${colCount - 1}" rowspan="${rows.length + 1}">${sec.note}</td>`
+        : '';
+      html += `<tr class="headcount-matrix__subhead"><td class="headcount-matrix__corner"></td><th scope="col">${sec.subHead || ''}</th>${note}</tr>`;
+      html += rows.map((r) =>
+        `<tr><th scope="row" class="headcount-matrix__rowlabel">${r.prefix || ''} ${r.label || ''}</th>${countCell(r.ids.a)}</tr>`
+      ).join('');
+    } else {
+      html += rows.map((r) => {
+        const labelCls = r.emphasis
+          ? 'headcount-matrix__rowlabel headcount-matrix__rowlabel--bold'
+          : 'headcount-matrix__rowlabel';
+        const cells = countCell(r.ids.a) + countCell(r.ids.b) + countCell(r.ids.c)
+          + countCell(r.ids.d, { total: true, sumOf: [r.ids.a, r.ids.b, r.ids.c] });
+        return `<tr><th scope="row" class="${labelCls}">${r.prefix || ''} ${r.label || ''}</th>${cells}</tr>`;
+      }).join('');
+    }
+    return html;
+  }).join('');
+
+  return `<table class="headcount-matrix">${thead}<tbody>${body}</tbody></table>`;
 }
 
 // Generic bordered data table (e.g. the Q6 "Examples" grid shown in a modal).
@@ -524,9 +639,19 @@ function renderTable(block) {
   const headRow = columns.length
     ? `<tr>${columns.map((c) => `<th scope="col">${c}</th>`).join('')}</tr>`
     : '';
-  const body = rows
-    .map((r) => `<tr>${r.map((cell) => `<td>${cell}</td>`).join('')}</tr>`)
-    .join('');
+  // A row is either an array of cells, or a full-width object:
+  //   { full, heading: true } → a spanning header row (same style as the title)
+  //   { full }               → a spanning body paragraph (e.g. the Q15
+  //                            "Researcher versus R&D technician" comparison).
+  const body = rows.map((r) => {
+    if (Array.isArray(r)) {
+      return `<tr>${r.map((cell) => `<td>${cell}</td>`).join('')}</tr>`;
+    }
+    if (r.heading) {
+      return `<tr class="data-table__title"><th colspan="${colspan}" scope="colgroup">${r.full || ''}</th></tr>`;
+    }
+    return `<tr><td colspan="${colspan}" class="data-table__full">${r.full || ''}</td></tr>`;
+  }).join('');
   return `
     <table class="data-table">
       <thead>${titleRow}${headRow}</thead>
@@ -543,9 +668,14 @@ function renderTable(block) {
 function renderModal(block) {
   const id = block.id || '';
   const label = block.label || block.title || 'Dialog';
+  // An optional visible title bar (e.g. Q16 "Examples of FTE Calculations",
+  // whose body is prose rather than a table that carries its own caption).
+  const labelId = `modal-${id}-title`;
+  const titleBar = block.title ? `<h2 class="modal__title" id="${labelId}">${block.title}</h2>` : '';
+  const nameAttr = block.title ? ` aria-labelledby="${labelId}"` : ` aria-label="${escapeAttr(label)}"`;
   const children = (block.content || []).map(renderContentBlock).join('');
   return `
-    <dialog class="modal" id="modal-${id}" aria-label="${escapeAttr(label)}">
+    <dialog class="modal" id="modal-${id}"${nameAttr}>
       <div class="modal__panel">
         <button type="button" class="modal__close" data-modal-close aria-label="Close ${escapeAttr(label)}">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
@@ -553,6 +683,7 @@ function renderModal(block) {
             <line x1="18" y1="6" x2="6" y2="18" />
           </svg>
         </button>
+        ${titleBar}
         <div class="modal__body">${children}</div>
       </div>
     </dialog>

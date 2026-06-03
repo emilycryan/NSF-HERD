@@ -335,12 +335,6 @@
               "marker": "2",
               "text": "Totals for rows e4 and g are automatically generated on the Web survey."
             },
-            {
-              "type": "comments",
-              "label": "Comments:",
-              "id": "q1-comments",
-              "maxLength": 1000
-            },
             { "type": "action-bar" }
           ]
         },
@@ -425,12 +419,6 @@
               "type": "footnote",
               "text": "The column total is automatically generated on the Web survey."
             },
-            {
-              "type": "comments",
-              "label": "Comments:",
-              "id": "q2-comments",
-              "maxLength": 1000
-            },
             { "type": "action-bar" }
           ]
         },
@@ -487,12 +475,6 @@
               "type": "footnote",
               "text": "The column total is automatically generated on the Web survey."
             },
-            {
-              "type": "comments",
-              "label": "Comments:",
-              "id": "q3-comments",
-              "maxLength": 1000
-            },
             { "type": "action-bar" }
           ]
         },
@@ -533,12 +515,6 @@
                   "id": "q4-b"
                 }
               ]
-            },
-            {
-              "type": "comments",
-              "label": "Comments:",
-              "id": "q4-comments",
-              "maxLength": 1000
             },
             { "type": "action-bar" }
           ]
@@ -623,12 +599,6 @@
                 }
               ]
             },
-            {
-              "type": "comments",
-              "label": "Comments:",
-              "id": "q5-comments",
-              "maxLength": 1000
-            },
             { "type": "action-bar" }
           ]
         },
@@ -706,12 +676,6 @@
               "type": "footnote",
               "marker": "1",
               "text": "Row and column totals are automatically generated on the Web survey."
-            },
-            {
-              "type": "comments",
-              "label": "Comments:",
-              "id": "q6-comments",
-              "maxLength": 1000
             },
             { "type": "action-bar" },
             {
@@ -836,12 +800,6 @@
               "marker": "1",
               "text": "Row and column totals are automatically generated on the Web survey."
             },
-            {
-              "type": "comments",
-              "label": "Comments:",
-              "id": "q7-comments",
-              "maxLength": 1000
-            },
             { "type": "action-bar" }
           ]
         },
@@ -928,12 +886,6 @@
               "marker": "1",
               "text": "Row and column totals are automatically generated on the Web survey."
             },
-            {
-              "type": "comments",
-              "label": "Comments:",
-              "id": "q8-comments",
-              "maxLength": 1000
-            },
             { "type": "action-bar" }
           ]
         }
@@ -944,20 +896,481 @@
       "title": "Federal Agencies",
       "sections": [
         { "id": "q9", "number": 9, "title": "R&D expenditures by field and federal agency source", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
-        { "id": "q10", "number": 10, "title": "Other federal agency sources", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        {
+          "id": "q10",
+          "number": 10,
+          "title": "Other federal agency sources",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 10.",
+              "text": "Of the amount reported for Other federal sources in Question 9 (row K, column g), which agencies funded this R&D, and how much of the reported amount was from each agency?"
+            },
+            {
+              "type": "paragraph",
+              "text": "If your institution reported $0 in Question 9, row K, column g, skip this question and go to Question 11."
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Use rows a–j to list up to 10 agencies that funded the largest R&D expenditures.",
+                "Use row k to report any remaining amount.",
+                "For subrecipient funding in this question, list the sponsor of the original award.",
+                "A list of federal departments, agencies and subagencies is included as a link on the web survey question."
+              ]
+            },
+            {
+              "type": "entry-list",
+              "lead": "Federal agencies (list up to 10)",
+              "caption": "R&D expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "rows": [
+                { "prefix": "a.", "nameId": "q10-a-name", "amountId": "q10-a-amount" },
+                { "prefix": "b.", "nameId": "q10-b-name", "amountId": "q10-b-amount" },
+                { "prefix": "c.", "nameId": "q10-c-name", "amountId": "q10-c-amount" },
+                { "prefix": "d.", "nameId": "q10-d-name", "amountId": "q10-d-amount" },
+                { "prefix": "e.", "nameId": "q10-e-name", "amountId": "q10-e-amount" },
+                { "prefix": "f.", "nameId": "q10-f-name", "amountId": "q10-f-amount" },
+                { "prefix": "g.", "nameId": "q10-g-name", "amountId": "q10-g-amount" },
+                { "prefix": "h.", "nameId": "q10-h-name", "amountId": "q10-h-amount" },
+                { "prefix": "i.", "nameId": "q10-i-name", "amountId": "q10-i-amount" },
+                { "prefix": "j.", "nameId": "q10-j-name", "amountId": "q10-j-amount" },
+                {
+                  "prefix": "k.",
+                  "label": "Other agencies included in Question 9, column g, but not listed above",
+                  "amountId": "q10-k-amount"
+                },
+                {
+                  "prefix": "l.",
+                  "label": "Total",
+                  "footnoteRef": "1",
+                  "description": "Should match Question 9, row K, column g",
+                  "amountId": "q10-l-total",
+                  "total": true,
+                  "sumOf": [
+                    "q10-a-amount", "q10-b-amount", "q10-c-amount", "q10-d-amount", "q10-e-amount",
+                    "q10-f-amount", "q10-g-amount", "q10-h-amount", "q10-i-amount", "q10-j-amount",
+                    "q10-k-amount"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "footnote",
+              "marker": "1",
+              "text": "The column total is automatically generated on the Web survey."
+            },
+            { "type": "action-bar" }
+          ]
+        },
         { "id": "q11", "number": 11, "title": "R&D expenditures by field and nonfederal agency source", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
-        { "id": "q12", "number": 12, "title": "Cost elements of R&D", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
-        { "id": "q13", "number": 13, "title": "Capitalization thresholds", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        {
+          "id": "q12",
+          "number": 12,
+          "title": "Cost elements of R&D",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 12.",
+              "text": "Of the total amount of R&D expenditures reported in Question 1, row g, what were the amounts for the following types of costs?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Please report only <strong>direct costs</strong> (including cost sharing) in rows a–e.",
+                "Recovered and unrecovered <strong>indirect costs</strong> should be reported in rows f1 and f2."
+              ]
+            },
+            {
+              "type": "currency-header",
+              "lead": "Types of costs",
+              "title": "R&D expenditures",
+              "subtitle": "(Dollars in thousands)"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "a.",
+              "label": "Salaries, wages, and fringe benefits",
+              "description": [
+                "Include compensation for all R&D personnel whether full-time or part-time, temporary or permanent. Include salaries, wages, and fringe benefits paid from your institution's funds and from external support."
+              ],
+              "id": "q12-a"
+            },
+            {
+              "type": "currency-group",
+              "prefix": "b.",
+              "label": "Software purchases",
+              "description": [
+                "All payments for software. Include both purchases of software packages and license fees for systems."
+              ],
+              "id": "q12-b",
+              "children": [
+                {
+                  "type": "currency-row",
+                  "prefix": "1.",
+                  "label": "Noncapitalized software",
+                  "id": "q12-b1"
+                },
+                {
+                  "type": "currency-row",
+                  "prefix": "2.",
+                  "label": "Capitalized software <span class=\"currency-row__label-note\">(If you are unable to distinguish capitalized software from capitalized equipment, report both in row c.)</span>",
+                  "id": "q12-b2"
+                }
+              ]
+            },
+            {
+              "type": "currency-row",
+              "prefix": "c.",
+              "label": "Capitalized equipment",
+              "description": [
+                "Payments for movable equipment exceeding your institution's capitalization threshold. Include ancillary costs such as delivery and setup."
+              ],
+              "id": "q12-c"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "d.",
+              "label": "Pass-throughs to other universities or organizations",
+              "description": [
+                "Should match Question 8, row e, column 3"
+              ],
+              "id": "q12-d"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "e.",
+              "label": "Other direct costs",
+              "description": [
+                "Other costs that do not fit into one of the above categories, including (but not limited to) travel, tuition waivers, services such as consulting, computer usage fees, and supplies."
+              ],
+              "id": "q12-e"
+            },
+            {
+              "type": "currency-group",
+              "prefix": "f.",
+              "label": "Indirect costs",
+              "id": "q12-f",
+              "children": [
+                {
+                  "type": "currency-row",
+                  "prefix": "1.",
+                  "label": "Recovered indirect costs",
+                  "description": [
+                    "Reimbursement of Facilities and Administrative (F&A) costs from external sponsors"
+                  ],
+                  "id": "q12-f1",
+                  "confidential": true,
+                  "footnoteRef": "1"
+                },
+                {
+                  "type": "currency-row",
+                  "prefix": "2.",
+                  "label": "Unrecovered indirect costs",
+                  "description": [
+                    "Should match Question 1, row e3"
+                  ],
+                  "id": "q12-f2",
+                  "confidential": true,
+                  "footnoteRef": "1"
+                },
+                {
+                  "type": "currency-row",
+                  "prefix": "3.",
+                  "label": "Total indirect costs",
+                  "id": "q12-f3",
+                  "total": true,
+                  "sumOf": ["q12-f1", "q12-f2"],
+                  "footnoteRef": "2"
+                }
+              ]
+            },
+            { "type": "divider" },
+            {
+              "type": "currency-row",
+              "prefix": "g.",
+              "label": "Total",
+              "description": [
+                "Should match Question 1, row g"
+              ],
+              "id": "q12-g",
+              "total": true,
+              "sumOf": ["q12-a", "q12-b1", "q12-b2", "q12-c", "q12-d", "q12-e", "q12-f3"],
+              "footnoteRef": "2"
+            },
+            {
+              "type": "footnote",
+              "marker": "1",
+              "text": "This item is confidential. Please see the confidentiality statement on page 4"
+            },
+            {
+              "type": "footnote",
+              "marker": "2",
+              "text": "Totals are automatically generated on the Web survey."
+            },
+            { "type": "action-bar" }
+          ]
+        },
+        {
+          "id": "q13",
+          "number": 13,
+          "title": "Capitalization thresholds",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 13.",
+              "text": "At the end of FY 2025, what were your institution's capitalization thresholds for software and equipment?"
+            },
+            {
+              "type": "currency-matrix",
+              "captionSub": "(Dollars in thousands)",
+              "columns": [
+                { "prefix": "(1)", "label": "Software" },
+                { "prefix": "(2)", "label": "Equipment" }
+              ],
+              "rows": [
+                {
+                  "label": "Capitalization thresholds",
+                  "cells": [
+                    { "id": "q13-software" },
+                    { "id": "q13-equipment" }
+                  ]
+                }
+              ]
+            },
+            { "type": "action-bar" }
+          ]
+        },
         { "id": "q14", "number": 14, "title": "R&D equipment expenditures by field", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
-        { "id": "q15", "number": 15, "title": "Headcount by R&D function", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" }
+        {
+          "id": "q15",
+          "number": 15,
+          "title": "Headcount by R&D function",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 15.",
+              "text": "How many personnel (headcount) worked in the functions listed below in FY 2025, and in which demographic and educational categories would these personnel be placed?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Headcount by sex, citizenship, and highest level of education is confidential<sup class=\"footnote-ref\">1</sup>. Total headcount by research function (row A) will be published by institution.",
+                "Include each person only once in headcount. If they performed work in two roles (e.g., researcher and technician), include them in the headcount for their predominant role.",
+                "Include all personnel and students paid from R&D accounts regardless of how much they were paid. Pay could be a salary, a stipend, or tuition remission.",
+                "Exclude personnel that would be considered indirect research support such as research administration and other personnel not paid for work on specific research projects.",
+                "<strong>Functions</strong> are defined primarily by the nature of the employee's work, not the employee's level of education. Depending on the nature of their work, a student could be placed in any functional category. <button type=\"button\" class=\"modal-link\" data-modal-target=\"q15-functions\">R&D function descriptions</button>"
+              ]
+            },
+            {
+              "type": "headcount-matrix",
+              "columns": [
+                { "prefix": "(a)", "label": "Researchers" },
+                { "prefix": "(b)", "label": "R&D technicians" },
+                { "prefix": "(c)", "label": "R&D support staff" },
+                { "prefix": "(d)", "label": "Total", "footnoteRef": "2" }
+              ],
+              "sections": [
+                {
+                  "rows": [
+                    {
+                      "prefix": "A.",
+                      "label": "Total R&D personnel",
+                      "emphasis": true,
+                      "ids": { "a": "q15-A-a", "b": "q15-A-b", "c": "q15-A-c", "d": "q15-A-d" }
+                    }
+                  ]
+                },
+                {
+                  "heading": "B. Sex",
+                  "confidential": true,
+                  "rows": [
+                    { "prefix": "1.", "label": "Female", "ids": { "a": "q15-B1-a", "b": "q15-B1-b", "c": "q15-B1-c", "d": "q15-B1-d" } },
+                    { "prefix": "2.", "label": "Male", "ids": { "a": "q15-B2-a", "b": "q15-B2-b", "c": "q15-B2-c", "d": "q15-B2-d" } },
+                    { "prefix": "3.", "label": "Sex unknown or not stated", "ids": { "a": "q15-B3-a", "b": "q15-B3-b", "c": "q15-B3-c", "d": "q15-B3-d" } }
+                  ]
+                },
+                {
+                  "heading": "C. Citizenship",
+                  "confidential": true,
+                  "rows": [
+                    { "prefix": "1.", "label": "U.S. citizens and permanent residents (non-U.S. citizens holding Green Cards)", "ids": { "a": "q15-C1-a", "b": "q15-C1-b", "c": "q15-C1-c", "d": "q15-C1-d" } },
+                    { "prefix": "2.", "label": "Foreign nationals holding temporary visas", "ids": { "a": "q15-C2-a", "b": "q15-C2-b", "c": "q15-C2-c", "d": "q15-C2-d" } },
+                    { "prefix": "3.", "label": "Citizenship or residency status unknown or not stated", "ids": { "a": "q15-C3-a", "b": "q15-C3-b", "c": "q15-C3-c", "d": "q15-C3-d" } }
+                  ]
+                },
+                {
+                  "heading": "D. Highest level of education completed",
+                  "confidential": true,
+                  "researchersOnly": true,
+                  "subHead": "Researchers only",
+                  "note": "Do not include highest level of education for R&D technicians or R&D support staff.",
+                  "rows": [
+                    { "prefix": "1.", "label": "Doctorate (e.g., PhD, DSc, EdD)", "ids": { "a": "q15-D1-a" } },
+                    { "prefix": "2.", "label": "Professional degree (e.g., JD, LLB, MD, DDS, DVM)", "ids": { "a": "q15-D2-a" } },
+                    { "prefix": "3.", "label": "Master's degree (e.g., MS, MA, MBA)", "ids": { "a": "q15-D3-a" } },
+                    { "prefix": "4.", "label": "Less than Master's", "ids": { "a": "q15-D4-a" } },
+                    { "prefix": "5.", "label": "Education level unknown or not stated", "ids": { "a": "q15-D5-a" } }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "footnote",
+              "marker": "1",
+              "text": "This item is confidential. Please see the confidentiality statement on page 4."
+            },
+            {
+              "type": "footnote",
+              "marker": "2",
+              "text": "Totals are automatically generated on the Web survey."
+            },
+            { "type": "action-bar" },
+            {
+              "type": "modal",
+              "id": "q15-functions",
+              "label": "Description of R&D Functions",
+              "content": [
+                {
+                  "type": "table",
+                  "caption": "Description of R&D Functions",
+                  "columns": ["Researchers", "R&D technicians", "R&D support staff"],
+                  "rows": [
+                    [
+                      "Professionals engaged in the conception or creation of new knowledge, products, processes, methods and systems and also in the management of the projects concerned. Include R&D managers in this category.",
+                      "Persons whose main tasks require technical knowledge and experience in one or more fields of science or engineering, but who contribute to R&D by performing technical tasks such as computer programming, data analysis, ensuring accurate testing, operating lab equipment, and preparing and processing samples under the supervision of researchers.",
+                      "Not directly involved with the conduct of a research project but support the researchers and technicians. These employees might include clerical staff, financial and personnel administrators, report writers, patent agents, safety trainers, equipment specialists, and other related employees."
+                    ],
+                    { "full": "Researcher versus R&D technician", "heading": true },
+                    { "full": "Researchers contribute more to the creative aspects of R&D whereas technicians provide technical support. For example, a researcher would design an experiment, and a technician would run the experiment and assist in analyzing results." }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
     {
       "id": "other",
       "title": "Other",
       "sections": [
-        { "id": "q16", "number": 16, "title": "FTE by R&D function", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
-        { "id": "q17", "number": 17, "title": "Fiscal year", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" }
+        {
+          "id": "q16",
+          "number": 16,
+          "title": "FTE by R&D function",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 16.",
+              "text": "How many full-time equivalents (FTEs) worked in the functions listed below in FY 2025?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "All personnel counted in Question 15 should be included in FTE calculations; however, we would expect FTEs to be less than headcounts.",
+                "FTEs for this question are calculated as the total working effort <strong>spent on research</strong> during your fiscal year divided by the total effort representing one full-time schedule within the same period. <button type=\"button\" class=\"modal-link\" data-modal-target=\"q16-fte-examples\">Example FTE calculations</button>",
+                "An individual cannot be more than 1.0 FTE. An individual counted as 1.0 FTE for this question, would spend 100% of their working effort on research. If an individual exceeds 1.0 research FTE based on your standard calculations, adjust down to 1.0.",
+                "<button type=\"button\" class=\"modal-link\" data-modal-target=\"q15-functions\">R&D function descriptions</button>"
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "plain": true,
+              "columns": [
+                { "prefix": "(a)", "label": "Researchers" },
+                { "prefix": "(b)", "label": "R&D technicians" },
+                { "prefix": "(c)", "label": "R&D support staff" },
+                { "prefix": "(d)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                {
+                  "label": "FTEs <span class=\"currency-row__label-note\">(round to 1 decimal place)</span>",
+                  "cells": [
+                    { "id": "q16-a" },
+                    { "id": "q16-b" },
+                    { "id": "q16-c" },
+                    { "id": "q16-d", "total": true, "sumOf": ["q16-a", "q16-b", "q16-c"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "footnote",
+              "marker": "1",
+              "text": "Total is automatically generated on the Web survey."
+            },
+            { "type": "action-bar" },
+            {
+              "type": "modal",
+              "id": "q16-fte-examples",
+              "title": "Examples of FTE Calculations",
+              "content": [
+                { "type": "subheader", "text": "Using labor hours:" },
+                {
+                  "type": "paragraph",
+                  "text": "The following examples assume a 40-hour work week during a 49-week work year (1,960 hours), which excludes 3 weeks for vacation, holidays, etc. However, you should use the hours per week and weeks per year that typically represent a full-time employee at your organization."
+                },
+                {
+                  "type": "bullet-list",
+                  "items": [
+                    "10 researchers who spent a combined 13,720 hours on research: 13,720/1,960 = 7.0 FTE",
+                    "1 researcher who works on research 20% of the time for 20 weeks, 50% of the time for another 20 weeks, and full-time for 9 weeks: ((20% * 20) + (60% * 20) + 9)/ 49 = 0.5 FTE",
+                    "2 research technicians who worked exclusively on research but only for 32 weeks: (2 * (32 * 40))/1,960 = 1.3 FTE",
+                    "10 student employees during the summer who each worked on research full-time for 10 weeks: 10 * (10/49) = 2.0 FTE"
+                  ]
+                },
+                { "type": "subheader", "text": "Using salary:" },
+                {
+                  "type": "paragraph",
+                  "text": "FTE must be calculated for each individual and then summed for institution reporting."
+                },
+                {
+                  "type": "bullet-list",
+                  "items": [
+                    "1 researcher with a $150,000 salary who was employed the entire year and $120,000 of salary came from R&D accounts: 120,000/150,000 = 0.8 FTE",
+                    "1 research support staff member with a $60,000 salary for a 9-month appointment, of which $40,000 came from R&D accounts: (40,000/60,000) * (9/12) = 0.5 FTE"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "q17",
+          "number": 17,
+          "title": "Fiscal year",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 17.",
+              "text": "In what month did your institution's 2025 fiscal year end?"
+            },
+            {
+              "type": "field",
+              "inputs": [ { "id": "q17-month", "size": "medium" } ]
+            },
+            { "type": "action-bar" }
+          ]
+        }
       ]
     }
   ]
