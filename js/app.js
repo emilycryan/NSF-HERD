@@ -166,6 +166,8 @@ function renderContentBlock(block) {
       return renderHeadcountMatrix(block);
     case 'table':
       return renderTable(block);
+    case 'examples-grid':
+      return renderExamplesGrid(block);
     case 'modal':
       return renderModal(block);
     case 'divider':
@@ -179,6 +181,23 @@ function renderContentBlock(block) {
         <div class="action-bar">
           <button type="button" class="action-bar__cancel">Cancel</button>
           <button type="button" class="action-bar__save">Save</button>
+        </div>
+      `;
+    // Helper text + bulk-fill buttons that sit above the data grid on the
+    // matrix questions (Q9, Q11, Q14). Content is identical across them, so
+    // the block is zero-config like action-bar.
+    case 'prefill-actions':
+      return `
+        <div class="prefill-actions">
+          <div class="prefill-actions__notes">
+            <p class="prefill-actions__note">Enter 0 for no expenditures and "U" for Unavailable.</p>
+            <p class="prefill-actions__note">If you have no expenditures to report for this section, "0" will be entered in all blank fields.</p>
+            <p class="prefill-actions__note">If you cannot provide this information at this time, "Unavailable" will be entered in all blank fields.</p>
+          </div>
+          <div class="prefill-actions__buttons">
+            <button type="button" class="prefill-actions__button">Enter Zeros in Blank Fields</button>
+            <button type="button" class="prefill-actions__button">Enter Unavailable in Blank Fields</button>
+          </div>
         </div>
       `;
     default:
@@ -491,37 +510,95 @@ function renderCurrencyMatrix(block) {
   const columns = block.columns || [];
   const rows = block.rows || [];
   const n = columns.length;
-  const gridCols = `minmax(0, 1.4fr) repeat(${n}, minmax(88px, 1fr))`;
+  // "Banded" field matrices (Q9/Q11/Q14) use explicit grid placement with section
+  // bands + bottom-aligned headers + a floored, wider label column. Auto-enabled for
+  // many-column matrices (n >= 6); a matrix with fewer columns opts in via
+  // `banded: true` (e.g. Q14's 3-column Federal/Nonfederal/Total grid).
+  const wide = block.banded === true || n >= 6;
+  const gridCols = wide
+    ? `minmax(150px, 1.5fr) repeat(${n}, minmax(58px, 1fr))`
+    : `minmax(0, 1.4fr) repeat(${n}, minmax(88px, 1fr))`;
 
   const captionTitle = block.caption ? `<span class="currency-matrix__caption-title">${block.caption}</span>` : '';
   const captionSub = block.captionSub ? `<span class="currency-matrix__caption-sub">${block.captionSub}</span>` : '';
-  const captionRow = (block.caption || block.captionSub)
+  const hasCaption = !!(block.caption || block.captionSub);
+
+  const colheadHtml = (c) => {
+    const ref = c.footnoteRef ? `<sup class="footnote-ref">${c.footnoteRef}</sup>` : '';
+    const num = c.prefix ? `<span class="currency-matrix__colhead-num">${c.prefix}</span>` : '';
+    return `${num}<span class="currency-matrix__colhead-label">${c.label || ''}${ref}</span>`;
+  };
+  const labelClasses = (r) =>
+    `currency-matrix__rowlabel${r.indent ? ' currency-matrix__rowlabel--indent' : ''}${r.regular ? ' currency-matrix__rowlabel--regular' : ''}`;
+  const rowLabelHtml = (r) => {
+    const desc = r.description ? `<p class="currency-matrix__row-desc">${r.description}</p>` : '';
+    return `<p class="currency-matrix__row-title">${r.label || ''}</p>${desc}`;
+  };
+
+  // `plain` matrices hold counts/FTEs, not dollars: drop the "$" and use a
+  // decimal input mode (e.g. Q16 FTEs, "round to 1 decimal place").
+  const cellExtra = block.plain ? { symbol: false, inputmode: 'decimal' } : {};
+
+  // Wide field matrices (Q9/Q11/Q14) use explicit grid placement so each data row
+  // can carry a full-width zebra "band" behind its label and inputs — auto-flow
+  // can't place a spanning background on the same track as the row's cells.
+  if (wide) {
+    const parts = [];
+    let gr = 1;
+    if (hasCaption) {
+      parts.push(`<div class="currency-matrix__caption" style="grid-row:${gr}; grid-column:2 / -1;">${captionTitle}${captionSub}</div>`);
+      gr++;
+    }
+    // The header row (R&D Fields + column headers) sits on a light section band.
+    parts.push(`<div class="currency-matrix__band" style="grid-row:${gr}; grid-column:1 / -1;"></div>`);
+    parts.push(block.lead
+      ? `<div class="currency-matrix__lead" style="grid-row:${gr}; grid-column:1;">${block.lead}</div>`
+      : `<div class="currency-matrix__spacer" style="grid-row:${gr}; grid-column:1;"></div>`);
+    columns.forEach((c, i) => {
+      parts.push(`<div class="currency-matrix__colhead" style="grid-row:${gr}; grid-column:${i + 2};">${colheadHtml(c)}</div>`);
+    });
+    gr++;
+    rows.forEach((r) => {
+      if (r.kind === 'group') {
+        // A section-group row (e.g. "B. Engineering") also sits on a section band.
+        parts.push(`<div class="currency-matrix__band" style="grid-row:${gr}; grid-column:1 / -1;"></div>`);
+        parts.push(`<div class="currency-matrix__group" style="grid-row:${gr}; grid-column:1 / -1;">${r.label || ''}</div>`);
+        gr++;
+        return;
+      }
+      // Data rows are unshaded; only the header and section-group rows get a band.
+      parts.push(`<div class="${labelClasses(r)}" style="grid-row:${gr}; grid-column:1;">${rowLabelHtml(r)}</div>`);
+      (r.cells || []).forEach((cell, i) => {
+        parts.push(`<div class="currency-matrix__cell" style="grid-row:${gr}; grid-column:${i + 2};">${renderCurrencyInput(cell.id, Object.assign({ total: cell.total, sumOf: cell.sumOf }, cellExtra))}</div>`);
+      });
+      gr++;
+    });
+    return `<div class="currency-matrix currency-matrix--banded" style="grid-template-columns: ${gridCols};">${parts.join('')}</div>`;
+  }
+
+  // Narrow matrices: original auto-flow layout.
+  const captionRow = hasCaption
     ? `<div class="currency-matrix__spacer"></div>`
       + `<div class="currency-matrix__caption" style="grid-column: span ${n};">${captionTitle}${captionSub}</div>`
     : '';
-
   // The col-1 header cell carries an optional "lead" label (e.g. "Type of
   // research"); otherwise it is an empty spacer aligning the column headers.
   const leadCell = block.lead
     ? `<div class="currency-matrix__lead">${block.lead}</div>`
     : `<div class="currency-matrix__spacer"></div>`;
-  const headRow = leadCell + columns.map((c) => {
-    const ref = c.footnoteRef ? `<sup class="footnote-ref">${c.footnoteRef}</sup>` : '';
-    const num = c.prefix ? `<span class="currency-matrix__colhead-num">${c.prefix}</span>` : '';
-    return `<div class="currency-matrix__colhead">${num}<span class="currency-matrix__colhead-label">${c.label || ''}${ref}</span></div>`;
-  }).join('');
-
-  // `plain` matrices hold counts/FTEs, not dollars: drop the "$" and use a
-  // decimal input mode (e.g. Q16 FTEs, "round to 1 decimal place").
-  const cellExtra = block.plain ? { symbol: false, inputmode: 'decimal' } : {};
+  const headRow = leadCell + columns.map((c) => `<div class="currency-matrix__colhead">${colheadHtml(c)}</div>`).join('');
   const dataRows = rows.map((r) => {
+    // A "group" row (e.g. "B. Engineering") is a full-width section heading with
+    // no inputs; it spans every column so the rows below stay column-aligned.
+    if (r.kind === 'group') {
+      return `<div class="currency-matrix__group">${r.label || ''}</div>`;
+    }
     // A totals row (e.g. row d) sets separatorBefore to draw a full-width rule.
     const sep = r.separatorBefore ? `<div class="currency-matrix__divider"></div>` : '';
-    const desc = r.description ? `<p class="currency-matrix__row-desc">${r.description}</p>` : '';
     const cells = (r.cells || []).map((cell) =>
       `<div class="currency-matrix__cell">${renderCurrencyInput(cell.id, Object.assign({ total: cell.total, sumOf: cell.sumOf }, cellExtra))}</div>`
     ).join('');
-    return `${sep}<div class="currency-matrix__rowlabel"><p class="currency-matrix__row-title">${r.label || ''}</p>${desc}</div>${cells}`;
+    return `${sep}<div class="${labelClasses(r)}">${rowLabelHtml(r)}</div>${cells}`;
   }).join('');
 
   return `
@@ -688,6 +765,31 @@ function renderModal(block) {
       </div>
     </dialog>
   `;
+}
+
+// "Examples of Disciplines" reference grid shown inside an examples modal (the
+// "Examples: Set N" lead links). Each group is a field heading followed by either
+// a flat discipline list (e.g. section A) or a set of numbered sub-field blocks
+// (e.g. B's nine engineering fields). Lists flow into CSS columns to mirror the
+// printed questionnaire's multi-column layout.
+function renderExamplesGrid(block) {
+  // Optional `note` (e.g. Chemistry's "except Biochemistry…", "I. Other Sciences"
+  // guidance) and `noteAfter` (a trailing note below a sub-field's disciplines).
+  const note = (text) => text ? `<p class="examples-grid__note">${text}</p>` : '';
+  const listOf = (items, extra = '') => (items && items.length)
+    ? `<ul class="examples-grid__list${extra}">${items.map((i) => `<li>${i}</li>`).join('')}</ul>` : '';
+  const subgroup = (sg) => `
+    <div class="examples-grid__subgroup">
+      <p class="examples-grid__subheading">${sg.heading || ''}</p>
+      ${note(sg.note)}${listOf(sg.items)}${note(sg.noteAfter)}
+    </div>`;
+  return (block.groups || []).map((g) => {
+    const heading = `<h3 class="examples-grid__heading">${g.heading || ''}</h3>`;
+    if (Array.isArray(g.subgroups)) {
+      return `<section class="examples-grid__group">${heading}${note(g.note)}<div class="examples-grid__flow">${g.subgroups.map(subgroup).join('')}</div></section>`;
+    }
+    return `<section class="examples-grid__group">${heading}${note(g.note)}${listOf(g.items, ' examples-grid__flow')}</section>`;
+  }).join('');
 }
 
 function renderComments(block) {
@@ -977,7 +1079,9 @@ function wireModals() {
     });
   });
   document.querySelectorAll('[data-modal-target]').forEach((trigger) => {
-    trigger.addEventListener('click', () => {
+    trigger.addEventListener('click', (e) => {
+      // Triggers may be <a href="#"> (the matrix lead links); stop the jump.
+      e.preventDefault();
       const dlg = document.getElementById(`modal-${trigger.getAttribute('data-modal-target')}`);
       if (dlg && typeof dlg.showModal === 'function') dlg.showModal();
     });

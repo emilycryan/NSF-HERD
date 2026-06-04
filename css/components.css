@@ -1124,6 +1124,62 @@
   line-height: 1.4;
 }
 
+/* Optional smaller sub-note under the lead label (e.g. "(Examples listed below)"). */
+.currency-matrix__lead-sub {
+  display: block;
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-text-subtle);
+}
+
+/* "Set N: Sections X–Y" examples link in the lead column header. */
+.currency-matrix__lead-link {
+  color: var(--color-stroke-active);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* Full-width section heading inside a matrix (e.g. "B. Engineering"); the rows
+ * that follow are its sub-fields and indent their labels. */
+.currency-matrix__group {
+  grid-column: 1 / -1;
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-top: var(--space-1);
+}
+
+.currency-matrix__rowlabel--indent {
+  padding-left: var(--space-4);
+}
+
+/* Sub-field rows (e.g. the 9 engineering fields) render at regular weight and a
+ * smaller size; the "R&D Fields" header, the lettered section rows, and totals
+ * stay bold at the base size. */
+.currency-matrix__rowlabel--regular .currency-matrix__row-title {
+  font-weight: 400;
+  font-size: var(--text-sm);
+}
+
+/* Section band behind a wide field-matrix's header row and its section-group
+ * rows (e.g. "B. Engineering") — a light strip that marks where each section
+ * begins. Data rows are left white. It spans every column and stretches to the
+ * full row height, sitting behind the labels/inputs, which paint over it. */
+.currency-matrix__band {
+  align-self: stretch;
+  background: var(--color-section-header);
+  border-radius: var(--radius-sm);
+  margin: calc(-1 * var(--space-1)) calc(-1 * var(--space-2));
+}
+
+/* In the wide field matrices, the column header cells stretch to the full header
+ * row height and pack their contents to the bottom, so the (a)–(h) keys and the
+ * agency names all bottom-align just above the inputs. */
+.currency-matrix--banded .currency-matrix__colhead {
+  align-self: stretch;
+  justify-content: flex-end;
+}
+
 /* ---- Entry list: prefixed write-in rows + an amount each (e.g. Q10
  * "list up to 10 agencies"). 3-column grid: letter prefix, write-in name or
  * fixed label, currency amount. The lead label spans the first two columns. */
@@ -1548,6 +1604,51 @@
   background-color: #2563eb;
 }
 
+/* ---- Prefill actions (helper text + "...in Blank Fields" buttons) ----
+ * Sits between the question instructions and the data grid on the matrix
+ * questions (Q9, Q11, Q14). The two outline buttons document the live
+ * survey's bulk-fill behavior; they are non-functional in the prototype. */
+.prefill-actions {
+  margin: 0 0 var(--space-5);
+}
+
+.prefill-actions__notes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0 0 var(--space-3);
+}
+
+.prefill-actions__note {
+  margin: 0;
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.prefill-actions__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.prefill-actions__button {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  font-family: inherit;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.prefill-actions__button:hover {
+  background-color: var(--color-nav-bg);
+  border-color: var(--color-text-subtle);
+}
+
 /* =====================================================================
  * Reusable modal (native <dialog>) + its trigger link + generic data table.
  * A trigger is any element with data-modal-target="<id>"; the matching
@@ -1653,6 +1754,62 @@
 /* Tidy the first block's top margin inside a modal body. */
 .modal__body > :first-child {
   margin-top: 0;
+}
+
+/* ---- "Examples of Disciplines" reference grid (examples modals) ---- */
+.examples-grid__group {
+  margin: 0 0 var(--space-6);
+}
+
+.examples-grid__heading {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-3);
+  padding-bottom: var(--space-1);
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+/* Multi-column flow: a flat discipline list (section A) flows its items into
+ * columns; a sub-field group (B/C/D) flows its sub-blocks into columns. */
+.examples-grid__flow {
+  column-count: 3;
+  column-gap: var(--space-8);
+}
+
+.examples-grid__subgroup {
+  break-inside: avoid;
+  margin: 0 0 var(--space-4);
+}
+
+.examples-grid__subheading {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-1);
+}
+
+.examples-grid__list {
+  margin: 0;
+  padding-left: var(--space-4);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.examples-grid__list li {
+  break-inside: avoid;
+}
+
+/* Notes inside the examples grid: a sub-field's parenthetical (e.g. Chemistry's
+ * "except Biochemistry…"), "(no specific examples)", or a group's guidance
+ * sentence ("I. Other Sciences"). */
+.examples-grid__note {
+  margin: 0 0 var(--space-2);
+  padding-left: var(--space-4);
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: var(--color-text-muted);
 }
 
 /* ---- Generic data table (e.g. Q6 "Examples") ---- */

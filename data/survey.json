@@ -895,7 +895,1367 @@
       "id": "federal-agencies",
       "title": "Federal Agencies",
       "sections": [
-        { "id": "q9", "number": 9, "title": "R&D expenditures by field and federal agency source", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        {
+          "id": "q9",
+          "number": 9,
+          "title": "R&D expenditures by field and federal agency source",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 9.",
+              "text": "What were your FY 2025 R&D expenditures in the computer and information sciences and engineering funded by the federal agency sources below? (R&D expenditures from nonfederal sources will be reported in Question 11.)"
+            },
+            {
+              "type": "callout",
+              "html": "<ul class=\"content-bullets\"><li>Question 9 total (page 18, row K, column h) should match Question 1, row a.</li><li>A list of federal departments, agencies and subagencies is included as a link on the web survey question.</li><li>If an individual project involves more than one of the 40 fields of R&amp;D, please prorate expenditures when possible and report the amount for each field involved.</li><li>For subrecipient funding, report the agency that sponsored the original award.</li><li>Funding from FFRDCs should be reported under the primary sponsoring agency for that center.</li></ul>"
+            },
+            { "type": "prefill-actions" },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from federal sources<sup class=\"footnote-ref\">1</sup>",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set1-examples\">Set 1: Sections A-B</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "USDA" },
+                { "prefix": "(b)", "label": "DoD" },
+                { "prefix": "(c)", "label": "Energy" },
+                { "prefix": "(d)", "label": "HHS, includes NIH" },
+                { "prefix": "(e)", "label": "NASA" },
+                { "prefix": "(f)", "label": "NSF" },
+                { "prefix": "(g)", "label": "Other" },
+                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+              ],
+              "rows": [
+                {
+                  "label": "A. Computer and Information Sciences",
+                  "cells": [
+                    { "id": "q9-cis-usda" },
+                    { "id": "q9-cis-dod" },
+                    { "id": "q9-cis-energy" },
+                    { "id": "q9-cis-hhs" },
+                    { "id": "q9-cis-nasa" },
+                    { "id": "q9-cis-nsf" },
+                    { "id": "q9-cis-other" },
+                    { "id": "q9-cis-total", "total": true, "sumOf": ["q9-cis-usda", "q9-cis-dod", "q9-cis-energy", "q9-cis-hhs", "q9-cis-nasa", "q9-cis-nsf", "q9-cis-other"] }
+                  ]
+                },
+                { "kind": "group", "label": "B. Engineering" },
+                {
+                  "label": "1. Aerospace, Aeronautical, and Astronautical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-eng1-usda" },
+                    { "id": "q9-eng1-dod" },
+                    { "id": "q9-eng1-energy" },
+                    { "id": "q9-eng1-hhs" },
+                    { "id": "q9-eng1-nasa" },
+                    { "id": "q9-eng1-nsf" },
+                    { "id": "q9-eng1-other" },
+                    { "id": "q9-eng1-total", "total": true, "sumOf": ["q9-eng1-usda", "q9-eng1-dod", "q9-eng1-energy", "q9-eng1-hhs", "q9-eng1-nasa", "q9-eng1-nsf", "q9-eng1-other"] }
+                  ]
+                },
+                {
+                  "label": "2. Bioengineering and Biomedical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-eng2-usda" },
+                    { "id": "q9-eng2-dod" },
+                    { "id": "q9-eng2-energy" },
+                    { "id": "q9-eng2-hhs" },
+                    { "id": "q9-eng2-nasa" },
+                    { "id": "q9-eng2-nsf" },
+                    { "id": "q9-eng2-other" },
+                    { "id": "q9-eng2-total", "total": true, "sumOf": ["q9-eng2-usda", "q9-eng2-dod", "q9-eng2-energy", "q9-eng2-hhs", "q9-eng2-nasa", "q9-eng2-nsf", "q9-eng2-other"] }
+                  ]
+                },
+                {
+                  "label": "3. Chemical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-eng3-usda" },
+                    { "id": "q9-eng3-dod" },
+                    { "id": "q9-eng3-energy" },
+                    { "id": "q9-eng3-hhs" },
+                    { "id": "q9-eng3-nasa" },
+                    { "id": "q9-eng3-nsf" },
+                    { "id": "q9-eng3-other" },
+                    { "id": "q9-eng3-total", "total": true, "sumOf": ["q9-eng3-usda", "q9-eng3-dod", "q9-eng3-energy", "q9-eng3-hhs", "q9-eng3-nasa", "q9-eng3-nsf", "q9-eng3-other"] }
+                  ]
+                },
+                {
+                  "label": "4. Civil Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-eng4-usda" },
+                    { "id": "q9-eng4-dod" },
+                    { "id": "q9-eng4-energy" },
+                    { "id": "q9-eng4-hhs" },
+                    { "id": "q9-eng4-nasa" },
+                    { "id": "q9-eng4-nsf" },
+                    { "id": "q9-eng4-other" },
+                    { "id": "q9-eng4-total", "total": true, "sumOf": ["q9-eng4-usda", "q9-eng4-dod", "q9-eng4-energy", "q9-eng4-hhs", "q9-eng4-nasa", "q9-eng4-nsf", "q9-eng4-other"] }
+                  ]
+                },
+                {
+                  "label": "5. Electrical, Electronic, and Communications Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-eng5-usda" },
+                    { "id": "q9-eng5-dod" },
+                    { "id": "q9-eng5-energy" },
+                    { "id": "q9-eng5-hhs" },
+                    { "id": "q9-eng5-nasa" },
+                    { "id": "q9-eng5-nsf" },
+                    { "id": "q9-eng5-other" },
+                    { "id": "q9-eng5-total", "total": true, "sumOf": ["q9-eng5-usda", "q9-eng5-dod", "q9-eng5-energy", "q9-eng5-hhs", "q9-eng5-nasa", "q9-eng5-nsf", "q9-eng5-other"] }
+                  ]
+                },
+                {
+                  "label": "6. Industrial and Manufacturing Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-eng6-usda" },
+                    { "id": "q9-eng6-dod" },
+                    { "id": "q9-eng6-energy" },
+                    { "id": "q9-eng6-hhs" },
+                    { "id": "q9-eng6-nasa" },
+                    { "id": "q9-eng6-nsf" },
+                    { "id": "q9-eng6-other" },
+                    { "id": "q9-eng6-total", "total": true, "sumOf": ["q9-eng6-usda", "q9-eng6-dod", "q9-eng6-energy", "q9-eng6-hhs", "q9-eng6-nasa", "q9-eng6-nsf", "q9-eng6-other"] }
+                  ]
+                },
+                {
+                  "label": "7. Mechanical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-eng7-usda" },
+                    { "id": "q9-eng7-dod" },
+                    { "id": "q9-eng7-energy" },
+                    { "id": "q9-eng7-hhs" },
+                    { "id": "q9-eng7-nasa" },
+                    { "id": "q9-eng7-nsf" },
+                    { "id": "q9-eng7-other" },
+                    { "id": "q9-eng7-total", "total": true, "sumOf": ["q9-eng7-usda", "q9-eng7-dod", "q9-eng7-energy", "q9-eng7-hhs", "q9-eng7-nasa", "q9-eng7-nsf", "q9-eng7-other"] }
+                  ]
+                },
+                {
+                  "label": "8. Metallurgical and Materials Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-eng8-usda" },
+                    { "id": "q9-eng8-dod" },
+                    { "id": "q9-eng8-energy" },
+                    { "id": "q9-eng8-hhs" },
+                    { "id": "q9-eng8-nasa" },
+                    { "id": "q9-eng8-nsf" },
+                    { "id": "q9-eng8-other" },
+                    { "id": "q9-eng8-total", "total": true, "sumOf": ["q9-eng8-usda", "q9-eng8-dod", "q9-eng8-energy", "q9-eng8-hhs", "q9-eng8-nasa", "q9-eng8-nsf", "q9-eng8-other"] }
+                  ]
+                },
+                {
+                  "label": "9. Other Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-eng9-usda" },
+                    { "id": "q9-eng9-dod" },
+                    { "id": "q9-eng9-energy" },
+                    { "id": "q9-eng9-hhs" },
+                    { "id": "q9-eng9-nasa" },
+                    { "id": "q9-eng9-nsf" },
+                    { "id": "q9-eng9-other" },
+                    { "id": "q9-eng9-total", "total": true, "sumOf": ["q9-eng9-usda", "q9-eng9-dod", "q9-eng9-energy", "q9-eng9-hhs", "q9-eng9-nasa", "q9-eng9-nsf", "q9-eng9-other"] }
+                  ]
+                },
+                {
+                  "label": "10. Total<sup class=\"footnote-ref\">2</sup>",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q9-eng-tot-usda", "total": true, "sumOf": ["q9-eng1-usda", "q9-eng2-usda", "q9-eng3-usda", "q9-eng4-usda", "q9-eng5-usda", "q9-eng6-usda", "q9-eng7-usda", "q9-eng8-usda", "q9-eng9-usda"] },
+                    { "id": "q9-eng-tot-dod", "total": true, "sumOf": ["q9-eng1-dod", "q9-eng2-dod", "q9-eng3-dod", "q9-eng4-dod", "q9-eng5-dod", "q9-eng6-dod", "q9-eng7-dod", "q9-eng8-dod", "q9-eng9-dod"] },
+                    { "id": "q9-eng-tot-energy", "total": true, "sumOf": ["q9-eng1-energy", "q9-eng2-energy", "q9-eng3-energy", "q9-eng4-energy", "q9-eng5-energy", "q9-eng6-energy", "q9-eng7-energy", "q9-eng8-energy", "q9-eng9-energy"] },
+                    { "id": "q9-eng-tot-hhs", "total": true, "sumOf": ["q9-eng1-hhs", "q9-eng2-hhs", "q9-eng3-hhs", "q9-eng4-hhs", "q9-eng5-hhs", "q9-eng6-hhs", "q9-eng7-hhs", "q9-eng8-hhs", "q9-eng9-hhs"] },
+                    { "id": "q9-eng-tot-nasa", "total": true, "sumOf": ["q9-eng1-nasa", "q9-eng2-nasa", "q9-eng3-nasa", "q9-eng4-nasa", "q9-eng5-nasa", "q9-eng6-nasa", "q9-eng7-nasa", "q9-eng8-nasa", "q9-eng9-nasa"] },
+                    { "id": "q9-eng-tot-nsf", "total": true, "sumOf": ["q9-eng1-nsf", "q9-eng2-nsf", "q9-eng3-nsf", "q9-eng4-nsf", "q9-eng5-nsf", "q9-eng6-nsf", "q9-eng7-nsf", "q9-eng8-nsf", "q9-eng9-nsf"] },
+                    { "id": "q9-eng-tot-other", "total": true, "sumOf": ["q9-eng1-other", "q9-eng2-other", "q9-eng3-other", "q9-eng4-other", "q9-eng5-other", "q9-eng6-other", "q9-eng7-other", "q9-eng8-other", "q9-eng9-other"] },
+                    { "id": "q9-eng-tot-total", "total": true, "sumOf": ["q9-eng-tot-usda", "q9-eng-tot-dod", "q9-eng-tot-energy", "q9-eng-tot-hhs", "q9-eng-tot-nasa", "q9-eng-tot-nsf", "q9-eng-tot-other"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from federal sources<sup class=\"footnote-ref\">1</sup>",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set2-examples\">Set 2: Sections C-D</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "USDA" },
+                { "prefix": "(b)", "label": "DoD" },
+                { "prefix": "(c)", "label": "Energy" },
+                { "prefix": "(d)", "label": "HHS, includes NIH" },
+                { "prefix": "(e)", "label": "NASA" },
+                { "prefix": "(f)", "label": "NSF" },
+                { "prefix": "(g)", "label": "Other" },
+                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+              ],
+              "rows": [
+                { "kind": "group", "label": "C. Geosciences, Atmospheric Sciences, and Ocean Sciences" },
+                {
+                  "label": "1. Atmospheric Science and Meteorology",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-c1-usda" },
+                    { "id": "q9-c1-dod" },
+                    { "id": "q9-c1-energy" },
+                    { "id": "q9-c1-hhs" },
+                    { "id": "q9-c1-nasa" },
+                    { "id": "q9-c1-nsf" },
+                    { "id": "q9-c1-other" },
+                    { "id": "q9-c1-total", "total": true, "sumOf": ["q9-c1-usda", "q9-c1-dod", "q9-c1-energy", "q9-c1-hhs", "q9-c1-nasa", "q9-c1-nsf", "q9-c1-other"] }
+                  ]
+                },
+                {
+                  "label": "2. Geological and Earth Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-c2-usda" },
+                    { "id": "q9-c2-dod" },
+                    { "id": "q9-c2-energy" },
+                    { "id": "q9-c2-hhs" },
+                    { "id": "q9-c2-nasa" },
+                    { "id": "q9-c2-nsf" },
+                    { "id": "q9-c2-other" },
+                    { "id": "q9-c2-total", "total": true, "sumOf": ["q9-c2-usda", "q9-c2-dod", "q9-c2-energy", "q9-c2-hhs", "q9-c2-nasa", "q9-c2-nsf", "q9-c2-other"] }
+                  ]
+                },
+                {
+                  "label": "3. Ocean Sciences and Marine Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-c3-usda" },
+                    { "id": "q9-c3-dod" },
+                    { "id": "q9-c3-energy" },
+                    { "id": "q9-c3-hhs" },
+                    { "id": "q9-c3-nasa" },
+                    { "id": "q9-c3-nsf" },
+                    { "id": "q9-c3-other" },
+                    { "id": "q9-c3-total", "total": true, "sumOf": ["q9-c3-usda", "q9-c3-dod", "q9-c3-energy", "q9-c3-hhs", "q9-c3-nasa", "q9-c3-nsf", "q9-c3-other"] }
+                  ]
+                },
+                {
+                  "label": "4. Other Geosciences, Atmospheric Sciences, and Ocean Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-c4-usda" },
+                    { "id": "q9-c4-dod" },
+                    { "id": "q9-c4-energy" },
+                    { "id": "q9-c4-hhs" },
+                    { "id": "q9-c4-nasa" },
+                    { "id": "q9-c4-nsf" },
+                    { "id": "q9-c4-other" },
+                    { "id": "q9-c4-total", "total": true, "sumOf": ["q9-c4-usda", "q9-c4-dod", "q9-c4-energy", "q9-c4-hhs", "q9-c4-nasa", "q9-c4-nsf", "q9-c4-other"] }
+                  ]
+                },
+                {
+                  "label": "5. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q9-c-tot-usda", "total": true, "sumOf": ["q9-c1-usda", "q9-c2-usda", "q9-c3-usda", "q9-c4-usda"] },
+                    { "id": "q9-c-tot-dod", "total": true, "sumOf": ["q9-c1-dod", "q9-c2-dod", "q9-c3-dod", "q9-c4-dod"] },
+                    { "id": "q9-c-tot-energy", "total": true, "sumOf": ["q9-c1-energy", "q9-c2-energy", "q9-c3-energy", "q9-c4-energy"] },
+                    { "id": "q9-c-tot-hhs", "total": true, "sumOf": ["q9-c1-hhs", "q9-c2-hhs", "q9-c3-hhs", "q9-c4-hhs"] },
+                    { "id": "q9-c-tot-nasa", "total": true, "sumOf": ["q9-c1-nasa", "q9-c2-nasa", "q9-c3-nasa", "q9-c4-nasa"] },
+                    { "id": "q9-c-tot-nsf", "total": true, "sumOf": ["q9-c1-nsf", "q9-c2-nsf", "q9-c3-nsf", "q9-c4-nsf"] },
+                    { "id": "q9-c-tot-other", "total": true, "sumOf": ["q9-c1-other", "q9-c2-other", "q9-c3-other", "q9-c4-other"] },
+                    { "id": "q9-c-tot-total", "total": true, "sumOf": ["q9-c-tot-usda", "q9-c-tot-dod", "q9-c-tot-energy", "q9-c-tot-hhs", "q9-c-tot-nasa", "q9-c-tot-nsf", "q9-c-tot-other"] }
+                  ]
+                },
+                { "kind": "group", "label": "D. Life Sciences" },
+                {
+                  "label": "1. Agricultural Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-d1-usda" },
+                    { "id": "q9-d1-dod" },
+                    { "id": "q9-d1-energy" },
+                    { "id": "q9-d1-hhs" },
+                    { "id": "q9-d1-nasa" },
+                    { "id": "q9-d1-nsf" },
+                    { "id": "q9-d1-other" },
+                    { "id": "q9-d1-total", "total": true, "sumOf": ["q9-d1-usda", "q9-d1-dod", "q9-d1-energy", "q9-d1-hhs", "q9-d1-nasa", "q9-d1-nsf", "q9-d1-other"] }
+                  ]
+                },
+                {
+                  "label": "2. Biological and Biomedical Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-d2-usda" },
+                    { "id": "q9-d2-dod" },
+                    { "id": "q9-d2-energy" },
+                    { "id": "q9-d2-hhs" },
+                    { "id": "q9-d2-nasa" },
+                    { "id": "q9-d2-nsf" },
+                    { "id": "q9-d2-other" },
+                    { "id": "q9-d2-total", "total": true, "sumOf": ["q9-d2-usda", "q9-d2-dod", "q9-d2-energy", "q9-d2-hhs", "q9-d2-nasa", "q9-d2-nsf", "q9-d2-other"] }
+                  ]
+                },
+                {
+                  "label": "3. Health Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-d3-usda" },
+                    { "id": "q9-d3-dod" },
+                    { "id": "q9-d3-energy" },
+                    { "id": "q9-d3-hhs" },
+                    { "id": "q9-d3-nasa" },
+                    { "id": "q9-d3-nsf" },
+                    { "id": "q9-d3-other" },
+                    { "id": "q9-d3-total", "total": true, "sumOf": ["q9-d3-usda", "q9-d3-dod", "q9-d3-energy", "q9-d3-hhs", "q9-d3-nasa", "q9-d3-nsf", "q9-d3-other"] }
+                  ]
+                },
+                {
+                  "label": "4. Natural Resources and Conservation",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-d4-usda" },
+                    { "id": "q9-d4-dod" },
+                    { "id": "q9-d4-energy" },
+                    { "id": "q9-d4-hhs" },
+                    { "id": "q9-d4-nasa" },
+                    { "id": "q9-d4-nsf" },
+                    { "id": "q9-d4-other" },
+                    { "id": "q9-d4-total", "total": true, "sumOf": ["q9-d4-usda", "q9-d4-dod", "q9-d4-energy", "q9-d4-hhs", "q9-d4-nasa", "q9-d4-nsf", "q9-d4-other"] }
+                  ]
+                },
+                {
+                  "label": "5. Other Life Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-d5-usda" },
+                    { "id": "q9-d5-dod" },
+                    { "id": "q9-d5-energy" },
+                    { "id": "q9-d5-hhs" },
+                    { "id": "q9-d5-nasa" },
+                    { "id": "q9-d5-nsf" },
+                    { "id": "q9-d5-other" },
+                    { "id": "q9-d5-total", "total": true, "sumOf": ["q9-d5-usda", "q9-d5-dod", "q9-d5-energy", "q9-d5-hhs", "q9-d5-nasa", "q9-d5-nsf", "q9-d5-other"] }
+                  ]
+                },
+                {
+                  "label": "6. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q9-d-tot-usda", "total": true, "sumOf": ["q9-d1-usda", "q9-d2-usda", "q9-d3-usda", "q9-d4-usda", "q9-d5-usda"] },
+                    { "id": "q9-d-tot-dod", "total": true, "sumOf": ["q9-d1-dod", "q9-d2-dod", "q9-d3-dod", "q9-d4-dod", "q9-d5-dod"] },
+                    { "id": "q9-d-tot-energy", "total": true, "sumOf": ["q9-d1-energy", "q9-d2-energy", "q9-d3-energy", "q9-d4-energy", "q9-d5-energy"] },
+                    { "id": "q9-d-tot-hhs", "total": true, "sumOf": ["q9-d1-hhs", "q9-d2-hhs", "q9-d3-hhs", "q9-d4-hhs", "q9-d5-hhs"] },
+                    { "id": "q9-d-tot-nasa", "total": true, "sumOf": ["q9-d1-nasa", "q9-d2-nasa", "q9-d3-nasa", "q9-d4-nasa", "q9-d5-nasa"] },
+                    { "id": "q9-d-tot-nsf", "total": true, "sumOf": ["q9-d1-nsf", "q9-d2-nsf", "q9-d3-nsf", "q9-d4-nsf", "q9-d5-nsf"] },
+                    { "id": "q9-d-tot-other", "total": true, "sumOf": ["q9-d1-other", "q9-d2-other", "q9-d3-other", "q9-d4-other", "q9-d5-other"] },
+                    { "id": "q9-d-tot-total", "total": true, "sumOf": ["q9-d-tot-usda", "q9-d-tot-dod", "q9-d-tot-energy", "q9-d-tot-hhs", "q9-d-tot-nasa", "q9-d-tot-nsf", "q9-d-tot-other"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from federal sources<sup class=\"footnote-ref\">1</sup>",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set3-examples\">Set 3: Sections E-G</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "USDA" },
+                { "prefix": "(b)", "label": "DoD" },
+                { "prefix": "(c)", "label": "Energy" },
+                { "prefix": "(d)", "label": "HHS, includes NIH" },
+                { "prefix": "(e)", "label": "NASA" },
+                { "prefix": "(f)", "label": "NSF" },
+                { "prefix": "(g)", "label": "Other" },
+                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+              ],
+              "rows": [
+                {
+                  "label": "E. Mathematics and Statistics",
+                  "cells": [
+                    { "id": "q9-e-usda" },
+                    { "id": "q9-e-dod" },
+                    { "id": "q9-e-energy" },
+                    { "id": "q9-e-hhs" },
+                    { "id": "q9-e-nasa" },
+                    { "id": "q9-e-nsf" },
+                    { "id": "q9-e-other" },
+                    { "id": "q9-e-total", "total": true, "sumOf": ["q9-e-usda", "q9-e-dod", "q9-e-energy", "q9-e-hhs", "q9-e-nasa", "q9-e-nsf", "q9-e-other"] }
+                  ]
+                },
+                { "kind": "group", "label": "F. Physical Sciences" },
+                {
+                  "label": "1. Astronomy and Astrophysics",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-f1-usda" },
+                    { "id": "q9-f1-dod" },
+                    { "id": "q9-f1-energy" },
+                    { "id": "q9-f1-hhs" },
+                    { "id": "q9-f1-nasa" },
+                    { "id": "q9-f1-nsf" },
+                    { "id": "q9-f1-other" },
+                    { "id": "q9-f1-total", "total": true, "sumOf": ["q9-f1-usda", "q9-f1-dod", "q9-f1-energy", "q9-f1-hhs", "q9-f1-nasa", "q9-f1-nsf", "q9-f1-other"] }
+                  ]
+                },
+                {
+                  "label": "2. Chemistry",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-f2-usda" },
+                    { "id": "q9-f2-dod" },
+                    { "id": "q9-f2-energy" },
+                    { "id": "q9-f2-hhs" },
+                    { "id": "q9-f2-nasa" },
+                    { "id": "q9-f2-nsf" },
+                    { "id": "q9-f2-other" },
+                    { "id": "q9-f2-total", "total": true, "sumOf": ["q9-f2-usda", "q9-f2-dod", "q9-f2-energy", "q9-f2-hhs", "q9-f2-nasa", "q9-f2-nsf", "q9-f2-other"] }
+                  ]
+                },
+                {
+                  "label": "3. Materials Science",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-f3-usda" },
+                    { "id": "q9-f3-dod" },
+                    { "id": "q9-f3-energy" },
+                    { "id": "q9-f3-hhs" },
+                    { "id": "q9-f3-nasa" },
+                    { "id": "q9-f3-nsf" },
+                    { "id": "q9-f3-other" },
+                    { "id": "q9-f3-total", "total": true, "sumOf": ["q9-f3-usda", "q9-f3-dod", "q9-f3-energy", "q9-f3-hhs", "q9-f3-nasa", "q9-f3-nsf", "q9-f3-other"] }
+                  ]
+                },
+                {
+                  "label": "4. Physics",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-f4-usda" },
+                    { "id": "q9-f4-dod" },
+                    { "id": "q9-f4-energy" },
+                    { "id": "q9-f4-hhs" },
+                    { "id": "q9-f4-nasa" },
+                    { "id": "q9-f4-nsf" },
+                    { "id": "q9-f4-other" },
+                    { "id": "q9-f4-total", "total": true, "sumOf": ["q9-f4-usda", "q9-f4-dod", "q9-f4-energy", "q9-f4-hhs", "q9-f4-nasa", "q9-f4-nsf", "q9-f4-other"] }
+                  ]
+                },
+                {
+                  "label": "5. Other Physical Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-f5-usda" },
+                    { "id": "q9-f5-dod" },
+                    { "id": "q9-f5-energy" },
+                    { "id": "q9-f5-hhs" },
+                    { "id": "q9-f5-nasa" },
+                    { "id": "q9-f5-nsf" },
+                    { "id": "q9-f5-other" },
+                    { "id": "q9-f5-total", "total": true, "sumOf": ["q9-f5-usda", "q9-f5-dod", "q9-f5-energy", "q9-f5-hhs", "q9-f5-nasa", "q9-f5-nsf", "q9-f5-other"] }
+                  ]
+                },
+                {
+                  "label": "6. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q9-f-tot-usda", "total": true, "sumOf": ["q9-f1-usda", "q9-f2-usda", "q9-f3-usda", "q9-f4-usda", "q9-f5-usda"] },
+                    { "id": "q9-f-tot-dod", "total": true, "sumOf": ["q9-f1-dod", "q9-f2-dod", "q9-f3-dod", "q9-f4-dod", "q9-f5-dod"] },
+                    { "id": "q9-f-tot-energy", "total": true, "sumOf": ["q9-f1-energy", "q9-f2-energy", "q9-f3-energy", "q9-f4-energy", "q9-f5-energy"] },
+                    { "id": "q9-f-tot-hhs", "total": true, "sumOf": ["q9-f1-hhs", "q9-f2-hhs", "q9-f3-hhs", "q9-f4-hhs", "q9-f5-hhs"] },
+                    { "id": "q9-f-tot-nasa", "total": true, "sumOf": ["q9-f1-nasa", "q9-f2-nasa", "q9-f3-nasa", "q9-f4-nasa", "q9-f5-nasa"] },
+                    { "id": "q9-f-tot-nsf", "total": true, "sumOf": ["q9-f1-nsf", "q9-f2-nsf", "q9-f3-nsf", "q9-f4-nsf", "q9-f5-nsf"] },
+                    { "id": "q9-f-tot-other", "total": true, "sumOf": ["q9-f1-other", "q9-f2-other", "q9-f3-other", "q9-f4-other", "q9-f5-other"] },
+                    { "id": "q9-f-tot-total", "total": true, "sumOf": ["q9-f-tot-usda", "q9-f-tot-dod", "q9-f-tot-energy", "q9-f-tot-hhs", "q9-f-tot-nasa", "q9-f-tot-nsf", "q9-f-tot-other"] }
+                  ]
+                },
+                {
+                  "label": "G. Psychology",
+                  "cells": [
+                    { "id": "q9-g-usda" },
+                    { "id": "q9-g-dod" },
+                    { "id": "q9-g-energy" },
+                    { "id": "q9-g-hhs" },
+                    { "id": "q9-g-nasa" },
+                    { "id": "q9-g-nsf" },
+                    { "id": "q9-g-other" },
+                    { "id": "q9-g-total", "total": true, "sumOf": ["q9-g-usda", "q9-g-dod", "q9-g-energy", "q9-g-hhs", "q9-g-nasa", "q9-g-nsf", "q9-g-other"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from federal sources<sup class=\"footnote-ref\">1</sup>",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set4-examples\">Set 4: H-I</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "USDA" },
+                { "prefix": "(b)", "label": "DoD" },
+                { "prefix": "(c)", "label": "Energy" },
+                { "prefix": "(d)", "label": "HHS, includes NIH" },
+                { "prefix": "(e)", "label": "NASA" },
+                { "prefix": "(f)", "label": "NSF" },
+                { "prefix": "(g)", "label": "Other" },
+                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+              ],
+              "rows": [
+                { "kind": "group", "label": "H. Social Sciences" },
+                {
+                  "label": "1. Anthropology",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-h1-usda" },
+                    { "id": "q9-h1-dod" },
+                    { "id": "q9-h1-energy" },
+                    { "id": "q9-h1-hhs" },
+                    { "id": "q9-h1-nasa" },
+                    { "id": "q9-h1-nsf" },
+                    { "id": "q9-h1-other" },
+                    { "id": "q9-h1-total", "total": true, "sumOf": ["q9-h1-usda", "q9-h1-dod", "q9-h1-energy", "q9-h1-hhs", "q9-h1-nasa", "q9-h1-nsf", "q9-h1-other"] }
+                  ]
+                },
+                {
+                  "label": "2. Economics",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-h2-usda" },
+                    { "id": "q9-h2-dod" },
+                    { "id": "q9-h2-energy" },
+                    { "id": "q9-h2-hhs" },
+                    { "id": "q9-h2-nasa" },
+                    { "id": "q9-h2-nsf" },
+                    { "id": "q9-h2-other" },
+                    { "id": "q9-h2-total", "total": true, "sumOf": ["q9-h2-usda", "q9-h2-dod", "q9-h2-energy", "q9-h2-hhs", "q9-h2-nasa", "q9-h2-nsf", "q9-h2-other"] }
+                  ]
+                },
+                {
+                  "label": "3. Political Science and Government",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-h3-usda" },
+                    { "id": "q9-h3-dod" },
+                    { "id": "q9-h3-energy" },
+                    { "id": "q9-h3-hhs" },
+                    { "id": "q9-h3-nasa" },
+                    { "id": "q9-h3-nsf" },
+                    { "id": "q9-h3-other" },
+                    { "id": "q9-h3-total", "total": true, "sumOf": ["q9-h3-usda", "q9-h3-dod", "q9-h3-energy", "q9-h3-hhs", "q9-h3-nasa", "q9-h3-nsf", "q9-h3-other"] }
+                  ]
+                },
+                {
+                  "label": "4. Sociology, Demography, and Population Studies",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-h4-usda" },
+                    { "id": "q9-h4-dod" },
+                    { "id": "q9-h4-energy" },
+                    { "id": "q9-h4-hhs" },
+                    { "id": "q9-h4-nasa" },
+                    { "id": "q9-h4-nsf" },
+                    { "id": "q9-h4-other" },
+                    { "id": "q9-h4-total", "total": true, "sumOf": ["q9-h4-usda", "q9-h4-dod", "q9-h4-energy", "q9-h4-hhs", "q9-h4-nasa", "q9-h4-nsf", "q9-h4-other"] }
+                  ]
+                },
+                {
+                  "label": "5. Other Social Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-h5-usda" },
+                    { "id": "q9-h5-dod" },
+                    { "id": "q9-h5-energy" },
+                    { "id": "q9-h5-hhs" },
+                    { "id": "q9-h5-nasa" },
+                    { "id": "q9-h5-nsf" },
+                    { "id": "q9-h5-other" },
+                    { "id": "q9-h5-total", "total": true, "sumOf": ["q9-h5-usda", "q9-h5-dod", "q9-h5-energy", "q9-h5-hhs", "q9-h5-nasa", "q9-h5-nsf", "q9-h5-other"] }
+                  ]
+                },
+                {
+                  "label": "6. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q9-h-tot-usda", "total": true, "sumOf": ["q9-h1-usda", "q9-h2-usda", "q9-h3-usda", "q9-h4-usda", "q9-h5-usda"] },
+                    { "id": "q9-h-tot-dod", "total": true, "sumOf": ["q9-h1-dod", "q9-h2-dod", "q9-h3-dod", "q9-h4-dod", "q9-h5-dod"] },
+                    { "id": "q9-h-tot-energy", "total": true, "sumOf": ["q9-h1-energy", "q9-h2-energy", "q9-h3-energy", "q9-h4-energy", "q9-h5-energy"] },
+                    { "id": "q9-h-tot-hhs", "total": true, "sumOf": ["q9-h1-hhs", "q9-h2-hhs", "q9-h3-hhs", "q9-h4-hhs", "q9-h5-hhs"] },
+                    { "id": "q9-h-tot-nasa", "total": true, "sumOf": ["q9-h1-nasa", "q9-h2-nasa", "q9-h3-nasa", "q9-h4-nasa", "q9-h5-nasa"] },
+                    { "id": "q9-h-tot-nsf", "total": true, "sumOf": ["q9-h1-nsf", "q9-h2-nsf", "q9-h3-nsf", "q9-h4-nsf", "q9-h5-nsf"] },
+                    { "id": "q9-h-tot-other", "total": true, "sumOf": ["q9-h1-other", "q9-h2-other", "q9-h3-other", "q9-h4-other", "q9-h5-other"] },
+                    { "id": "q9-h-tot-total", "total": true, "sumOf": ["q9-h-tot-usda", "q9-h-tot-dod", "q9-h-tot-energy", "q9-h-tot-hhs", "q9-h-tot-nasa", "q9-h-tot-nsf", "q9-h-tot-other"] }
+                  ]
+                },
+                {
+                  "label": "I. Other Sciences",
+                  "cells": [
+                    { "id": "q9-i-usda" },
+                    { "id": "q9-i-dod" },
+                    { "id": "q9-i-energy" },
+                    { "id": "q9-i-hhs" },
+                    { "id": "q9-i-nasa" },
+                    { "id": "q9-i-nsf" },
+                    { "id": "q9-i-other" },
+                    { "id": "q9-i-total", "total": true, "sumOf": ["q9-i-usda", "q9-i-dod", "q9-i-energy", "q9-i-hhs", "q9-i-nasa", "q9-i-nsf", "q9-i-other"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from federal sources<sup class=\"footnote-ref\">1</sup>",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set5-examples\">Set 5: J-K</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "USDA" },
+                { "prefix": "(b)", "label": "DoD" },
+                { "prefix": "(c)", "label": "Energy" },
+                { "prefix": "(d)", "label": "HHS, includes NIH" },
+                { "prefix": "(e)", "label": "NASA" },
+                { "prefix": "(f)", "label": "NSF" },
+                { "prefix": "(g)", "label": "Other" },
+                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+              ],
+              "rows": [
+                { "kind": "group", "label": "J. Non-S&amp;E Fields" },
+                {
+                  "label": "1. Business Management and Business Administration",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-j1-usda" },
+                    { "id": "q9-j1-dod" },
+                    { "id": "q9-j1-energy" },
+                    { "id": "q9-j1-hhs" },
+                    { "id": "q9-j1-nasa" },
+                    { "id": "q9-j1-nsf" },
+                    { "id": "q9-j1-other" },
+                    { "id": "q9-j1-total", "total": true, "sumOf": ["q9-j1-usda", "q9-j1-dod", "q9-j1-energy", "q9-j1-hhs", "q9-j1-nasa", "q9-j1-nsf", "q9-j1-other"] }
+                  ]
+                },
+                {
+                  "label": "2. Communication and Communications Technologies",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-j2-usda" },
+                    { "id": "q9-j2-dod" },
+                    { "id": "q9-j2-energy" },
+                    { "id": "q9-j2-hhs" },
+                    { "id": "q9-j2-nasa" },
+                    { "id": "q9-j2-nsf" },
+                    { "id": "q9-j2-other" },
+                    { "id": "q9-j2-total", "total": true, "sumOf": ["q9-j2-usda", "q9-j2-dod", "q9-j2-energy", "q9-j2-hhs", "q9-j2-nasa", "q9-j2-nsf", "q9-j2-other"] }
+                  ]
+                },
+                {
+                  "label": "3. Education",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-j3-usda" },
+                    { "id": "q9-j3-dod" },
+                    { "id": "q9-j3-energy" },
+                    { "id": "q9-j3-hhs" },
+                    { "id": "q9-j3-nasa" },
+                    { "id": "q9-j3-nsf" },
+                    { "id": "q9-j3-other" },
+                    { "id": "q9-j3-total", "total": true, "sumOf": ["q9-j3-usda", "q9-j3-dod", "q9-j3-energy", "q9-j3-hhs", "q9-j3-nasa", "q9-j3-nsf", "q9-j3-other"] }
+                  ]
+                },
+                {
+                  "label": "4. Humanities",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-j4-usda" },
+                    { "id": "q9-j4-dod" },
+                    { "id": "q9-j4-energy" },
+                    { "id": "q9-j4-hhs" },
+                    { "id": "q9-j4-nasa" },
+                    { "id": "q9-j4-nsf" },
+                    { "id": "q9-j4-other" },
+                    { "id": "q9-j4-total", "total": true, "sumOf": ["q9-j4-usda", "q9-j4-dod", "q9-j4-energy", "q9-j4-hhs", "q9-j4-nasa", "q9-j4-nsf", "q9-j4-other"] }
+                  ]
+                },
+                {
+                  "label": "5. Law",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-j5-usda" },
+                    { "id": "q9-j5-dod" },
+                    { "id": "q9-j5-energy" },
+                    { "id": "q9-j5-hhs" },
+                    { "id": "q9-j5-nasa" },
+                    { "id": "q9-j5-nsf" },
+                    { "id": "q9-j5-other" },
+                    { "id": "q9-j5-total", "total": true, "sumOf": ["q9-j5-usda", "q9-j5-dod", "q9-j5-energy", "q9-j5-hhs", "q9-j5-nasa", "q9-j5-nsf", "q9-j5-other"] }
+                  ]
+                },
+                {
+                  "label": "6. Social Work",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-j6-usda" },
+                    { "id": "q9-j6-dod" },
+                    { "id": "q9-j6-energy" },
+                    { "id": "q9-j6-hhs" },
+                    { "id": "q9-j6-nasa" },
+                    { "id": "q9-j6-nsf" },
+                    { "id": "q9-j6-other" },
+                    { "id": "q9-j6-total", "total": true, "sumOf": ["q9-j6-usda", "q9-j6-dod", "q9-j6-energy", "q9-j6-hhs", "q9-j6-nasa", "q9-j6-nsf", "q9-j6-other"] }
+                  ]
+                },
+                {
+                  "label": "7. Visual and Performing Arts",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-j7-usda" },
+                    { "id": "q9-j7-dod" },
+                    { "id": "q9-j7-energy" },
+                    { "id": "q9-j7-hhs" },
+                    { "id": "q9-j7-nasa" },
+                    { "id": "q9-j7-nsf" },
+                    { "id": "q9-j7-other" },
+                    { "id": "q9-j7-total", "total": true, "sumOf": ["q9-j7-usda", "q9-j7-dod", "q9-j7-energy", "q9-j7-hhs", "q9-j7-nasa", "q9-j7-nsf", "q9-j7-other"] }
+                  ]
+                },
+                {
+                  "label": "8. Other Non-S&amp;E Fields",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q9-j8-usda" },
+                    { "id": "q9-j8-dod" },
+                    { "id": "q9-j8-energy" },
+                    { "id": "q9-j8-hhs" },
+                    { "id": "q9-j8-nasa" },
+                    { "id": "q9-j8-nsf" },
+                    { "id": "q9-j8-other" },
+                    { "id": "q9-j8-total", "total": true, "sumOf": ["q9-j8-usda", "q9-j8-dod", "q9-j8-energy", "q9-j8-hhs", "q9-j8-nasa", "q9-j8-nsf", "q9-j8-other"] }
+                  ]
+                },
+                {
+                  "label": "9. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q9-j-tot-usda", "total": true, "sumOf": ["q9-j1-usda", "q9-j2-usda", "q9-j3-usda", "q9-j4-usda", "q9-j5-usda", "q9-j6-usda", "q9-j7-usda", "q9-j8-usda"] },
+                    { "id": "q9-j-tot-dod", "total": true, "sumOf": ["q9-j1-dod", "q9-j2-dod", "q9-j3-dod", "q9-j4-dod", "q9-j5-dod", "q9-j6-dod", "q9-j7-dod", "q9-j8-dod"] },
+                    { "id": "q9-j-tot-energy", "total": true, "sumOf": ["q9-j1-energy", "q9-j2-energy", "q9-j3-energy", "q9-j4-energy", "q9-j5-energy", "q9-j6-energy", "q9-j7-energy", "q9-j8-energy"] },
+                    { "id": "q9-j-tot-hhs", "total": true, "sumOf": ["q9-j1-hhs", "q9-j2-hhs", "q9-j3-hhs", "q9-j4-hhs", "q9-j5-hhs", "q9-j6-hhs", "q9-j7-hhs", "q9-j8-hhs"] },
+                    { "id": "q9-j-tot-nasa", "total": true, "sumOf": ["q9-j1-nasa", "q9-j2-nasa", "q9-j3-nasa", "q9-j4-nasa", "q9-j5-nasa", "q9-j6-nasa", "q9-j7-nasa", "q9-j8-nasa"] },
+                    { "id": "q9-j-tot-nsf", "total": true, "sumOf": ["q9-j1-nsf", "q9-j2-nsf", "q9-j3-nsf", "q9-j4-nsf", "q9-j5-nsf", "q9-j6-nsf", "q9-j7-nsf", "q9-j8-nsf"] },
+                    { "id": "q9-j-tot-other", "total": true, "sumOf": ["q9-j1-other", "q9-j2-other", "q9-j3-other", "q9-j4-other", "q9-j5-other", "q9-j6-other", "q9-j7-other", "q9-j8-other"] },
+                    { "id": "q9-j-tot-total", "total": true, "sumOf": ["q9-j-tot-usda", "q9-j-tot-dod", "q9-j-tot-energy", "q9-j-tot-hhs", "q9-j-tot-nasa", "q9-j-tot-nsf", "q9-j-tot-other"] }
+                  ]
+                },
+                {
+                  "label": "K. Total for All Fields of R&amp;D",
+                  "cells": [
+                    { "id": "q9-k-usda", "total": true, "sumOf": ["q9-cis-usda", "q9-eng-tot-usda", "q9-c-tot-usda", "q9-d-tot-usda", "q9-e-usda", "q9-f-tot-usda", "q9-g-usda", "q9-h-tot-usda", "q9-i-usda", "q9-j-tot-usda"] },
+                    { "id": "q9-k-dod", "total": true, "sumOf": ["q9-cis-dod", "q9-eng-tot-dod", "q9-c-tot-dod", "q9-d-tot-dod", "q9-e-dod", "q9-f-tot-dod", "q9-g-dod", "q9-h-tot-dod", "q9-i-dod", "q9-j-tot-dod"] },
+                    { "id": "q9-k-energy", "total": true, "sumOf": ["q9-cis-energy", "q9-eng-tot-energy", "q9-c-tot-energy", "q9-d-tot-energy", "q9-e-energy", "q9-f-tot-energy", "q9-g-energy", "q9-h-tot-energy", "q9-i-energy", "q9-j-tot-energy"] },
+                    { "id": "q9-k-hhs", "total": true, "sumOf": ["q9-cis-hhs", "q9-eng-tot-hhs", "q9-c-tot-hhs", "q9-d-tot-hhs", "q9-e-hhs", "q9-f-tot-hhs", "q9-g-hhs", "q9-h-tot-hhs", "q9-i-hhs", "q9-j-tot-hhs"] },
+                    { "id": "q9-k-nasa", "total": true, "sumOf": ["q9-cis-nasa", "q9-eng-tot-nasa", "q9-c-tot-nasa", "q9-d-tot-nasa", "q9-e-nasa", "q9-f-tot-nasa", "q9-g-nasa", "q9-h-tot-nasa", "q9-i-nasa", "q9-j-tot-nasa"] },
+                    { "id": "q9-k-nsf", "total": true, "sumOf": ["q9-cis-nsf", "q9-eng-tot-nsf", "q9-c-tot-nsf", "q9-d-tot-nsf", "q9-e-nsf", "q9-f-tot-nsf", "q9-g-nsf", "q9-h-tot-nsf", "q9-i-nsf", "q9-j-tot-nsf"] },
+                    { "id": "q9-k-other", "total": true, "sumOf": ["q9-cis-other", "q9-eng-tot-other", "q9-c-tot-other", "q9-d-tot-other", "q9-e-other", "q9-f-tot-other", "q9-g-other", "q9-h-tot-other", "q9-i-other", "q9-j-tot-other"] },
+                    { "id": "q9-k-total", "total": true, "sumOf": ["q9-k-usda", "q9-k-dod", "q9-k-energy", "q9-k-hhs", "q9-k-nasa", "q9-k-nsf", "q9-k-other"] }
+                  ]
+                }
+              ]
+            },
+            { "type": "footnote", "marker": "1", "text": "<strong>Key:</strong> USDA, Department of Agriculture; DoD, Department of Defense; Energy, Department of Energy; HHS, Department of Health and Human Services; NASA, National Aeronautics and Space Administration; NIH, National Institutes of Health; NSF, National Science Foundation. “Other” includes all other federal agencies." },
+            { "type": "footnote", "marker": "2", "text": "Row and column totals are automatically generated on the Web survey." },
+            {
+              "type": "modal",
+              "id": "set1-examples",
+              "title": "Examples of Disciplines: Computer and Information Sciences and Engineering Fields of R&amp;D",
+              "content": [
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "A. Computer and Information Sciences",
+                      "items": [
+                        "Artificial intelligence",
+                        "Computer and information technology administration and management",
+                        "Computer science",
+                        "Computer software and media applications",
+                        "Computer systems analysis",
+                        "Computer systems networking and telecommunications",
+                        "Data processing",
+                        "Information sciences, studies",
+                        "Information technology"
+                      ]
+                    },
+                    {
+                      "heading": "B. Engineering",
+                      "subgroups": [
+                        {
+                          "heading": "1. Aerospace, Aeronautical, and Astronautical Engineering",
+                          "items": [
+                            "Aerodynamics",
+                            "Aerospace engineering",
+                            "Space technology"
+                          ]
+                        },
+                        {
+                          "heading": "2. Bioengineering and Biomedical Engineering",
+                          "items": [
+                            "Biological and biosystems engineering",
+                            "Biomaterials engineering",
+                            "Biomedical technology",
+                            "Medical engineering"
+                          ]
+                        },
+                        {
+                          "heading": "3. Chemical Engineering",
+                          "items": [
+                            "Biochemical engineering",
+                            "Chemical and biomolecular engineering",
+                            "Engineering chemistry",
+                            "Paper science",
+                            "Petroleum refining process",
+                            "Polymer, plastics engineering"
+                          ]
+                        },
+                        {
+                          "heading": "4. Civil Engineering",
+                          "items": [
+                            "Architectural engineering",
+                            "Construction engineering",
+                            "Engineering management, administration",
+                            "Environmental, environmental health engineering",
+                            "Geotechnical and geoenvironmental engineering",
+                            "Sanitary engineering",
+                            "Structural engineering",
+                            "Surveying engineering",
+                            "Transportation and highway engineering",
+                            "Water resources engineering"
+                          ]
+                        },
+                        {
+                          "heading": "5. Electrical, Electronic, and Communications Engineering",
+                          "items": [
+                            "Communications engineering",
+                            "Computer engineering",
+                            "Computer hardware engineering",
+                            "Computer software engineering",
+                            "Electrical and electronics engineering",
+                            "Laser and optical engineering",
+                            "Power",
+                            "Telecommunications engineering"
+                          ]
+                        },
+                        {
+                          "heading": "6. Industrial and Manufacturing Engineering",
+                          "items": [
+                            "Industrial engineering",
+                            "Manufacturing engineering",
+                            "Operations research",
+                            "Systems engineering"
+                          ]
+                        },
+                        {
+                          "heading": "7. Mechanical Engineering",
+                          "items": [
+                            "Electromechanical engineering",
+                            "Mechatronics, robotics, and automation engineering"
+                          ]
+                        },
+                        {
+                          "heading": "8. Metallurgical and Materials Engineering",
+                          "items": [
+                            "Ceramic sciences and engineering",
+                            "Geophysical, geological engineering",
+                            "Materials engineering",
+                            "Metallurgical engineering",
+                            "Mining and mineral engineering",
+                            "Textile sciences and engineering",
+                            "Welding"
+                          ]
+                        },
+                        {
+                          "heading": "9. Other Engineering",
+                          "items": [
+                            "Agricultural engineering",
+                            "Engineering design",
+                            "Engineering mechanics, physics, and science",
+                            "Engineering physics",
+                            "Engineering science",
+                            "Forest engineering",
+                            "Nanotechnology",
+                            "Naval architecture and marine engineering",
+                            "Nuclear engineering",
+                            "Ocean engineering",
+                            "Petroleum engineering",
+                            "Other engineering fields that cannot be classified using the fields listed above"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "modal",
+              "id": "set2-examples",
+              "title": "Examples of Disciplines: Geosciences, Atmospheric Sciences, Ocean Sciences, and Life Sciences Fields of R&amp;D",
+              "content": [
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "C. Geosciences, Atmospheric Sciences, and Ocean Sciences",
+                      "subgroups": [
+                        {
+                          "heading": "1. Atmospheric Science and Meteorology",
+                          "items": [
+                            "Aeronomy",
+                            "Atmospheric chemistry and climatology",
+                            "Atmospheric physics and dynamics",
+                            "Extraterrestrial atmospheres",
+                            "Meteorology",
+                            "Solar",
+                            "Weather modification"
+                          ]
+                        },
+                        {
+                          "heading": "2. Geological and Earth Sciences",
+                          "items": [
+                            "Earth and planetary sciences",
+                            "Geochemistry",
+                            "Geodesy and gravity",
+                            "Geology",
+                            "Geomagnetism",
+                            "Geophysics and seismology",
+                            "Hydrology and water resources",
+                            "Minerology and petrology",
+                            "Paleomagnetism",
+                            "Paleontology",
+                            "Physical geography",
+                            "Stratigraphy and sedimentation",
+                            "Surveying"
+                          ]
+                        },
+                        {
+                          "heading": "3. Ocean Sciences and Marine Sciences",
+                          "items": [
+                            "Biological oceanography",
+                            "Geological oceanography",
+                            "Marine biology",
+                            "Marine oceanography",
+                            "Marine sciences",
+                            "Oceanography, chemical and physical"
+                          ]
+                        },
+                        {
+                          "heading": "4. Other Geosciences, Atmospheric Sciences, and Ocean Sciences",
+                          "items": [
+                            "Other fields that cannot be classified using the fields listed above"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "heading": "D. Life Sciences",
+                      "subgroups": [
+                        {
+                          "heading": "1. Agricultural Sciences",
+                          "items": [
+                            "Agricultural business and management",
+                            "Agricultural chemistry",
+                            "Agricultural engineering—report in Engineering",
+                            "Agricultural production operations",
+                            "Animal sciences",
+                            "Applied horticulture and horticultural business services",
+                            "Aquaculture",
+                            "Food science and technology",
+                            "International agriculture",
+                            "Plant sciences",
+                            "Soil sciences",
+                            "Veterinary biomedical and clinical sciences",
+                            "Veterinary medicine",
+                            "Wood science"
+                          ]
+                        },
+                        {
+                          "heading": "2. Biological and Biomedical Sciences",
+                          "items": [
+                            "Allergies and immunology",
+                            "Biochemistry, biophysics, and molecular biology",
+                            "Biogeography",
+                            "Biology and biomedical sciences, general",
+                            "Biomathematics, bioinformatics, and computational biology",
+                            "Biotechnology",
+                            "Botany and plant biology",
+                            "Cell, cellular biology, and anatomical sciences",
+                            "Epidemiology, ecology and population biology",
+                            "Food, nutrition, and wellness studies",
+                            "Genetics",
+                            "Microbiological sciences and immunology",
+                            "Molecular medicine",
+                            "Neurobiology and neuroscience",
+                            "Pharmacology and toxicology",
+                            "Physiology, pathology and related sciences",
+                            "Zoology, animal biology"
+                          ]
+                        },
+                        {
+                          "heading": "3. Health Sciences",
+                          "items": [
+                            "Advanced, graduate dentistry and oral sciences",
+                            "Allied health and medical assisting services",
+                            "Bioethics, medical ethics",
+                            "Clinical medicine research",
+                            "Clinical/medical laboratory science/research and allied professions",
+                            "Communication disorders sciences and services",
+                            "Dentistry",
+                            "Dietetics and clinical nutrition services",
+                            "Health and medical administrative services",
+                            "Health, medical preparatory programs",
+                            "Gerontology, health sciences",
+                            "Kinesiology and exercise science",
+                            "Medical clinical science, graduate medical studies",
+                            "Medical illustration and informatics",
+                            "Medicine",
+                            "Mental health",
+                            "Nursing",
+                            "Optometry",
+                            "Osteopathic medicine, osteopathy",
+                            "Pharmacy, pharmaceutical sciences, and administration",
+                            "Podiatric medicine, podiatry",
+                            "Public health",
+                            "Radiological science",
+                            "Registered nursing, nursing administration, nursing research and clinical nursing",
+                            "Rehabilitation and therapeutic professions",
+                            "Zoology"
+                          ]
+                        },
+                        {
+                          "heading": "4. Natural Resources and Conservation",
+                          "items": [
+                            "Fishing and fisheries sciences and management",
+                            "Forestry",
+                            "Natural resources conservation and research",
+                            "Natural resources management and policy",
+                            "Renewable natural resources",
+                            "Wildlife and wildlands science and management"
+                          ]
+                        },
+                        {
+                          "heading": "5. Other Life Sciences",
+                          "items": [
+                            "Other life sciences that cannot be classified using the fields listed above"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "modal",
+              "id": "set3-examples",
+              "title": "Examples of Disciplines: Mathematics and Statistics, Physical Sciences, and Psychology Fields of R&amp;D",
+              "content": [
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "E. Mathematics and Statistics",
+                      "items": [
+                        "Applied mathematics",
+                        "Mathematics",
+                        "Statistics"
+                      ]
+                    },
+                    {
+                      "heading": "F. Physical Sciences",
+                      "subgroups": [
+                        {
+                          "heading": "1. Astronomy and Astrophysics",
+                          "items": [
+                            "Astronomy",
+                            "Astrophysics",
+                            "Planetary astronomy and science"
+                          ]
+                        },
+                        {
+                          "heading": "2. Chemistry",
+                          "note": "(except Biochemistry—report in Biological and Biomedical Sciences)",
+                          "items": [
+                            "Analytical chemistry",
+                            "Chemical physics",
+                            "Environmental chemistry",
+                            "Forensic chemistry",
+                            "Inorganic chemistry",
+                            "Organic chemistry",
+                            "Organo-metallic chemistry",
+                            "Physical chemistry",
+                            "Polymer chemistry",
+                            "Theoretical chemistry"
+                          ]
+                        },
+                        {
+                          "heading": "3. Materials Science",
+                          "items": [
+                            "Materials chemistry",
+                            "Materials science"
+                          ]
+                        },
+                        {
+                          "heading": "4. Physics",
+                          "items": [
+                            "Acoustics",
+                            "Atomic, molecular physics",
+                            "Condensed matter and materials physics",
+                            "Elementary particle physics",
+                            "Mathematical physics",
+                            "Nuclear physics",
+                            "Optics, optical sciences",
+                            "Plasma, high-temperature physics",
+                            "Theoretical physics"
+                          ]
+                        },
+                        {
+                          "heading": "5. Other Physical Sciences",
+                          "items": [
+                            "Other physical sciences that cannot be classified using the fields listed above"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "heading": "G. Psychology",
+                      "items": [
+                        "Clinical psychology",
+                        "Counseling and applied psychology",
+                        "Human development",
+                        "Research and experimental psychology"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "modal",
+              "id": "set4-examples",
+              "title": "Examples of Disciplines: Social Sciences and Other Sciences Fields of R&amp;D",
+              "content": [
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "H. Social Sciences",
+                      "subgroups": [
+                        {
+                          "heading": "1. Anthropology",
+                          "items": [
+                            "Cultural anthropology",
+                            "Medical anthropology",
+                            "Physical and biological anthropology"
+                          ]
+                        },
+                        {
+                          "heading": "2. Economics",
+                          "items": [
+                            "Agricultural economics",
+                            "Applied economics",
+                            "Business development",
+                            "Development economics and international development",
+                            "Econometrics and quantitative economics",
+                            "Industrial economics",
+                            "International economics",
+                            "Labor economics",
+                            "Managerial economics",
+                            "Natural resource economics",
+                            "Public finance and fiscal policy"
+                          ]
+                        },
+                        {
+                          "heading": "3. Political Science and Government",
+                          "items": [
+                            "Comparative government",
+                            "Government",
+                            "Legal systems",
+                            "Political economy",
+                            "Political science",
+                            "Political theory"
+                          ]
+                        },
+                        {
+                          "heading": "4. Sociology, Demography, and Population Studies",
+                          "items": [
+                            "Comparative and historical sociology",
+                            "Complex organizations",
+                            "Cultural and social structure",
+                            "Demography and population studies",
+                            "Group interactions",
+                            "Rural sociology",
+                            "Social problems and welfare theory",
+                            "Sociology"
+                          ]
+                        },
+                        {
+                          "heading": "5. Other Social Sciences",
+                          "items": [
+                            "Archeology",
+                            "Area, ethnic, cultural, gender, and group studies",
+                            "Cartography",
+                            "Criminal science and corrections",
+                            "Criminology",
+                            "Geography",
+                            "Gerontology, social sciences",
+                            "History and philosophy of science and technology",
+                            "International relations and national security studies",
+                            "Linguistics",
+                            "Public policy analysis",
+                            "Regional studies",
+                            "Urban studies, affairs"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "heading": "I. Other Sciences",
+                      "note": "Use this category for R&amp;D that involves at least one S&amp;E field (rows A–H) if it is impossible to report multidisciplinary or interdisciplinary R&amp;D expenditures in specific fields."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "modal",
+              "id": "set5-examples",
+              "title": "Examples of Disciplines: Non-S&amp;E Fields of R&amp;D",
+              "content": [
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "J. Non-S&amp;E Fields",
+                      "subgroups": [
+                        {
+                          "heading": "1. Business Management and Business Administration",
+                          "items": [
+                            "Business administration",
+                            "Business management",
+                            "Business, managerial economics",
+                            "Management information systems and services",
+                            "Marketing management and research"
+                          ]
+                        },
+                        {
+                          "heading": "2. Communication and Communications Technologies",
+                          "items": [
+                            "Communication and media studies",
+                            "Communications technologies",
+                            "Journalism",
+                            "Radio, television, and digital communication"
+                          ]
+                        },
+                        {
+                          "heading": "3. Education",
+                          "items": [
+                            "Education administration and supervision",
+                            "Education research",
+                            "Teacher education, specific levels and methods",
+                            "Teaching fields"
+                          ]
+                        },
+                        {
+                          "heading": "4. Humanities",
+                          "items": [
+                            "English language and literature, letters",
+                            "Foreign languages and literatures",
+                            "History",
+                            "Humanities, general",
+                            "Liberal arts and sciences",
+                            "Philosophy and religious studies",
+                            "Theology and religious vocations"
+                          ]
+                        },
+                        {
+                          "heading": "5. Law",
+                          "items": [
+                            "Law",
+                            "Legal studies"
+                          ]
+                        },
+                        {
+                          "heading": "6. Social Work",
+                          "note": "(no specific examples)"
+                        },
+                        {
+                          "heading": "7. Visual and Performing Arts",
+                          "items": [
+                            "Drama, theatre arts and stagecraft",
+                            "Film, video, and photographic arts",
+                            "Fine and studio arts",
+                            "Music"
+                          ]
+                        },
+                        {
+                          "heading": "8. Other Non-S&amp;E Fields",
+                          "items": [
+                            "Architecture",
+                            "City, urban, community and regional planning",
+                            "Family, consumer sciences and human sciences",
+                            "Landscape architecture",
+                            "Library science",
+                            "Military technology and applied science",
+                            "Parks, sports, recreation, leisure and fitness",
+                            "Public administration and public affairs",
+                            "Other non-S&amp;E fields that cannot be classified using the fields listed above"
+                          ],
+                          "noteAfter": "Also, use this category for R&amp;D that involves multiple non-S&amp;E fields if it is impossible to report multidisciplinary or interdisciplinary R&amp;D expenditures in specific fields."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
         {
           "id": "q10",
           "number": 10,
@@ -966,7 +2326,708 @@
             { "type": "action-bar" }
           ]
         },
-        { "id": "q11", "number": 11, "title": "R&D expenditures by field and nonfederal agency source", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        {
+          "id": "q11",
+          "number": 11,
+          "title": "R&D expenditures by field and nonfederal agency source",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 11A–B.",
+              "text": "What were your FY 2025 R&D expenditures in the computer and information sciences and engineering fields funded by the nonfederal sources below?"
+            },
+            {
+              "type": "callout",
+              "html": "<ul class=\"content-bullets\"><li>The totals in row K, page 24 should match the corresponding sources in Question 1, rows b–f.</li><li>If an individual project involves more than one of the 40 fields of R&amp;D, please prorate expenditures when possible and report the amount for each field involved.</li></ul>"
+            },
+            { "type": "prefill-actions" },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from nonfederal sources",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set1-examples\">Set 1: Sections A-B</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "State and local government" },
+                { "prefix": "(b)", "label": "Business" },
+                { "prefix": "(c)", "label": "Nonprofit organizations" },
+                { "prefix": "(d)", "label": "Institutional funds" },
+                { "prefix": "(e)", "label": "Other nonfederal sources" },
+                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                {
+                  "label": "A. Computer and Information Sciences",
+                  "cells": [
+                    { "id": "q11-cis-statelocal" },
+                    { "id": "q11-cis-business" },
+                    { "id": "q11-cis-nonprofit" },
+                    { "id": "q11-cis-institutional" },
+                    { "id": "q11-cis-othernonfed" },
+                    { "id": "q11-cis-total", "total": true, "sumOf": ["q11-cis-statelocal", "q11-cis-business", "q11-cis-nonprofit", "q11-cis-institutional", "q11-cis-othernonfed"] }
+                  ]
+                },
+                { "kind": "group", "label": "B. Engineering" },
+                {
+                  "label": "1. Aerospace, Aeronautical, and Astronautical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-eng1-statelocal" },
+                    { "id": "q11-eng1-business" },
+                    { "id": "q11-eng1-nonprofit" },
+                    { "id": "q11-eng1-institutional" },
+                    { "id": "q11-eng1-othernonfed" },
+                    { "id": "q11-eng1-total", "total": true, "sumOf": ["q11-eng1-statelocal", "q11-eng1-business", "q11-eng1-nonprofit", "q11-eng1-institutional", "q11-eng1-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "2. Bioengineering and Biomedical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-eng2-statelocal" },
+                    { "id": "q11-eng2-business" },
+                    { "id": "q11-eng2-nonprofit" },
+                    { "id": "q11-eng2-institutional" },
+                    { "id": "q11-eng2-othernonfed" },
+                    { "id": "q11-eng2-total", "total": true, "sumOf": ["q11-eng2-statelocal", "q11-eng2-business", "q11-eng2-nonprofit", "q11-eng2-institutional", "q11-eng2-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "3. Chemical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-eng3-statelocal" },
+                    { "id": "q11-eng3-business" },
+                    { "id": "q11-eng3-nonprofit" },
+                    { "id": "q11-eng3-institutional" },
+                    { "id": "q11-eng3-othernonfed" },
+                    { "id": "q11-eng3-total", "total": true, "sumOf": ["q11-eng3-statelocal", "q11-eng3-business", "q11-eng3-nonprofit", "q11-eng3-institutional", "q11-eng3-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "4. Civil Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-eng4-statelocal" },
+                    { "id": "q11-eng4-business" },
+                    { "id": "q11-eng4-nonprofit" },
+                    { "id": "q11-eng4-institutional" },
+                    { "id": "q11-eng4-othernonfed" },
+                    { "id": "q11-eng4-total", "total": true, "sumOf": ["q11-eng4-statelocal", "q11-eng4-business", "q11-eng4-nonprofit", "q11-eng4-institutional", "q11-eng4-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "5. Electrical, Electronic, and Communications Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-eng5-statelocal" },
+                    { "id": "q11-eng5-business" },
+                    { "id": "q11-eng5-nonprofit" },
+                    { "id": "q11-eng5-institutional" },
+                    { "id": "q11-eng5-othernonfed" },
+                    { "id": "q11-eng5-total", "total": true, "sumOf": ["q11-eng5-statelocal", "q11-eng5-business", "q11-eng5-nonprofit", "q11-eng5-institutional", "q11-eng5-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "6. Industrial and Manufacturing Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-eng6-statelocal" },
+                    { "id": "q11-eng6-business" },
+                    { "id": "q11-eng6-nonprofit" },
+                    { "id": "q11-eng6-institutional" },
+                    { "id": "q11-eng6-othernonfed" },
+                    { "id": "q11-eng6-total", "total": true, "sumOf": ["q11-eng6-statelocal", "q11-eng6-business", "q11-eng6-nonprofit", "q11-eng6-institutional", "q11-eng6-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "7. Mechanical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-eng7-statelocal" },
+                    { "id": "q11-eng7-business" },
+                    { "id": "q11-eng7-nonprofit" },
+                    { "id": "q11-eng7-institutional" },
+                    { "id": "q11-eng7-othernonfed" },
+                    { "id": "q11-eng7-total", "total": true, "sumOf": ["q11-eng7-statelocal", "q11-eng7-business", "q11-eng7-nonprofit", "q11-eng7-institutional", "q11-eng7-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "8. Metallurgical and Materials Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-eng8-statelocal" },
+                    { "id": "q11-eng8-business" },
+                    { "id": "q11-eng8-nonprofit" },
+                    { "id": "q11-eng8-institutional" },
+                    { "id": "q11-eng8-othernonfed" },
+                    { "id": "q11-eng8-total", "total": true, "sumOf": ["q11-eng8-statelocal", "q11-eng8-business", "q11-eng8-nonprofit", "q11-eng8-institutional", "q11-eng8-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "9. Other Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-eng9-statelocal" },
+                    { "id": "q11-eng9-business" },
+                    { "id": "q11-eng9-nonprofit" },
+                    { "id": "q11-eng9-institutional" },
+                    { "id": "q11-eng9-othernonfed" },
+                    { "id": "q11-eng9-total", "total": true, "sumOf": ["q11-eng9-statelocal", "q11-eng9-business", "q11-eng9-nonprofit", "q11-eng9-institutional", "q11-eng9-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "10. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q11-eng-tot-statelocal", "total": true, "sumOf": ["q11-eng1-statelocal", "q11-eng2-statelocal", "q11-eng3-statelocal", "q11-eng4-statelocal", "q11-eng5-statelocal", "q11-eng6-statelocal", "q11-eng7-statelocal", "q11-eng8-statelocal", "q11-eng9-statelocal"] },
+                    { "id": "q11-eng-tot-business", "total": true, "sumOf": ["q11-eng1-business", "q11-eng2-business", "q11-eng3-business", "q11-eng4-business", "q11-eng5-business", "q11-eng6-business", "q11-eng7-business", "q11-eng8-business", "q11-eng9-business"] },
+                    { "id": "q11-eng-tot-nonprofit", "total": true, "sumOf": ["q11-eng1-nonprofit", "q11-eng2-nonprofit", "q11-eng3-nonprofit", "q11-eng4-nonprofit", "q11-eng5-nonprofit", "q11-eng6-nonprofit", "q11-eng7-nonprofit", "q11-eng8-nonprofit", "q11-eng9-nonprofit"] },
+                    { "id": "q11-eng-tot-institutional", "total": true, "sumOf": ["q11-eng1-institutional", "q11-eng2-institutional", "q11-eng3-institutional", "q11-eng4-institutional", "q11-eng5-institutional", "q11-eng6-institutional", "q11-eng7-institutional", "q11-eng8-institutional", "q11-eng9-institutional"] },
+                    { "id": "q11-eng-tot-othernonfed", "total": true, "sumOf": ["q11-eng1-othernonfed", "q11-eng2-othernonfed", "q11-eng3-othernonfed", "q11-eng4-othernonfed", "q11-eng5-othernonfed", "q11-eng6-othernonfed", "q11-eng7-othernonfed", "q11-eng8-othernonfed", "q11-eng9-othernonfed"] },
+                    { "id": "q11-eng-tot-total", "total": true, "sumOf": ["q11-eng-tot-statelocal", "q11-eng-tot-business", "q11-eng-tot-nonprofit", "q11-eng-tot-institutional", "q11-eng-tot-othernonfed"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from nonfederal sources",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set2-examples\">Set 2: Sections C-D</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "State and local government" },
+                { "prefix": "(b)", "label": "Business" },
+                { "prefix": "(c)", "label": "Nonprofit organizations" },
+                { "prefix": "(d)", "label": "Institutional funds" },
+                { "prefix": "(e)", "label": "Other nonfederal sources" },
+                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                { "kind": "group", "label": "C. Geosciences, Atmospheric Sciences, and Ocean Sciences" },
+                {
+                  "label": "1. Atmospheric Science and Meteorology",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-c1-statelocal" },
+                    { "id": "q11-c1-business" },
+                    { "id": "q11-c1-nonprofit" },
+                    { "id": "q11-c1-institutional" },
+                    { "id": "q11-c1-othernonfed" },
+                    { "id": "q11-c1-total", "total": true, "sumOf": ["q11-c1-statelocal", "q11-c1-business", "q11-c1-nonprofit", "q11-c1-institutional", "q11-c1-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "2. Geological and Earth Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-c2-statelocal" },
+                    { "id": "q11-c2-business" },
+                    { "id": "q11-c2-nonprofit" },
+                    { "id": "q11-c2-institutional" },
+                    { "id": "q11-c2-othernonfed" },
+                    { "id": "q11-c2-total", "total": true, "sumOf": ["q11-c2-statelocal", "q11-c2-business", "q11-c2-nonprofit", "q11-c2-institutional", "q11-c2-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "3. Ocean Sciences and Marine Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-c3-statelocal" },
+                    { "id": "q11-c3-business" },
+                    { "id": "q11-c3-nonprofit" },
+                    { "id": "q11-c3-institutional" },
+                    { "id": "q11-c3-othernonfed" },
+                    { "id": "q11-c3-total", "total": true, "sumOf": ["q11-c3-statelocal", "q11-c3-business", "q11-c3-nonprofit", "q11-c3-institutional", "q11-c3-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "4. Other Geosciences, Atmospheric Sciences, and Ocean Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-c4-statelocal" },
+                    { "id": "q11-c4-business" },
+                    { "id": "q11-c4-nonprofit" },
+                    { "id": "q11-c4-institutional" },
+                    { "id": "q11-c4-othernonfed" },
+                    { "id": "q11-c4-total", "total": true, "sumOf": ["q11-c4-statelocal", "q11-c4-business", "q11-c4-nonprofit", "q11-c4-institutional", "q11-c4-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "5. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q11-c-tot-statelocal", "total": true, "sumOf": ["q11-c1-statelocal", "q11-c2-statelocal", "q11-c3-statelocal", "q11-c4-statelocal"] },
+                    { "id": "q11-c-tot-business", "total": true, "sumOf": ["q11-c1-business", "q11-c2-business", "q11-c3-business", "q11-c4-business"] },
+                    { "id": "q11-c-tot-nonprofit", "total": true, "sumOf": ["q11-c1-nonprofit", "q11-c2-nonprofit", "q11-c3-nonprofit", "q11-c4-nonprofit"] },
+                    { "id": "q11-c-tot-institutional", "total": true, "sumOf": ["q11-c1-institutional", "q11-c2-institutional", "q11-c3-institutional", "q11-c4-institutional"] },
+                    { "id": "q11-c-tot-othernonfed", "total": true, "sumOf": ["q11-c1-othernonfed", "q11-c2-othernonfed", "q11-c3-othernonfed", "q11-c4-othernonfed"] },
+                    { "id": "q11-c-tot-total", "total": true, "sumOf": ["q11-c-tot-statelocal", "q11-c-tot-business", "q11-c-tot-nonprofit", "q11-c-tot-institutional", "q11-c-tot-othernonfed"] }
+                  ]
+                },
+                { "kind": "group", "label": "D. Life Sciences" },
+                {
+                  "label": "1. Agricultural Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-d1-statelocal" },
+                    { "id": "q11-d1-business" },
+                    { "id": "q11-d1-nonprofit" },
+                    { "id": "q11-d1-institutional" },
+                    { "id": "q11-d1-othernonfed" },
+                    { "id": "q11-d1-total", "total": true, "sumOf": ["q11-d1-statelocal", "q11-d1-business", "q11-d1-nonprofit", "q11-d1-institutional", "q11-d1-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "2. Biological and Biomedical Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-d2-statelocal" },
+                    { "id": "q11-d2-business" },
+                    { "id": "q11-d2-nonprofit" },
+                    { "id": "q11-d2-institutional" },
+                    { "id": "q11-d2-othernonfed" },
+                    { "id": "q11-d2-total", "total": true, "sumOf": ["q11-d2-statelocal", "q11-d2-business", "q11-d2-nonprofit", "q11-d2-institutional", "q11-d2-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "3. Health Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-d3-statelocal" },
+                    { "id": "q11-d3-business" },
+                    { "id": "q11-d3-nonprofit" },
+                    { "id": "q11-d3-institutional" },
+                    { "id": "q11-d3-othernonfed" },
+                    { "id": "q11-d3-total", "total": true, "sumOf": ["q11-d3-statelocal", "q11-d3-business", "q11-d3-nonprofit", "q11-d3-institutional", "q11-d3-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "4. Natural Resources and Conservation",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-d4-statelocal" },
+                    { "id": "q11-d4-business" },
+                    { "id": "q11-d4-nonprofit" },
+                    { "id": "q11-d4-institutional" },
+                    { "id": "q11-d4-othernonfed" },
+                    { "id": "q11-d4-total", "total": true, "sumOf": ["q11-d4-statelocal", "q11-d4-business", "q11-d4-nonprofit", "q11-d4-institutional", "q11-d4-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "5. Other Life Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-d5-statelocal" },
+                    { "id": "q11-d5-business" },
+                    { "id": "q11-d5-nonprofit" },
+                    { "id": "q11-d5-institutional" },
+                    { "id": "q11-d5-othernonfed" },
+                    { "id": "q11-d5-total", "total": true, "sumOf": ["q11-d5-statelocal", "q11-d5-business", "q11-d5-nonprofit", "q11-d5-institutional", "q11-d5-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "6. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q11-d-tot-statelocal", "total": true, "sumOf": ["q11-d1-statelocal", "q11-d2-statelocal", "q11-d3-statelocal", "q11-d4-statelocal", "q11-d5-statelocal"] },
+                    { "id": "q11-d-tot-business", "total": true, "sumOf": ["q11-d1-business", "q11-d2-business", "q11-d3-business", "q11-d4-business", "q11-d5-business"] },
+                    { "id": "q11-d-tot-nonprofit", "total": true, "sumOf": ["q11-d1-nonprofit", "q11-d2-nonprofit", "q11-d3-nonprofit", "q11-d4-nonprofit", "q11-d5-nonprofit"] },
+                    { "id": "q11-d-tot-institutional", "total": true, "sumOf": ["q11-d1-institutional", "q11-d2-institutional", "q11-d3-institutional", "q11-d4-institutional", "q11-d5-institutional"] },
+                    { "id": "q11-d-tot-othernonfed", "total": true, "sumOf": ["q11-d1-othernonfed", "q11-d2-othernonfed", "q11-d3-othernonfed", "q11-d4-othernonfed", "q11-d5-othernonfed"] },
+                    { "id": "q11-d-tot-total", "total": true, "sumOf": ["q11-d-tot-statelocal", "q11-d-tot-business", "q11-d-tot-nonprofit", "q11-d-tot-institutional", "q11-d-tot-othernonfed"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from nonfederal sources",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set3-examples\">Set 3: Sections E-G</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "State and local government" },
+                { "prefix": "(b)", "label": "Business" },
+                { "prefix": "(c)", "label": "Nonprofit organizations" },
+                { "prefix": "(d)", "label": "Institutional funds" },
+                { "prefix": "(e)", "label": "Other nonfederal sources" },
+                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                {
+                  "label": "E. Mathematics and Statistics",
+                  "cells": [
+                    { "id": "q11-e-statelocal" },
+                    { "id": "q11-e-business" },
+                    { "id": "q11-e-nonprofit" },
+                    { "id": "q11-e-institutional" },
+                    { "id": "q11-e-othernonfed" },
+                    { "id": "q11-e-total", "total": true, "sumOf": ["q11-e-statelocal", "q11-e-business", "q11-e-nonprofit", "q11-e-institutional", "q11-e-othernonfed"] }
+                  ]
+                },
+                { "kind": "group", "label": "F. Physical Sciences" },
+                {
+                  "label": "1. Astronomy and Astrophysics",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-f1-statelocal" },
+                    { "id": "q11-f1-business" },
+                    { "id": "q11-f1-nonprofit" },
+                    { "id": "q11-f1-institutional" },
+                    { "id": "q11-f1-othernonfed" },
+                    { "id": "q11-f1-total", "total": true, "sumOf": ["q11-f1-statelocal", "q11-f1-business", "q11-f1-nonprofit", "q11-f1-institutional", "q11-f1-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "2. Chemistry",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-f2-statelocal" },
+                    { "id": "q11-f2-business" },
+                    { "id": "q11-f2-nonprofit" },
+                    { "id": "q11-f2-institutional" },
+                    { "id": "q11-f2-othernonfed" },
+                    { "id": "q11-f2-total", "total": true, "sumOf": ["q11-f2-statelocal", "q11-f2-business", "q11-f2-nonprofit", "q11-f2-institutional", "q11-f2-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "3. Materials Science",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-f3-statelocal" },
+                    { "id": "q11-f3-business" },
+                    { "id": "q11-f3-nonprofit" },
+                    { "id": "q11-f3-institutional" },
+                    { "id": "q11-f3-othernonfed" },
+                    { "id": "q11-f3-total", "total": true, "sumOf": ["q11-f3-statelocal", "q11-f3-business", "q11-f3-nonprofit", "q11-f3-institutional", "q11-f3-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "4. Physics",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-f4-statelocal" },
+                    { "id": "q11-f4-business" },
+                    { "id": "q11-f4-nonprofit" },
+                    { "id": "q11-f4-institutional" },
+                    { "id": "q11-f4-othernonfed" },
+                    { "id": "q11-f4-total", "total": true, "sumOf": ["q11-f4-statelocal", "q11-f4-business", "q11-f4-nonprofit", "q11-f4-institutional", "q11-f4-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "5. Other Physical Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-f5-statelocal" },
+                    { "id": "q11-f5-business" },
+                    { "id": "q11-f5-nonprofit" },
+                    { "id": "q11-f5-institutional" },
+                    { "id": "q11-f5-othernonfed" },
+                    { "id": "q11-f5-total", "total": true, "sumOf": ["q11-f5-statelocal", "q11-f5-business", "q11-f5-nonprofit", "q11-f5-institutional", "q11-f5-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "6. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q11-f-tot-statelocal", "total": true, "sumOf": ["q11-f1-statelocal", "q11-f2-statelocal", "q11-f3-statelocal", "q11-f4-statelocal", "q11-f5-statelocal"] },
+                    { "id": "q11-f-tot-business", "total": true, "sumOf": ["q11-f1-business", "q11-f2-business", "q11-f3-business", "q11-f4-business", "q11-f5-business"] },
+                    { "id": "q11-f-tot-nonprofit", "total": true, "sumOf": ["q11-f1-nonprofit", "q11-f2-nonprofit", "q11-f3-nonprofit", "q11-f4-nonprofit", "q11-f5-nonprofit"] },
+                    { "id": "q11-f-tot-institutional", "total": true, "sumOf": ["q11-f1-institutional", "q11-f2-institutional", "q11-f3-institutional", "q11-f4-institutional", "q11-f5-institutional"] },
+                    { "id": "q11-f-tot-othernonfed", "total": true, "sumOf": ["q11-f1-othernonfed", "q11-f2-othernonfed", "q11-f3-othernonfed", "q11-f4-othernonfed", "q11-f5-othernonfed"] },
+                    { "id": "q11-f-tot-total", "total": true, "sumOf": ["q11-f-tot-statelocal", "q11-f-tot-business", "q11-f-tot-nonprofit", "q11-f-tot-institutional", "q11-f-tot-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "G. Psychology",
+                  "cells": [
+                    { "id": "q11-g-statelocal" },
+                    { "id": "q11-g-business" },
+                    { "id": "q11-g-nonprofit" },
+                    { "id": "q11-g-institutional" },
+                    { "id": "q11-g-othernonfed" },
+                    { "id": "q11-g-total", "total": true, "sumOf": ["q11-g-statelocal", "q11-g-business", "q11-g-nonprofit", "q11-g-institutional", "q11-g-othernonfed"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from nonfederal sources",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set4-examples\">Set 4: H-I</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "State and local government" },
+                { "prefix": "(b)", "label": "Business" },
+                { "prefix": "(c)", "label": "Nonprofit organizations" },
+                { "prefix": "(d)", "label": "Institutional funds" },
+                { "prefix": "(e)", "label": "Other nonfederal sources" },
+                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                { "kind": "group", "label": "H. Social Sciences" },
+                {
+                  "label": "1. Anthropology",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-h1-statelocal" },
+                    { "id": "q11-h1-business" },
+                    { "id": "q11-h1-nonprofit" },
+                    { "id": "q11-h1-institutional" },
+                    { "id": "q11-h1-othernonfed" },
+                    { "id": "q11-h1-total", "total": true, "sumOf": ["q11-h1-statelocal", "q11-h1-business", "q11-h1-nonprofit", "q11-h1-institutional", "q11-h1-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "2. Economics",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-h2-statelocal" },
+                    { "id": "q11-h2-business" },
+                    { "id": "q11-h2-nonprofit" },
+                    { "id": "q11-h2-institutional" },
+                    { "id": "q11-h2-othernonfed" },
+                    { "id": "q11-h2-total", "total": true, "sumOf": ["q11-h2-statelocal", "q11-h2-business", "q11-h2-nonprofit", "q11-h2-institutional", "q11-h2-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "3. Political Science and Government",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-h3-statelocal" },
+                    { "id": "q11-h3-business" },
+                    { "id": "q11-h3-nonprofit" },
+                    { "id": "q11-h3-institutional" },
+                    { "id": "q11-h3-othernonfed" },
+                    { "id": "q11-h3-total", "total": true, "sumOf": ["q11-h3-statelocal", "q11-h3-business", "q11-h3-nonprofit", "q11-h3-institutional", "q11-h3-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "4. Sociology, Demography, and Population Studies",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-h4-statelocal" },
+                    { "id": "q11-h4-business" },
+                    { "id": "q11-h4-nonprofit" },
+                    { "id": "q11-h4-institutional" },
+                    { "id": "q11-h4-othernonfed" },
+                    { "id": "q11-h4-total", "total": true, "sumOf": ["q11-h4-statelocal", "q11-h4-business", "q11-h4-nonprofit", "q11-h4-institutional", "q11-h4-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "5. Other Social Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-h5-statelocal" },
+                    { "id": "q11-h5-business" },
+                    { "id": "q11-h5-nonprofit" },
+                    { "id": "q11-h5-institutional" },
+                    { "id": "q11-h5-othernonfed" },
+                    { "id": "q11-h5-total", "total": true, "sumOf": ["q11-h5-statelocal", "q11-h5-business", "q11-h5-nonprofit", "q11-h5-institutional", "q11-h5-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "6. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q11-h-tot-statelocal", "total": true, "sumOf": ["q11-h1-statelocal", "q11-h2-statelocal", "q11-h3-statelocal", "q11-h4-statelocal", "q11-h5-statelocal"] },
+                    { "id": "q11-h-tot-business", "total": true, "sumOf": ["q11-h1-business", "q11-h2-business", "q11-h3-business", "q11-h4-business", "q11-h5-business"] },
+                    { "id": "q11-h-tot-nonprofit", "total": true, "sumOf": ["q11-h1-nonprofit", "q11-h2-nonprofit", "q11-h3-nonprofit", "q11-h4-nonprofit", "q11-h5-nonprofit"] },
+                    { "id": "q11-h-tot-institutional", "total": true, "sumOf": ["q11-h1-institutional", "q11-h2-institutional", "q11-h3-institutional", "q11-h4-institutional", "q11-h5-institutional"] },
+                    { "id": "q11-h-tot-othernonfed", "total": true, "sumOf": ["q11-h1-othernonfed", "q11-h2-othernonfed", "q11-h3-othernonfed", "q11-h4-othernonfed", "q11-h5-othernonfed"] },
+                    { "id": "q11-h-tot-total", "total": true, "sumOf": ["q11-h-tot-statelocal", "q11-h-tot-business", "q11-h-tot-nonprofit", "q11-h-tot-institutional", "q11-h-tot-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "I. Other Sciences",
+                  "cells": [
+                    { "id": "q11-i-statelocal" },
+                    { "id": "q11-i-business" },
+                    { "id": "q11-i-nonprofit" },
+                    { "id": "q11-i-institutional" },
+                    { "id": "q11-i-othernonfed" },
+                    { "id": "q11-i-total", "total": true, "sumOf": ["q11-i-statelocal", "q11-i-business", "q11-i-nonprofit", "q11-i-institutional", "q11-i-othernonfed"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "R&D expenditures from nonfederal sources",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set5-examples\">Set 5: J-K</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "State and local government" },
+                { "prefix": "(b)", "label": "Business" },
+                { "prefix": "(c)", "label": "Nonprofit organizations" },
+                { "prefix": "(d)", "label": "Institutional funds" },
+                { "prefix": "(e)", "label": "Other nonfederal sources" },
+                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                { "kind": "group", "label": "J. Non-S&amp;E Fields" },
+                {
+                  "label": "1. Business Management and Business Administration",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-j1-statelocal" },
+                    { "id": "q11-j1-business" },
+                    { "id": "q11-j1-nonprofit" },
+                    { "id": "q11-j1-institutional" },
+                    { "id": "q11-j1-othernonfed" },
+                    { "id": "q11-j1-total", "total": true, "sumOf": ["q11-j1-statelocal", "q11-j1-business", "q11-j1-nonprofit", "q11-j1-institutional", "q11-j1-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "2. Communication and Communications Technologies",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-j2-statelocal" },
+                    { "id": "q11-j2-business" },
+                    { "id": "q11-j2-nonprofit" },
+                    { "id": "q11-j2-institutional" },
+                    { "id": "q11-j2-othernonfed" },
+                    { "id": "q11-j2-total", "total": true, "sumOf": ["q11-j2-statelocal", "q11-j2-business", "q11-j2-nonprofit", "q11-j2-institutional", "q11-j2-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "3. Education",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-j3-statelocal" },
+                    { "id": "q11-j3-business" },
+                    { "id": "q11-j3-nonprofit" },
+                    { "id": "q11-j3-institutional" },
+                    { "id": "q11-j3-othernonfed" },
+                    { "id": "q11-j3-total", "total": true, "sumOf": ["q11-j3-statelocal", "q11-j3-business", "q11-j3-nonprofit", "q11-j3-institutional", "q11-j3-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "4. Humanities",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-j4-statelocal" },
+                    { "id": "q11-j4-business" },
+                    { "id": "q11-j4-nonprofit" },
+                    { "id": "q11-j4-institutional" },
+                    { "id": "q11-j4-othernonfed" },
+                    { "id": "q11-j4-total", "total": true, "sumOf": ["q11-j4-statelocal", "q11-j4-business", "q11-j4-nonprofit", "q11-j4-institutional", "q11-j4-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "5. Law",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-j5-statelocal" },
+                    { "id": "q11-j5-business" },
+                    { "id": "q11-j5-nonprofit" },
+                    { "id": "q11-j5-institutional" },
+                    { "id": "q11-j5-othernonfed" },
+                    { "id": "q11-j5-total", "total": true, "sumOf": ["q11-j5-statelocal", "q11-j5-business", "q11-j5-nonprofit", "q11-j5-institutional", "q11-j5-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "6. Social Work",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-j6-statelocal" },
+                    { "id": "q11-j6-business" },
+                    { "id": "q11-j6-nonprofit" },
+                    { "id": "q11-j6-institutional" },
+                    { "id": "q11-j6-othernonfed" },
+                    { "id": "q11-j6-total", "total": true, "sumOf": ["q11-j6-statelocal", "q11-j6-business", "q11-j6-nonprofit", "q11-j6-institutional", "q11-j6-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "7. Visual and Performing Arts",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-j7-statelocal" },
+                    { "id": "q11-j7-business" },
+                    { "id": "q11-j7-nonprofit" },
+                    { "id": "q11-j7-institutional" },
+                    { "id": "q11-j7-othernonfed" },
+                    { "id": "q11-j7-total", "total": true, "sumOf": ["q11-j7-statelocal", "q11-j7-business", "q11-j7-nonprofit", "q11-j7-institutional", "q11-j7-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "8. Other Non-S&amp;E Fields",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q11-j8-statelocal" },
+                    { "id": "q11-j8-business" },
+                    { "id": "q11-j8-nonprofit" },
+                    { "id": "q11-j8-institutional" },
+                    { "id": "q11-j8-othernonfed" },
+                    { "id": "q11-j8-total", "total": true, "sumOf": ["q11-j8-statelocal", "q11-j8-business", "q11-j8-nonprofit", "q11-j8-institutional", "q11-j8-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "9. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q11-j-tot-statelocal", "total": true, "sumOf": ["q11-j1-statelocal", "q11-j2-statelocal", "q11-j3-statelocal", "q11-j4-statelocal", "q11-j5-statelocal", "q11-j6-statelocal", "q11-j7-statelocal", "q11-j8-statelocal"] },
+                    { "id": "q11-j-tot-business", "total": true, "sumOf": ["q11-j1-business", "q11-j2-business", "q11-j3-business", "q11-j4-business", "q11-j5-business", "q11-j6-business", "q11-j7-business", "q11-j8-business"] },
+                    { "id": "q11-j-tot-nonprofit", "total": true, "sumOf": ["q11-j1-nonprofit", "q11-j2-nonprofit", "q11-j3-nonprofit", "q11-j4-nonprofit", "q11-j5-nonprofit", "q11-j6-nonprofit", "q11-j7-nonprofit", "q11-j8-nonprofit"] },
+                    { "id": "q11-j-tot-institutional", "total": true, "sumOf": ["q11-j1-institutional", "q11-j2-institutional", "q11-j3-institutional", "q11-j4-institutional", "q11-j5-institutional", "q11-j6-institutional", "q11-j7-institutional", "q11-j8-institutional"] },
+                    { "id": "q11-j-tot-othernonfed", "total": true, "sumOf": ["q11-j1-othernonfed", "q11-j2-othernonfed", "q11-j3-othernonfed", "q11-j4-othernonfed", "q11-j5-othernonfed", "q11-j6-othernonfed", "q11-j7-othernonfed", "q11-j8-othernonfed"] },
+                    { "id": "q11-j-tot-total", "total": true, "sumOf": ["q11-j-tot-statelocal", "q11-j-tot-business", "q11-j-tot-nonprofit", "q11-j-tot-institutional", "q11-j-tot-othernonfed"] }
+                  ]
+                },
+                {
+                  "label": "K. Total for All Fields of R&amp;D",
+                  "cells": [
+                    { "id": "q11-k-statelocal", "total": true, "sumOf": ["q11-cis-statelocal", "q11-eng-tot-statelocal", "q11-c-tot-statelocal", "q11-d-tot-statelocal", "q11-e-statelocal", "q11-f-tot-statelocal", "q11-g-statelocal", "q11-h-tot-statelocal", "q11-i-statelocal", "q11-j-tot-statelocal"] },
+                    { "id": "q11-k-business", "total": true, "sumOf": ["q11-cis-business", "q11-eng-tot-business", "q11-c-tot-business", "q11-d-tot-business", "q11-e-business", "q11-f-tot-business", "q11-g-business", "q11-h-tot-business", "q11-i-business", "q11-j-tot-business"] },
+                    { "id": "q11-k-nonprofit", "total": true, "sumOf": ["q11-cis-nonprofit", "q11-eng-tot-nonprofit", "q11-c-tot-nonprofit", "q11-d-tot-nonprofit", "q11-e-nonprofit", "q11-f-tot-nonprofit", "q11-g-nonprofit", "q11-h-tot-nonprofit", "q11-i-nonprofit", "q11-j-tot-nonprofit"] },
+                    { "id": "q11-k-institutional", "total": true, "sumOf": ["q11-cis-institutional", "q11-eng-tot-institutional", "q11-c-tot-institutional", "q11-d-tot-institutional", "q11-e-institutional", "q11-f-tot-institutional", "q11-g-institutional", "q11-h-tot-institutional", "q11-i-institutional", "q11-j-tot-institutional"] },
+                    { "id": "q11-k-othernonfed", "total": true, "sumOf": ["q11-cis-othernonfed", "q11-eng-tot-othernonfed", "q11-c-tot-othernonfed", "q11-d-tot-othernonfed", "q11-e-othernonfed", "q11-f-tot-othernonfed", "q11-g-othernonfed", "q11-h-tot-othernonfed", "q11-i-othernonfed", "q11-j-tot-othernonfed"] },
+                    { "id": "q11-k-total", "total": true, "sumOf": ["q11-k-statelocal", "q11-k-business", "q11-k-nonprofit", "q11-k-institutional", "q11-k-othernonfed"] }
+                  ]
+                }
+              ]
+            },
+            { "type": "footnote", "marker": "1", "text": "Row and column totals are automatically generated on the Web survey." }
+          ]
+        },
         {
           "id": "q12",
           "number": 12,
@@ -1150,7 +3211,557 @@
             { "type": "action-bar" }
           ]
         },
-        { "id": "q14", "number": 14, "title": "R&D equipment expenditures by field", "kind": "question", "showInSidebar": true, "demoStatus": "not-started" },
+        {
+          "id": "q14",
+          "number": 14,
+          "title": "R&D equipment expenditures by field",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 14A–C.",
+              "text": "For the R&D fields below, what portion of your FY 2025 R&D expenditures went for the purchase of capitalized R&D equipment?"
+            },
+            {
+              "type": "callout",
+              "html": "<ul class=\"content-bullets\"><li>Question 14 total (row K, column c) should match Question 12, row c (Capitalized equipment).</li></ul>"
+            },
+            { "type": "prefill-actions" },
+            {
+              "type": "currency-matrix",
+              "banded": true,
+              "caption": "R&D equipment expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set1-examples\">Set 1: Sections A-B</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "Federal" },
+                { "prefix": "(b)", "label": "Nonfederal" },
+                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                {
+                  "label": "A. Computer and Information Sciences",
+                  "cells": [
+                    { "id": "q14-cis-federal" },
+                    { "id": "q14-cis-nonfederal" },
+                    { "id": "q14-cis-total", "total": true, "sumOf": ["q14-cis-federal", "q14-cis-nonfederal"] }
+                  ]
+                },
+                { "kind": "group", "label": "B. Engineering" },
+                {
+                  "label": "1. Aerospace, Aeronautical, and Astronautical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-eng1-federal" },
+                    { "id": "q14-eng1-nonfederal" },
+                    { "id": "q14-eng1-total", "total": true, "sumOf": ["q14-eng1-federal", "q14-eng1-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "2. Bioengineering and Biomedical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-eng2-federal" },
+                    { "id": "q14-eng2-nonfederal" },
+                    { "id": "q14-eng2-total", "total": true, "sumOf": ["q14-eng2-federal", "q14-eng2-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "3. Chemical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-eng3-federal" },
+                    { "id": "q14-eng3-nonfederal" },
+                    { "id": "q14-eng3-total", "total": true, "sumOf": ["q14-eng3-federal", "q14-eng3-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "4. Civil Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-eng4-federal" },
+                    { "id": "q14-eng4-nonfederal" },
+                    { "id": "q14-eng4-total", "total": true, "sumOf": ["q14-eng4-federal", "q14-eng4-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "5. Electrical, Electronic, and Communications Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-eng5-federal" },
+                    { "id": "q14-eng5-nonfederal" },
+                    { "id": "q14-eng5-total", "total": true, "sumOf": ["q14-eng5-federal", "q14-eng5-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "6. Industrial and Manufacturing Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-eng6-federal" },
+                    { "id": "q14-eng6-nonfederal" },
+                    { "id": "q14-eng6-total", "total": true, "sumOf": ["q14-eng6-federal", "q14-eng6-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "7. Mechanical Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-eng7-federal" },
+                    { "id": "q14-eng7-nonfederal" },
+                    { "id": "q14-eng7-total", "total": true, "sumOf": ["q14-eng7-federal", "q14-eng7-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "8. Metallurgical and Materials Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-eng8-federal" },
+                    { "id": "q14-eng8-nonfederal" },
+                    { "id": "q14-eng8-total", "total": true, "sumOf": ["q14-eng8-federal", "q14-eng8-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "9. Other Engineering",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-eng9-federal" },
+                    { "id": "q14-eng9-nonfederal" },
+                    { "id": "q14-eng9-total", "total": true, "sumOf": ["q14-eng9-federal", "q14-eng9-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "10. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q14-eng-tot-federal", "total": true, "sumOf": ["q14-eng1-federal", "q14-eng2-federal", "q14-eng3-federal", "q14-eng4-federal", "q14-eng5-federal", "q14-eng6-federal", "q14-eng7-federal", "q14-eng8-federal", "q14-eng9-federal"] },
+                    { "id": "q14-eng-tot-nonfederal", "total": true, "sumOf": ["q14-eng1-nonfederal", "q14-eng2-nonfederal", "q14-eng3-nonfederal", "q14-eng4-nonfederal", "q14-eng5-nonfederal", "q14-eng6-nonfederal", "q14-eng7-nonfederal", "q14-eng8-nonfederal", "q14-eng9-nonfederal"] },
+                    { "id": "q14-eng-tot-total", "total": true, "sumOf": ["q14-eng-tot-federal", "q14-eng-tot-nonfederal"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "banded": true,
+              "caption": "R&D equipment expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set2-examples\">Set 2: Sections C-D</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "Federal" },
+                { "prefix": "(b)", "label": "Nonfederal" },
+                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                { "kind": "group", "label": "C. Geosciences, Atmospheric Sciences, and Ocean Sciences" },
+                {
+                  "label": "1. Atmospheric Science and Meteorology",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-c1-federal" },
+                    { "id": "q14-c1-nonfederal" },
+                    { "id": "q14-c1-total", "total": true, "sumOf": ["q14-c1-federal", "q14-c1-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "2. Geological and Earth Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-c2-federal" },
+                    { "id": "q14-c2-nonfederal" },
+                    { "id": "q14-c2-total", "total": true, "sumOf": ["q14-c2-federal", "q14-c2-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "3. Ocean Sciences and Marine Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-c3-federal" },
+                    { "id": "q14-c3-nonfederal" },
+                    { "id": "q14-c3-total", "total": true, "sumOf": ["q14-c3-federal", "q14-c3-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "4. Other Geosciences, Atmospheric Sciences, and Ocean Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-c4-federal" },
+                    { "id": "q14-c4-nonfederal" },
+                    { "id": "q14-c4-total", "total": true, "sumOf": ["q14-c4-federal", "q14-c4-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "5. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q14-c-tot-federal", "total": true, "sumOf": ["q14-c1-federal", "q14-c2-federal", "q14-c3-federal", "q14-c4-federal"] },
+                    { "id": "q14-c-tot-nonfederal", "total": true, "sumOf": ["q14-c1-nonfederal", "q14-c2-nonfederal", "q14-c3-nonfederal", "q14-c4-nonfederal"] },
+                    { "id": "q14-c-tot-total", "total": true, "sumOf": ["q14-c-tot-federal", "q14-c-tot-nonfederal"] }
+                  ]
+                },
+                { "kind": "group", "label": "D. Life Sciences" },
+                {
+                  "label": "1. Agricultural Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-d1-federal" },
+                    { "id": "q14-d1-nonfederal" },
+                    { "id": "q14-d1-total", "total": true, "sumOf": ["q14-d1-federal", "q14-d1-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "2. Biological and Biomedical Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-d2-federal" },
+                    { "id": "q14-d2-nonfederal" },
+                    { "id": "q14-d2-total", "total": true, "sumOf": ["q14-d2-federal", "q14-d2-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "3. Health Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-d3-federal" },
+                    { "id": "q14-d3-nonfederal" },
+                    { "id": "q14-d3-total", "total": true, "sumOf": ["q14-d3-federal", "q14-d3-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "4. Natural Resources and Conservation",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-d4-federal" },
+                    { "id": "q14-d4-nonfederal" },
+                    { "id": "q14-d4-total", "total": true, "sumOf": ["q14-d4-federal", "q14-d4-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "5. Other Life Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-d5-federal" },
+                    { "id": "q14-d5-nonfederal" },
+                    { "id": "q14-d5-total", "total": true, "sumOf": ["q14-d5-federal", "q14-d5-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "6. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q14-d-tot-federal", "total": true, "sumOf": ["q14-d1-federal", "q14-d2-federal", "q14-d3-federal", "q14-d4-federal", "q14-d5-federal"] },
+                    { "id": "q14-d-tot-nonfederal", "total": true, "sumOf": ["q14-d1-nonfederal", "q14-d2-nonfederal", "q14-d3-nonfederal", "q14-d4-nonfederal", "q14-d5-nonfederal"] },
+                    { "id": "q14-d-tot-total", "total": true, "sumOf": ["q14-d-tot-federal", "q14-d-tot-nonfederal"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "banded": true,
+              "caption": "R&D equipment expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set3-examples\">Set 3: Sections E-G</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "Federal" },
+                { "prefix": "(b)", "label": "Nonfederal" },
+                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                {
+                  "label": "E. Mathematics and Statistics",
+                  "cells": [
+                    { "id": "q14-e-federal" },
+                    { "id": "q14-e-nonfederal" },
+                    { "id": "q14-e-total", "total": true, "sumOf": ["q14-e-federal", "q14-e-nonfederal"] }
+                  ]
+                },
+                { "kind": "group", "label": "F. Physical Sciences" },
+                {
+                  "label": "1. Astronomy and Astrophysics",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-f1-federal" },
+                    { "id": "q14-f1-nonfederal" },
+                    { "id": "q14-f1-total", "total": true, "sumOf": ["q14-f1-federal", "q14-f1-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "2. Chemistry",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-f2-federal" },
+                    { "id": "q14-f2-nonfederal" },
+                    { "id": "q14-f2-total", "total": true, "sumOf": ["q14-f2-federal", "q14-f2-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "3. Materials Science",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-f3-federal" },
+                    { "id": "q14-f3-nonfederal" },
+                    { "id": "q14-f3-total", "total": true, "sumOf": ["q14-f3-federal", "q14-f3-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "4. Physics",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-f4-federal" },
+                    { "id": "q14-f4-nonfederal" },
+                    { "id": "q14-f4-total", "total": true, "sumOf": ["q14-f4-federal", "q14-f4-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "5. Other Physical Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-f5-federal" },
+                    { "id": "q14-f5-nonfederal" },
+                    { "id": "q14-f5-total", "total": true, "sumOf": ["q14-f5-federal", "q14-f5-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "6. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q14-f-tot-federal", "total": true, "sumOf": ["q14-f1-federal", "q14-f2-federal", "q14-f3-federal", "q14-f4-federal", "q14-f5-federal"] },
+                    { "id": "q14-f-tot-nonfederal", "total": true, "sumOf": ["q14-f1-nonfederal", "q14-f2-nonfederal", "q14-f3-nonfederal", "q14-f4-nonfederal", "q14-f5-nonfederal"] },
+                    { "id": "q14-f-tot-total", "total": true, "sumOf": ["q14-f-tot-federal", "q14-f-tot-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "G. Psychology",
+                  "cells": [
+                    { "id": "q14-g-federal" },
+                    { "id": "q14-g-nonfederal" },
+                    { "id": "q14-g-total", "total": true, "sumOf": ["q14-g-federal", "q14-g-nonfederal"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "banded": true,
+              "caption": "R&D equipment expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set4-examples\">Set 4: H-I</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "Federal" },
+                { "prefix": "(b)", "label": "Nonfederal" },
+                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                { "kind": "group", "label": "H. Social Sciences" },
+                {
+                  "label": "1. Anthropology",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-h1-federal" },
+                    { "id": "q14-h1-nonfederal" },
+                    { "id": "q14-h1-total", "total": true, "sumOf": ["q14-h1-federal", "q14-h1-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "2. Economics",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-h2-federal" },
+                    { "id": "q14-h2-nonfederal" },
+                    { "id": "q14-h2-total", "total": true, "sumOf": ["q14-h2-federal", "q14-h2-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "3. Political Science and Government",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-h3-federal" },
+                    { "id": "q14-h3-nonfederal" },
+                    { "id": "q14-h3-total", "total": true, "sumOf": ["q14-h3-federal", "q14-h3-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "4. Sociology, Demography, and Population Studies",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-h4-federal" },
+                    { "id": "q14-h4-nonfederal" },
+                    { "id": "q14-h4-total", "total": true, "sumOf": ["q14-h4-federal", "q14-h4-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "5. Other Social Sciences",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-h5-federal" },
+                    { "id": "q14-h5-nonfederal" },
+                    { "id": "q14-h5-total", "total": true, "sumOf": ["q14-h5-federal", "q14-h5-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "6. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q14-h-tot-federal", "total": true, "sumOf": ["q14-h1-federal", "q14-h2-federal", "q14-h3-federal", "q14-h4-federal", "q14-h5-federal"] },
+                    { "id": "q14-h-tot-nonfederal", "total": true, "sumOf": ["q14-h1-nonfederal", "q14-h2-nonfederal", "q14-h3-nonfederal", "q14-h4-nonfederal", "q14-h5-nonfederal"] },
+                    { "id": "q14-h-tot-total", "total": true, "sumOf": ["q14-h-tot-federal", "q14-h-tot-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "I. Other Sciences",
+                  "cells": [
+                    { "id": "q14-i-federal" },
+                    { "id": "q14-i-nonfederal" },
+                    { "id": "q14-i-total", "total": true, "sumOf": ["q14-i-federal", "q14-i-nonfederal"] }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "banded": true,
+              "caption": "R&D equipment expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields<span class=\"currency-matrix__lead-sub\">Examples: <a href=\"#\" class=\"currency-matrix__lead-link\" data-modal-target=\"set5-examples\">Set 5: J-K</a></span>",
+              "columns": [
+                { "prefix": "(a)", "label": "Federal" },
+                { "prefix": "(b)", "label": "Nonfederal" },
+                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+              ],
+              "rows": [
+                { "kind": "group", "label": "J. Non-S&amp;E Fields" },
+                {
+                  "label": "1. Business Management and Business Administration",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-j1-federal" },
+                    { "id": "q14-j1-nonfederal" },
+                    { "id": "q14-j1-total", "total": true, "sumOf": ["q14-j1-federal", "q14-j1-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "2. Communication and Communications Technologies",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-j2-federal" },
+                    { "id": "q14-j2-nonfederal" },
+                    { "id": "q14-j2-total", "total": true, "sumOf": ["q14-j2-federal", "q14-j2-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "3. Education",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-j3-federal" },
+                    { "id": "q14-j3-nonfederal" },
+                    { "id": "q14-j3-total", "total": true, "sumOf": ["q14-j3-federal", "q14-j3-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "4. Humanities",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-j4-federal" },
+                    { "id": "q14-j4-nonfederal" },
+                    { "id": "q14-j4-total", "total": true, "sumOf": ["q14-j4-federal", "q14-j4-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "5. Law",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-j5-federal" },
+                    { "id": "q14-j5-nonfederal" },
+                    { "id": "q14-j5-total", "total": true, "sumOf": ["q14-j5-federal", "q14-j5-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "6. Social Work",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-j6-federal" },
+                    { "id": "q14-j6-nonfederal" },
+                    { "id": "q14-j6-total", "total": true, "sumOf": ["q14-j6-federal", "q14-j6-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "7. Visual and Performing Arts",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-j7-federal" },
+                    { "id": "q14-j7-nonfederal" },
+                    { "id": "q14-j7-total", "total": true, "sumOf": ["q14-j7-federal", "q14-j7-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "8. Other Non-S&amp;E Fields",
+                  "indent": true,
+                  "regular": true,
+                  "cells": [
+                    { "id": "q14-j8-federal" },
+                    { "id": "q14-j8-nonfederal" },
+                    { "id": "q14-j8-total", "total": true, "sumOf": ["q14-j8-federal", "q14-j8-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "9. Total",
+                  "indent": true,
+                  "cells": [
+                    { "id": "q14-j-tot-federal", "total": true, "sumOf": ["q14-j1-federal", "q14-j2-federal", "q14-j3-federal", "q14-j4-federal", "q14-j5-federal", "q14-j6-federal", "q14-j7-federal", "q14-j8-federal"] },
+                    { "id": "q14-j-tot-nonfederal", "total": true, "sumOf": ["q14-j1-nonfederal", "q14-j2-nonfederal", "q14-j3-nonfederal", "q14-j4-nonfederal", "q14-j5-nonfederal", "q14-j6-nonfederal", "q14-j7-nonfederal", "q14-j8-nonfederal"] },
+                    { "id": "q14-j-tot-total", "total": true, "sumOf": ["q14-j-tot-federal", "q14-j-tot-nonfederal"] }
+                  ]
+                },
+                {
+                  "label": "K. Total for All Fields of R&amp;D",
+                  "cells": [
+                    { "id": "q14-k-federal", "total": true, "sumOf": ["q14-cis-federal", "q14-eng-tot-federal", "q14-c-tot-federal", "q14-d-tot-federal", "q14-e-federal", "q14-f-tot-federal", "q14-g-federal", "q14-h-tot-federal", "q14-i-federal", "q14-j-tot-federal"] },
+                    { "id": "q14-k-nonfederal", "total": true, "sumOf": ["q14-cis-nonfederal", "q14-eng-tot-nonfederal", "q14-c-tot-nonfederal", "q14-d-tot-nonfederal", "q14-e-nonfederal", "q14-f-tot-nonfederal", "q14-g-nonfederal", "q14-h-tot-nonfederal", "q14-i-nonfederal", "q14-j-tot-nonfederal"] },
+                    { "id": "q14-k-total", "total": true, "sumOf": ["q14-k-federal", "q14-k-nonfederal"] }
+                  ]
+                }
+              ]
+            },
+            { "type": "footnote", "marker": "1", "text": "Row and column totals are automatically generated on the Web survey." }
+          ]
+        },
         {
           "id": "q15",
           "number": 15,
