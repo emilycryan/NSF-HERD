@@ -189,10 +189,22 @@
 .site-footer {
   background-color: var(--color-primary-dark); /* deep navy — matches header and group headers */
   color: #fff;
-  text-align: center;
+  text-align: right;
   padding: var(--space-5) var(--space-6);
   font-size: var(--text-sm);
   margin-top: var(--space-6);
+}
+
+/* Paperwork Reduction Act display: the OMB control number + expiration date,
+ * shown the way federal information-collection sites present it. */
+.site-footer__omb {
+  margin: 0;
+  font-weight: 600;
+}
+
+.site-footer__sep {
+  margin: 0 var(--space-2);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* === Responsive (basic) === */
