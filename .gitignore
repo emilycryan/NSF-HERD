@@ -16,6 +16,9 @@
 .env.local
 scratch/
 
+# Session continuity (local crash-recovery notes, not committed)
+SESSION_CONTEXT.md
+
 # Reference materials (kept locally, not committed)
 reference/
 

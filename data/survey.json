@@ -41,7 +41,7 @@
             },
             {
               "type": "paragraph",
-              "text": "R&D activity is creative and systematic work undertaken in order to increase the stock of knowledge — including knowledge of humankind, culture, and society — and to devise new applications of available knowledge. R&D covers three activities: basic research, applied research, and experimental development."
+              "text": "R&D activity is creative and systematic work undertaken in order to increase the stock of knowledge — including knowledge of humankind, culture, and society — and to devise new applications of available knowledge. R&D covers three activities defined below — basic research, applied research, and experimental development."
             },
             {
               "type": "definition-list",
@@ -58,23 +58,6 @@
                   "term": "Experimental development",
                   "text": "is systematic work, drawing on knowledge gained from research and practical experience and producing additional knowledge, which is directed to producing new products or processes or to improving existing products or processes."
                 }
-              ]
-            },
-            {
-              "type": "heading",
-              "text": "Reporting Units"
-            },
-            {
-              "type": "table",
-              "columns": [
-                "Please <em>include</em> these components of your institution:",
-                "Please do <em>not</em> include:"
-              ],
-              "rows": [
-                [
-                  "<ul class=\"content-bullets\"><li>All units of your institution included in or with your financial statements, such as:<ul class=\"content-subbullets\"><li>Agricultural experiment stations</li><li>Branch campuses</li><li>Medical schools</li><li>Hospitals or clinics</li><li>Research centers and facilities</li><li>A university 501(c)3 foundation</li></ul></li></ul>",
-                  "<ul class=\"content-bullets\"><li>Federally Funded R&amp;D Centers (FFRDCs). This information is collected separately. See the list of FFRDCs: <a href=\"http://www.nsf.gov/statistics/ffrdc/\">http://www.nsf.gov/statistics/ffrdc/</a>.</li><li>Other organizations or institutions, such as teaching hospitals or research institutes, with which your institution has an affiliation or relationship, but which are <em>not</em> components of your institution.</li><li>Other campuses headed by their own president, chancellor, or equivalent within your university system. Each campus is asked to respond separately.</li></ul>"
-                ]
               ]
             },
             {
@@ -97,6 +80,23 @@
                   "<ul class=\"content-bullets\"><li>Public service grants or outreach programs</li><li>Curriculum development (unless included as part of an overall research project)</li><li>R&amp;D conducted by university faculty or staff at outside institutions that is not accounted for in your financial records</li><li>Estimates of the proportion of time budgeted for instruction that is spent on research</li><li>Capital projects (i.e., construction or renovation of research facilities)</li><li>Non-research training grants</li><li>Unrecovered indirect costs that exceed your institution&#8217;s federally negotiated Facilities and Administrative (F&amp;A) rate</li></ul>"
                 ]
               ]
+            },
+            {
+              "type": "heading",
+              "text": "Reporting Units"
+            },
+            {
+              "type": "table",
+              "columns": [
+                "Please <em>include</em> these components of your institution:",
+                "Please do <em>not</em> include:"
+              ],
+              "rows": [
+                [
+                  "<ul class=\"content-bullets\"><li>All units of your institution included in or with your financial statements, such as:<ul class=\"content-subbullets\"><li>Agricultural experiment stations</li><li>Branch campuses</li><li>Medical schools</li><li>Hospitals or clinics</li><li>Research centers and facilities</li><li>A university 501(c)3 foundation</li></ul></li></ul>",
+                  "<ul class=\"content-bullets\"><li>Federally Funded R&amp;D Centers (FFRDCs). This information is collected separately. See the list of FFRDCs: <a href=\"http://www.nsf.gov/statistics/ffrdc/\">http://www.nsf.gov/statistics/ffrdc/</a>.</li><li>Other organizations or institutions, such as teaching hospitals or research institutes, with which your institution has an affiliation or relationship, but which are <em>not</em> components of your institution.</li><li>Other campuses headed by their own president, chancellor, or equivalent within your university system. Each campus is asked to respond separately.</li></ul>"
+                ]
+              ]
             }
           ]
         },
@@ -112,7 +112,7 @@
 
             {
               "type": "field",
-              "label": "First name, last name:",
+              "label": "Name",
               "inputs": [
                 { "id": "primary-first-name", "prefill": "Emily" },
                 { "id": "primary-last-name", "prefill": "Ryan" }
@@ -120,7 +120,7 @@
             },
             {
               "type": "field",
-              "label": "Job title:",
+              "label": "Job Title",
               "inputs": [
                 { "id": "primary-job-title", "prefill": "Director" }
               ]
@@ -129,11 +129,11 @@
               "type": "field-row",
               "fields": [
                 {
-                  "label": "Email address:",
+                  "label": "E-mail address",
                   "inputs": [{ "id": "primary-email", "type": "email", "prefill": "Emily.Ryan@icfnext.com" }]
                 },
                 {
-                  "label": "Phone number:",
+                  "label": "Phone number",
                   "inputs": [{ "id": "primary-phone", "prefill": "890-897-7777" }],
                   "ext": { "id": "primary-phone-ext" }
                 }
@@ -141,29 +141,29 @@
             },
             {
               "type": "field",
-              "label": "Institution name:",
+              "label": "Institution name",
               "inputs": [{ "id": "primary-institution", "prefill": "Standard Test Reference 53" }]
             },
             {
               "type": "field",
-              "label": "Office/department:",
+              "label": "Office/Department",
               "inputs": [{ "id": "primary-office", "prefill": "Accounting" }]
             },
 
             { "type": "subheader", "text": "Mailing Address" },
             {
               "type": "field",
-              "label": "Line 1 (building, office number, campus box):",
+              "label": "Mailing address (line 1)",
               "inputs": [{ "id": "primary-addr-1", "prefill": "1902 Reston Metro Plaza" }]
             },
             {
               "type": "field",
-              "label": "Line 2 (campus street address or P.O. box):",
+              "label": "Mailing address (line 2)",
               "inputs": [{ "id": "primary-addr-2", "prefill": "PO Box 1234" }]
             },
             {
               "type": "field",
-              "label": "City, state, and ZIP code:",
+              "label": "City, state, and ZIP Code",
               "inputs": [
                 { "id": "primary-city", "prefill": "Reston" },
                 { "id": "primary-state", "prefill": "VA", "size": "small" },
@@ -218,7 +218,36 @@
               "type": "question-intro",
               "number": "Question 1.",
               "text": "How much of your total expenditures for research and development (R&D) came from the following sources in FY 2025?",
-              "definition": { "label": "See definition of R&D", "tag": "PDF", "href": "#" }
+              "definition": { "label": "Definition of R&D", "modalTarget": "rd-definition" }
+            },
+            {
+              "type": "modal",
+              "id": "rd-definition",
+              "title": "Research and Development (R&D)",
+              "label": "Research and Development (R&D)",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "text": "R&D activity is creative and systematic work undertaken in order to increase the stock of knowledge — including knowledge of humankind, culture, and society — and to devise new applications of available knowledge. R&D covers three activities defined below — basic research, applied research, and experimental development."
+                },
+                {
+                  "type": "definition-list",
+                  "items": [
+                    {
+                      "term": "Basic research",
+                      "text": "is experimental or theoretical work undertaken primarily to acquire new knowledge of the underlying foundations of phenomena and observable facts, without any particular application or use in view."
+                    },
+                    {
+                      "term": "Applied research",
+                      "text": "is original investigation undertaken in order to acquire new knowledge. It is directed primarily towards a specific, practical aim or objective."
+                    },
+                    {
+                      "term": "Experimental development",
+                      "text": "is systematic work, drawing on knowledge gained from research and practical experience and producing additional knowledge, which is directed to producing new products or processes or to improving existing products or processes."
+                    }
+                  ]
+                }
+              ]
             },
             {
               "type": "callout",
@@ -339,8 +368,7 @@
                   "label": "Total institutional funds",
                   "id": "q1-e4",
                   "total": true,
-                  "sumOf": ["q1-e1", "q1-e2", "q1-e3"],
-                  "footnoteRef": "2"
+                  "sumOf": ["q1-e1", "q1-e2", "q1-e3"]
                 }
               ]
             },
@@ -360,18 +388,12 @@
               "label": "Total",
               "id": "q1-g",
               "total": true,
-              "sumOf": ["q1-a", "q1-b", "q1-c", "q1-d", "q1-e4", "q1-f"],
-              "footnoteRef": "2"
+              "sumOf": ["q1-a", "q1-b", "q1-c", "q1-d", "q1-e4", "q1-f"]
             },
             {
               "type": "footnote",
               "marker": "1",
               "text": "This item is confidential. Please see the <button type=\"button\" class=\"modal-link\" data-modal-target=\"confidentiality\">confidentiality statement</button>."
-            },
-            {
-              "type": "footnote",
-              "marker": "2",
-              "text": "Totals for rows e4 and g are automatically generated on the Web survey."
             },
             { "type": "action-bar" },
             {
@@ -472,14 +494,10 @@
             {
               "type": "currency-row",
               "prefix": "f.",
-              "label": "Total<sup>1</sup>",
+              "label": "Total",
               "id": "q2-f",
               "total": true,
               "sumOf": ["q2-a", "q2-b", "q2-c", "q2-d", "q2-e"]
-            },
-            {
-              "type": "footnote",
-              "text": "The column total is automatically generated on the Web survey."
             },
             { "type": "action-bar" }
           ]
@@ -525,17 +543,13 @@
             {
               "type": "currency-row",
               "prefix": "c.",
-              "label": "Total<sup>1</sup>",
+              "label": "Total",
               "description": [
                 "Should match Question 1, row g minus Question 1, row e4"
               ],
               "id": "q3-c",
               "total": true,
               "sumOf": ["q3-a", "q3-b"]
-            },
-            {
-              "type": "footnote",
-              "text": "The column total is automatically generated on the Web survey."
             },
             { "type": "action-bar" }
           ]
@@ -638,7 +652,7 @@
                       "columns": [
                         { "prefix": "(1)", "label": "Federal" },
                         { "prefix": "(2)", "label": "Nonfederal" },
-                        { "prefix": "(3)", "label": "Total", "footnoteRef": "1" }
+                        { "prefix": "(3)", "label": "Total" }
                       ],
                       "rows": [
                         {
@@ -651,11 +665,6 @@
                           ]
                         }
                       ]
-                    },
-                    {
-                      "type": "footnote",
-                      "marker": "1",
-                      "text": "The row total is automatically generated on the Web survey."
                     }
                   ]
                 }
@@ -692,7 +701,7 @@
               "columns": [
                 { "prefix": "(1)", "label": "Federal" },
                 { "prefix": "(2)", "label": "Nonfederal" },
-                { "prefix": "(3)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(3)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -723,7 +732,7 @@
                   ]
                 },
                 {
-                  "label": "d. Total<sup class=\"footnote-ref\">1</sup>",
+                  "label": "d. Total",
                   "description": "Column 1 total should match Question 1, row a.<br />Column 3 total should match Question 1, row g.",
                   "separatorBefore": true,
                   "cells": [
@@ -733,11 +742,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "footnote",
-              "marker": "1",
-              "text": "Row and column totals are automatically generated on the Web survey."
             },
             { "type": "action-bar" },
             {
@@ -807,7 +811,7 @@
               "columns": [
                 { "prefix": "(1)", "label": "Federal" },
                 { "prefix": "(2)", "label": "Nonfederal" },
-                { "prefix": "(3)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(3)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -847,7 +851,7 @@
                   ]
                 },
                 {
-                  "label": "e. Total<sup class=\"footnote-ref\">1</sup>",
+                  "label": "e. Total",
                   "separatorBefore": true,
                   "cells": [
                     { "id": "q7-e-federal", "total": true, "sumOf": ["q7-a-federal", "q7-b-federal", "q7-c-federal", "q7-d-federal"] },
@@ -856,11 +860,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "footnote",
-              "marker": "1",
-              "text": "Row and column totals are automatically generated on the Web survey."
             },
             { "type": "action-bar" }
           ]
@@ -893,7 +892,7 @@
               "columns": [
                 { "prefix": "(1)", "label": "Federal" },
                 { "prefix": "(2)", "label": "Nonfederal" },
-                { "prefix": "(3)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(3)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -933,7 +932,7 @@
                   ]
                 },
                 {
-                  "label": "e. Total<sup class=\"footnote-ref\">1</sup>",
+                  "label": "e. Total",
                   "separatorBefore": true,
                   "cells": [
                     { "id": "q8-e-federal", "total": true, "sumOf": ["q8-a-federal", "q8-b-federal", "q8-c-federal", "q8-d-federal"] },
@@ -942,11 +941,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "footnote",
-              "marker": "1",
-              "text": "Row and column totals are automatically generated on the Web survey."
             },
             { "type": "action-bar" }
           ]
@@ -988,7 +982,7 @@
                 { "prefix": "(e)", "label": "NASA" },
                 { "prefix": "(f)", "label": "NSF" },
                 { "prefix": "(g)", "label": "Other" },
-                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+                { "prefix": "(h)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -1141,7 +1135,7 @@
                   ]
                 },
                 {
-                  "label": "10. Total<sup class=\"footnote-ref\">2</sup>",
+                  "label": "10. Total",
                   "indent": true,
                   "cells": [
                     { "id": "q9-eng-tot-usda", "total": true, "sumOf": ["q9-eng1-usda", "q9-eng2-usda", "q9-eng3-usda", "q9-eng4-usda", "q9-eng5-usda", "q9-eng6-usda", "q9-eng7-usda", "q9-eng8-usda", "q9-eng9-usda"] },
@@ -1169,7 +1163,7 @@
                 { "prefix": "(e)", "label": "NASA" },
                 { "prefix": "(f)", "label": "NSF" },
                 { "prefix": "(g)", "label": "Other" },
-                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+                { "prefix": "(h)", "label": "Total" }
               ],
               "rows": [
                 { "kind": "group", "label": "C. Geosciences, Atmospheric Sciences, and Ocean Sciences" },
@@ -1352,7 +1346,7 @@
                 { "prefix": "(e)", "label": "NASA" },
                 { "prefix": "(f)", "label": "NSF" },
                 { "prefix": "(g)", "label": "Other" },
-                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+                { "prefix": "(h)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -1486,7 +1480,7 @@
                 { "prefix": "(e)", "label": "NASA" },
                 { "prefix": "(f)", "label": "NSF" },
                 { "prefix": "(g)", "label": "Other" },
-                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+                { "prefix": "(h)", "label": "Total" }
               ],
               "rows": [
                 { "kind": "group", "label": "H. Social Sciences" },
@@ -1607,7 +1601,7 @@
                 { "prefix": "(e)", "label": "NASA" },
                 { "prefix": "(f)", "label": "NSF" },
                 { "prefix": "(g)", "label": "Other" },
-                { "prefix": "(h)", "label": "Total", "footnoteRef": "2" }
+                { "prefix": "(h)", "label": "Total" }
               ],
               "rows": [
                 { "kind": "group", "label": "J. Non-S&amp;E Fields" },
@@ -1761,7 +1755,6 @@
               ]
             },
             { "type": "footnote", "marker": "1", "text": "<strong>Key:</strong> USDA, Department of Agriculture; DoD, Department of Defense; Energy, Department of Energy; HHS, Department of Health and Human Services; NASA, National Aeronautics and Space Administration; NIH, National Institutes of Health; NSF, National Science Foundation. “Other” includes all other federal agencies." },
-            { "type": "footnote", "marker": "2", "text": "Row and column totals are automatically generated on the Web survey." },
             {
               "type": "modal",
               "id": "set1-examples",
@@ -2368,7 +2361,6 @@
                 {
                   "prefix": "l.",
                   "label": "Total",
-                  "footnoteRef": "1",
                   "description": "Should match Question 9, row K, column g",
                   "amountId": "q10-l-total",
                   "total": true,
@@ -2379,11 +2371,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "footnote",
-              "marker": "1",
-              "text": "The column total is automatically generated on the Web survey."
             },
             { "type": "action-bar" }
           ]
@@ -2417,7 +2404,7 @@
                 { "prefix": "(c)", "label": "Nonprofit organizations" },
                 { "prefix": "(d)", "label": "Institutional funds" },
                 { "prefix": "(e)", "label": "Other nonfederal sources" },
-                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(f)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -2574,7 +2561,7 @@
                 { "prefix": "(c)", "label": "Nonprofit organizations" },
                 { "prefix": "(d)", "label": "Institutional funds" },
                 { "prefix": "(e)", "label": "Other nonfederal sources" },
-                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(f)", "label": "Total" }
               ],
               "rows": [
                 { "kind": "group", "label": "C. Geosciences, Atmospheric Sciences, and Ocean Sciences" },
@@ -2733,7 +2720,7 @@
                 { "prefix": "(c)", "label": "Nonprofit organizations" },
                 { "prefix": "(d)", "label": "Institutional funds" },
                 { "prefix": "(e)", "label": "Other nonfederal sources" },
-                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(f)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -2849,7 +2836,7 @@
                 { "prefix": "(c)", "label": "Nonprofit organizations" },
                 { "prefix": "(d)", "label": "Institutional funds" },
                 { "prefix": "(e)", "label": "Other nonfederal sources" },
-                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(f)", "label": "Total" }
               ],
               "rows": [
                 { "kind": "group", "label": "H. Social Sciences" },
@@ -2954,7 +2941,7 @@
                 { "prefix": "(c)", "label": "Nonprofit organizations" },
                 { "prefix": "(d)", "label": "Institutional funds" },
                 { "prefix": "(e)", "label": "Other nonfederal sources" },
-                { "prefix": "(f)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(f)", "label": "Total" }
               ],
               "rows": [
                 { "kind": "group", "label": "J. Non-S&amp;E Fields" },
@@ -3086,8 +3073,7 @@
                   ]
                 }
               ]
-            },
-            { "type": "footnote", "marker": "1", "text": "Row and column totals are automatically generated on the Web survey." }
+            }
           ]
         },
         {
@@ -3209,8 +3195,7 @@
                   "label": "Total indirect costs",
                   "id": "q12-f3",
                   "total": true,
-                  "sumOf": ["q12-f1", "q12-f2"],
-                  "footnoteRef": "2"
+                  "sumOf": ["q12-f1", "q12-f2"]
                 }
               ]
             },
@@ -3224,18 +3209,12 @@
               ],
               "id": "q12-g",
               "total": true,
-              "sumOf": ["q12-a", "q12-b1", "q12-b2", "q12-c", "q12-d", "q12-e", "q12-f3"],
-              "footnoteRef": "2"
+              "sumOf": ["q12-a", "q12-b1", "q12-b2", "q12-c", "q12-d", "q12-e", "q12-f3"]
             },
             {
               "type": "footnote",
               "marker": "1",
               "text": "This item is confidential. Please see the <button type=\"button\" class=\"modal-link\" data-modal-target=\"confidentiality\">confidentiality statement</button>."
-            },
-            {
-              "type": "footnote",
-              "marker": "2",
-              "text": "Totals are automatically generated on the Web survey."
             },
             { "type": "action-bar" }
           ]
@@ -3300,7 +3279,7 @@
               "columns": [
                 { "prefix": "(a)", "label": "Federal" },
                 { "prefix": "(b)", "label": "Nonfederal" },
-                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(c)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -3422,7 +3401,7 @@
               "columns": [
                 { "prefix": "(a)", "label": "Federal" },
                 { "prefix": "(b)", "label": "Nonfederal" },
-                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(c)", "label": "Total" }
               ],
               "rows": [
                 { "kind": "group", "label": "C. Geosciences, Atmospheric Sciences, and Ocean Sciences" },
@@ -3546,7 +3525,7 @@
               "columns": [
                 { "prefix": "(a)", "label": "Federal" },
                 { "prefix": "(b)", "label": "Nonfederal" },
-                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(c)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -3636,7 +3615,7 @@
               "columns": [
                 { "prefix": "(a)", "label": "Federal" },
                 { "prefix": "(b)", "label": "Nonfederal" },
-                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(c)", "label": "Total" }
               ],
               "rows": [
                 { "kind": "group", "label": "H. Social Sciences" },
@@ -3718,7 +3697,7 @@
               "columns": [
                 { "prefix": "(a)", "label": "Federal" },
                 { "prefix": "(b)", "label": "Nonfederal" },
-                { "prefix": "(c)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(c)", "label": "Total" }
               ],
               "rows": [
                 { "kind": "group", "label": "J. Non-S&amp;E Fields" },
@@ -3820,8 +3799,7 @@
                   ]
                 }
               ]
-            },
-            { "type": "footnote", "marker": "1", "text": "Row and column totals are automatically generated on the Web survey." }
+            }
           ]
         },
         {
@@ -3853,7 +3831,7 @@
                 { "prefix": "(a)", "label": "Researchers" },
                 { "prefix": "(b)", "label": "R&D technicians" },
                 { "prefix": "(c)", "label": "R&D support staff" },
-                { "prefix": "(d)", "label": "Total", "footnoteRef": "2" }
+                { "prefix": "(d)", "label": "Total" }
               ],
               "sections": [
                 {
@@ -3904,11 +3882,6 @@
               "type": "footnote",
               "marker": "1",
               "text": "This item is confidential. Please see the <button type=\"button\" class=\"modal-link\" data-modal-target=\"confidentiality\">confidentiality statement</button>."
-            },
-            {
-              "type": "footnote",
-              "marker": "2",
-              "text": "Totals are automatically generated on the Web survey."
             },
             { "type": "action-bar" },
             {
@@ -3969,7 +3942,7 @@
                 { "prefix": "(a)", "label": "Researchers" },
                 { "prefix": "(b)", "label": "R&D technicians" },
                 { "prefix": "(c)", "label": "R&D support staff" },
-                { "prefix": "(d)", "label": "Total", "footnoteRef": "1" }
+                { "prefix": "(d)", "label": "Total" }
               ],
               "rows": [
                 {
@@ -3982,11 +3955,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "type": "footnote",
-              "marker": "1",
-              "text": "Total is automatically generated on the Web survey."
             },
             { "type": "action-bar" },
             {

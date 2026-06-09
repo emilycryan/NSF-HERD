@@ -9,10 +9,23 @@ const STATUS_LABELS = {
   'review': 'Review'
 };
 
+// Survey versions are selected via the ?survey= query param; default is HERD.
+// Add a version by dropping a data file here and pointing a key at it.
+const SURVEY_FILES = {
+  herd: 'data/survey.json',
+  ffrdc: 'data/survey-ffrdc.json',
+  'herd-short': 'data/survey-herd-short.json',
+};
+
 async function loadSurvey() {
-  const res = await fetch('data/survey.json');
+  const key = (new URLSearchParams(window.location.search).get('survey') || 'herd').toLowerCase();
+  const file = SURVEY_FILES[key];
+  if (!file) {
+    throw new Error(`Unknown survey "${key}". Valid values: ${Object.keys(SURVEY_FILES).join(', ')}.`);
+  }
+  const res = await fetch(file);
   if (!res.ok) {
-    throw new Error(`Failed to load survey.json: HTTP ${res.status}`);
+    throw new Error(`Failed to load ${file}: HTTP ${res.status}`);
   }
   return res.json();
 }
@@ -273,12 +286,18 @@ function renderQuestionIntro(block) {
   const number = block.number || '';
   const text = block.text || '';
   const def = block.definition;
-  const defHtml = def
-    ? `<p class="question-intro__definition">
+  let defHtml = '';
+  if (def && def.modalTarget) {
+    // Standard popup: a modal-link button opening the matching <dialog> (see wireModals).
+    defHtml = `<p class="question-intro__definition">
+         <button type="button" class="modal-link" data-modal-target="${def.modalTarget}">${def.label || ''}</button>
+       </p>`;
+  } else if (def) {
+    defHtml = `<p class="question-intro__definition">
          <a href="${def.href || '#'}">${def.label || ''}</a>
          <span class="question-intro__definition-tag">(${def.tag || 'PDF'})</span>
-       </p>`
-    : '';
+       </p>`;
+  }
   // Text is optional: a multi-part question (e.g. Q4) uses the intro for just
   // the "Question N." number, with the prose living in its lettered sub-parts.
   const textHtml = text ? `<p class="question-intro__text">${text}</p>` : '';
@@ -292,6 +311,7 @@ function renderQuestionIntro(block) {
 }
 
 function renderCurrencyHeader(block) {
+  const title = block.title ? `<p class="currency-header__title">${block.title}</p>` : '';
   const subtitle = block.subtitle ? `<p class="currency-header__subtitle">${block.subtitle}</p>` : '';
   const hint = block.hint ? `<p class="currency-header__hint">${block.hint}</p>` : '';
   if (block.lead) {
@@ -299,7 +319,7 @@ function renderCurrencyHeader(block) {
       <div class="currency-header currency-header--split">
         <p class="currency-header__lead">${block.lead}</p>
         <div class="currency-header__main">
-          <p class="currency-header__title">${block.title || ''}</p>
+          ${title}
           ${subtitle}
           ${hint}
         </div>
@@ -308,7 +328,7 @@ function renderCurrencyHeader(block) {
   }
   return `
     <div class="currency-header">
-      <p class="currency-header__title">${block.title || ''}</p>
+      ${title}
       ${subtitle}
       ${hint}
     </div>
@@ -809,17 +829,17 @@ function renderContactCard(block) {
   return `
     <div class="content-contact-card">
       ${renderField({
-        label: 'First name, last name',
+        label: 'Name',
         inputs: [{ id: `${p}-first-name` }, { id: `${p}-last-name` }]
       })}
       ${renderField({
-        label: 'Job title:',
+        label: 'Job Title',
         inputs: [{ id: `${p}-job-title` }]
       })}
       ${renderFieldRow({
         fields: [
-          { label: 'Email address:', inputs: [{ id: `${p}-email`, type: 'email' }] },
-          { label: 'Phone number:', inputs: [{ id: `${p}-phone` }], ext: { id: `${p}-phone-ext` } }
+          { label: 'E-mail address', inputs: [{ id: `${p}-email`, type: 'email' }] },
+          { label: 'Phone Number', inputs: [{ id: `${p}-phone` }], ext: { id: `${p}-phone-ext` } }
         ]
       })}
       <div class="content-checkbox-row">

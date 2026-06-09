@@ -1,0 +1,1033 @@
+{
+  "title": "FY 2025 Survey",
+  "fullTitle": "FFRDC Research and Development Survey",
+  "year": "2025",
+  "dueDate": "January 16, 2026",
+  "surveyStatus": "Not Submitted",
+  "completedCount": 0,
+  "totalSidebarSections": 8,
+  "changesNote": "There were no changes to this questionnaire from the FY 2024 version.",
+  "issues": [
+    {
+      "severity": "not-started",
+      "title": "Review",
+      "detail": "None"
+    },
+    {
+      "severity": "not-started",
+      "title": "Unexplained Trend Variances",
+      "detail": "None"
+    },
+    {
+      "severity": "not-started",
+      "title": "Unexplained Data Quality Issues",
+      "detail": "None"
+    }
+  ],
+  "groups": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "sections": [
+        {
+          "id": "definitions",
+          "title": "Definitions & Instructions",
+          "kind": "info",
+          "showInSidebar": false,
+          "content": [
+            {
+              "type": "callout",
+              "html": "This survey collects data on research and development (R&D) activities at Federally Funded R&D Centers (FFRDCs). Please report R&D activities and expenditures for your organization's <strong>2025 fiscal year</strong>."
+            },
+            {
+              "type": "heading",
+              "text": "Fiscal year (FY)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Please report data for your organization's 2025 fiscal year."
+            },
+            {
+              "type": "heading",
+              "text": "Research and Development (R&D)"
+            },
+            {
+              "type": "paragraph",
+              "text": "R&D activity is creative and systematic work undertaken in order to increase the stock of knowledge — including knowledge of humankind, culture, and society — and to devise new applications of available knowledge. R&D covers three activities defined below — basic research, applied research, and experimental development."
+            },
+            {
+              "type": "definition-list",
+              "items": [
+                {
+                  "term": "Basic research",
+                  "text": "is experimental or theoretical work undertaken primarily to acquire new knowledge of the underlying foundations of phenomena and observable facts, without any particular application or use in view."
+                },
+                {
+                  "term": "Applied research",
+                  "text": "is original investigation undertaken in order to acquire new knowledge. It is directed primarily towards a specific, practical aim or objective."
+                },
+                {
+                  "term": "Experimental development",
+                  "text": "is systematic work, drawing on knowledge gained from research and practical experience and producing additional knowledge, which is directed to producing new products or processes or to improving existing products or processes."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "R&amp;D Expenditures"
+            },
+            {
+              "type": "paragraph",
+              "text": "Please include all current operating expenditures for activities specifically organized to produce R&amp;D outcomes. This includes basic research, applied research, and experimental development funded by external sponsors or separately budgeted and accounted for by your organization using internal funds."
+            },
+            {
+              "type": "table",
+              "columns": [
+                "R&amp;D <em>includes</em>:",
+                "R&amp;D does <em>not</em> include:"
+              ],
+              "rows": [
+                [
+                  "<ul class=\"content-bullets\"><li>Sponsored research (including federal and nonfederal sponsors)</li><li>Indirect costs associated with R&amp;D projects</li><li>R&amp;D equipment and software</li><li>R&amp;D subcontract expenditures</li><li>Clinical trials</li><li>Research training grants</li></ul>",
+                  "<ul class=\"content-bullets\"><li>Outreach or training programs</li><li>R&amp;D conducted by staff at outside institutions that is not accounted for in your financial records</li><li>Capital projects (i.e., construction or renovation of research facilities)</li><li>Routine testing</li><li>Non-R&amp;D program implementation or management</li><li>Policy development</li></ul>"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "contact-info",
+          "title": "Contact Information & login accounts",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "warning",
+          "content": [
+            {
+              "type": "subheader",
+              "text": "Primary Contact Information"
+            },
+            {
+              "type": "paragraph",
+              "text": "Please complete the contact information for the person responsible for the survey"
+            },
+            {
+              "type": "field",
+              "label": "Name",
+              "inputs": [
+                {
+                  "id": "primary-first-name",
+                  "prefill": "Emily"
+                },
+                {
+                  "id": "primary-last-name",
+                  "prefill": "Ryan"
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Job Title",
+              "inputs": [
+                {
+                  "id": "primary-job-title",
+                  "prefill": "Director"
+                }
+              ]
+            },
+            {
+              "type": "field-row",
+              "fields": [
+                {
+                  "label": "E-mail address",
+                  "inputs": [
+                    {
+                      "id": "primary-email",
+                      "type": "email",
+                      "prefill": "Emily.Ryan@icfnext.com"
+                    }
+                  ]
+                },
+                {
+                  "label": "Phone number",
+                  "inputs": [
+                    {
+                      "id": "primary-phone",
+                      "prefill": "890-897-7777"
+                    }
+                  ],
+                  "ext": {
+                    "id": "primary-phone-ext"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Institution name",
+              "inputs": [
+                {
+                  "id": "primary-institution",
+                  "prefill": "Standard Test Reference 53"
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Office/Department",
+              "inputs": [
+                {
+                  "id": "primary-office",
+                  "prefill": "Accounting"
+                }
+              ]
+            },
+            {
+              "type": "subheader",
+              "text": "Mailing Address"
+            },
+            {
+              "type": "field",
+              "label": "Mailing address (line 1)",
+              "inputs": [
+                {
+                  "id": "primary-addr-1",
+                  "prefill": "1902 Reston Metro Plaza"
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Mailing address (line 2)",
+              "inputs": [
+                {
+                  "id": "primary-addr-2",
+                  "prefill": "PO Box 1234"
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "City, state, and ZIP Code",
+              "inputs": [
+                {
+                  "id": "primary-city",
+                  "prefill": "Reston"
+                },
+                {
+                  "id": "primary-state",
+                  "prefill": "VA",
+                  "size": "small"
+                },
+                {
+                  "id": "primary-zip",
+                  "prefill": "20190"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "At the end of each survey cycle, we send a thank-you letter to the president/director of each organization that completes the survey. In that letter, we acknowledge the person listed as the primary contact. If there are other individuals who should also be thanked in the letter, please let us know in the box below. Please limit to 2 individuals, and provide first and last names and job titles."
+            },
+            {
+              "type": "textarea",
+              "id": "primary-thank-you-names",
+              "maxLength": 500
+            },
+            {
+              "type": "subheader",
+              "text": "Other Contact Information"
+            },
+            {
+              "type": "paragraph",
+              "text": "List individuals who should be copied on all e-mails about the survey or can create a login account."
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Check <strong>All Email</strong> box, if this person should be copied on all e-mails.",
+                "Check <strong>Can Log In</strong> box, if this person can create a login account. After you save the information on this page, this person will receive an e-mail allowing them to create their own password.",
+                "Job Title should include information about office/department as appropriate (e.g., VP of Sponsored Programs, Department of Finance Manager, Analyst II in Grants Management)."
+              ]
+            },
+            {
+              "type": "contact-card",
+              "prefix": "other-1"
+            },
+            {
+              "type": "contact-card",
+              "prefix": "other-2"
+            },
+            {
+              "type": "contact-card",
+              "prefix": "other-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-expenditures",
+      "title": "R&D Expenditures",
+      "sections": [
+        {
+          "id": "q1",
+          "number": 1,
+          "title": "R&D expenditures by source of funds",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 1.",
+              "text": "How much of your total expenditures for separately budgeted research and development (R&D) came from the following sources in FY 2025?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Report the <strong>original source</strong> of funds, when possible. For example, if you received federal funds from another organization, report that amount under \"U.S. federal government.\"",
+                "Please do not report capital construction costs."
+              ]
+            },
+            {
+              "type": "currency-header",
+              "title": "R&D expenditures",
+              "subtitle": "(Dollars in thousands)",
+              "hint": "(for example, report $25,342 as $25)"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "a.",
+              "label": "U.S. federal government",
+              "description": [
+                "Any agency of the United States government.",
+                "Include federal funds passed through from another organization."
+              ],
+              "id": "q1-a"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "b.",
+              "label": "State and local government",
+              "description": [
+                "Any state, county, municipality, or other local government entity in the United States, including state health agencies."
+              ],
+              "id": "q1-b"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "c.",
+              "label": "Business",
+              "description": [
+                "Domestic or foreign for-profit organizations. (Report funds from a company's nonprofit foundation in row d.)"
+              ],
+              "id": "q1-c"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "d.",
+              "label": "Nonprofit organizations",
+              "description": [
+                "Domestic or foreign nonprofit foundations and organizations, except universities and colleges. Funds from universities and colleges should be reported in row e."
+              ],
+              "id": "q1-d"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "e.",
+              "label": "All other sources",
+              "description": [
+                "Other sources not reported above, such as funds from foreign governments, and foreign or U.S. universities."
+              ],
+              "id": "q1-e"
+            },
+            {
+              "type": "divider"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "f.",
+              "label": "Total",
+              "id": "q1-f",
+              "total": true,
+              "sumOf": [
+                "q1-a",
+                "q1-b",
+                "q1-c",
+                "q1-d",
+                "q1-e"
+              ]
+            },
+            {
+              "type": "action-bar"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "number": 2,
+          "title": "Federal agency sources of R&D",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 2.",
+              "text": "Of the federally funded R&D expenditures reported in Question 1, row a, which agencies funded this R&D and how much of the reported amount was from each agency?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Report the agency that was the <strong>original source</strong> of funds, when possible.",
+                "Use rows h–q to list up to 10 other agencies that funded the largest R&D expenditures. Use row r to report any remaining amount.",
+                "A list of federal departments, agencies and subagencies is included as a link on the web questionnaire."
+              ]
+            },
+            {
+              "type": "entry-list",
+              "lead": "Funding agency",
+              "caption": "R&D expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "rows": [
+                {
+                  "prefix": "a.",
+                  "label": "Department of Defense",
+                  "amountId": "q2-a-amount"
+                },
+                {
+                  "prefix": "b.",
+                  "label": "Department of Energy",
+                  "amountId": "q2-b-amount"
+                },
+                {
+                  "prefix": "c.",
+                  "label": "Department of Health and Human Services (including the National Institutes of Health)",
+                  "amountId": "q2-c-amount"
+                },
+                {
+                  "prefix": "d.",
+                  "label": "Department of Homeland Security",
+                  "amountId": "q2-d-amount"
+                },
+                {
+                  "prefix": "e.",
+                  "label": "Department of Transportation",
+                  "amountId": "q2-e-amount"
+                },
+                {
+                  "prefix": "f.",
+                  "label": "National Aeronautics and Space Administration",
+                  "amountId": "q2-f-amount"
+                },
+                {
+                  "prefix": "g.",
+                  "label": "National Science Foundation",
+                  "amountId": "q2-g-amount"
+                },
+                {
+                  "prefix": "h.",
+                  "nameId": "q2-h-name",
+                  "amountId": "q2-h-amount"
+                },
+                {
+                  "prefix": "i.",
+                  "nameId": "q2-i-name",
+                  "amountId": "q2-i-amount"
+                },
+                {
+                  "prefix": "j.",
+                  "nameId": "q2-j-name",
+                  "amountId": "q2-j-amount"
+                },
+                {
+                  "prefix": "k.",
+                  "nameId": "q2-k-name",
+                  "amountId": "q2-k-amount"
+                },
+                {
+                  "prefix": "l.",
+                  "nameId": "q2-l-name",
+                  "amountId": "q2-l-amount"
+                },
+                {
+                  "prefix": "m.",
+                  "nameId": "q2-m-name",
+                  "amountId": "q2-m-amount"
+                },
+                {
+                  "prefix": "n.",
+                  "nameId": "q2-n-name",
+                  "amountId": "q2-n-amount"
+                },
+                {
+                  "prefix": "o.",
+                  "nameId": "q2-o-name",
+                  "amountId": "q2-o-amount"
+                },
+                {
+                  "prefix": "p.",
+                  "nameId": "q2-p-name",
+                  "amountId": "q2-p-amount"
+                },
+                {
+                  "prefix": "q.",
+                  "nameId": "q2-q-name",
+                  "amountId": "q2-q-amount"
+                },
+                {
+                  "prefix": "r.",
+                  "label": "Other agencies not listed above",
+                  "amountId": "q2-r-amount"
+                },
+                {
+                  "prefix": "s.",
+                  "label": "Total",
+                  "description": "Should match Question 1, row a",
+                  "amountId": "q2-s-total",
+                  "total": true,
+                  "sumOf": [
+                    "q2-a-amount",
+                    "q2-b-amount",
+                    "q2-c-amount",
+                    "q2-d-amount",
+                    "q2-e-amount",
+                    "q2-f-amount",
+                    "q2-g-amount",
+                    "q2-h-amount",
+                    "q2-i-amount",
+                    "q2-j-amount",
+                    "q2-k-amount",
+                    "q2-l-amount",
+                    "q2-m-amount",
+                    "q2-n-amount",
+                    "q2-o-amount",
+                    "q2-p-amount",
+                    "q2-q-amount",
+                    "q2-r-amount"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "action-bar"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "number": 3,
+          "title": "Types of R&D: basic research, applied research and experimental development",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 3.",
+              "text": "What amounts of your FY 2025 R&D expenditures were for basic research, applied research, and experimental development?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "If possible, these categories defining the type of R&D should be coded at the individual project level by the principal investigator. Estimates are acceptable if necessary.",
+                "<button type=\"button\" class=\"modal-link\" data-modal-target=\"q3-examples\">Click for examples</button>"
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "lead": "Type of research",
+              "caption": "R&D expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "columns": [
+                {
+                  "prefix": "(1)",
+                  "label": "Federal"
+                },
+                {
+                  "prefix": "(2)",
+                  "label": "Nonfederal"
+                },
+                {
+                  "prefix": "(3)",
+                  "label": "Total"
+                }
+              ],
+              "rows": [
+                {
+                  "label": "a. Basic research",
+                  "description": "Experimental or theoretical work undertaken primarily to acquire new knowledge of the underlying foundations of phenomena and observable facts, without any particular application or use in view.",
+                  "cells": [
+                    {
+                      "id": "q3-a-federal"
+                    },
+                    {
+                      "id": "q3-a-nonfederal"
+                    },
+                    {
+                      "id": "q3-a-total",
+                      "total": true,
+                      "sumOf": [
+                        "q3-a-federal",
+                        "q3-a-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "b. Applied research",
+                  "description": "Original investigation undertaken in order to acquire new knowledge. It is directed primarily towards a specific, practical aim or objective.",
+                  "cells": [
+                    {
+                      "id": "q3-b-federal"
+                    },
+                    {
+                      "id": "q3-b-nonfederal"
+                    },
+                    {
+                      "id": "q3-b-total",
+                      "total": true,
+                      "sumOf": [
+                        "q3-b-federal",
+                        "q3-b-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "c. Experimental development",
+                  "description": "Systematic work, drawing on knowledge gained from research and practical experience and producing additional knowledge, which is directed to producing new products or processes or to improving existing products or processes.",
+                  "cells": [
+                    {
+                      "id": "q3-c-federal"
+                    },
+                    {
+                      "id": "q3-c-nonfederal"
+                    },
+                    {
+                      "id": "q3-c-total",
+                      "total": true,
+                      "sumOf": [
+                        "q3-c-federal",
+                        "q3-c-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "d. Total",
+                  "description": "Column 1 total should match Question 1, row a.<br />Column 3 total should match Question 1, row f.",
+                  "separatorBefore": true,
+                  "cells": [
+                    {
+                      "id": "q3-d-federal",
+                      "total": true,
+                      "sumOf": [
+                        "q3-a-federal",
+                        "q3-b-federal",
+                        "q3-c-federal"
+                      ]
+                    },
+                    {
+                      "id": "q3-d-nonfederal",
+                      "total": true,
+                      "sumOf": [
+                        "q3-a-nonfederal",
+                        "q3-b-nonfederal",
+                        "q3-c-nonfederal"
+                      ]
+                    },
+                    {
+                      "id": "q3-d-total",
+                      "total": true,
+                      "sumOf": [
+                        "q3-d-federal",
+                        "q3-d-nonfederal"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "action-bar"
+            },
+            {
+              "type": "modal",
+              "id": "q3-examples",
+              "label": "Examples",
+              "content": [
+                {
+                  "type": "table",
+                  "caption": "Examples",
+                  "columns": [
+                    "Basic research",
+                    "Applied research",
+                    "Experimental development"
+                  ],
+                  "rows": [
+                    [
+                      "A researcher is studying the properties of human blood to determine what affects coagulation.",
+                      "A researcher is conducting research on how a new chicken pox vaccine affects blood coagulation.",
+                      "A researcher is conducting clinical trials to test a newly developed chicken pox vaccine for young children."
+                    ],
+                    [
+                      "A researcher is studying the properties of molecules under various heat and cold conditions.",
+                      "A researcher is investigating the properties of particular substances under various heat and cold conditions with the objective of finding longer-lasting components for highway pavement.",
+                      "A researcher is working with state transportation officials to conduct tests of a newly developed highway pavement under various types of heat and cold conditions."
+                    ],
+                    [
+                      "A researcher is investigating the effect of different types of manipulatives on the way first graders learn mathematical strategy by changing manipulatives and then measuring what students have learned through standardized instruments.",
+                      "A researcher is studying the implementation of a specific math curriculum to determine what teachers needed to know to implement the curriculum successfully.",
+                      "A researcher is developing and testing software and support tools, based on fieldwork, to improve mathematics cognition for student special education."
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "number": 4,
+          "title": "Cost elements of R&D",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 4.",
+              "text": "Of the total R&D expenditures reported in Question 1, what were the amounts for the following types of costs?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Please report only <strong>direct costs</strong> in rows a–e. Indirect costs should be reported in row f."
+              ]
+            },
+            {
+              "type": "currency-header",
+              "lead": "Types of costs",
+              "title": "R&D expenditures",
+              "subtitle": "(Dollars in thousands)"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "a.",
+              "label": "Salaries, wages, and fringe benefits",
+              "description": [
+                "Include compensation for all R&D personnel whether full-time or part-time, temporary or permanent. Include salaries, wages, and fringe benefits paid from internal funds and from external support."
+              ],
+              "id": "q4-a"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "b.",
+              "label": "Software purchases",
+              "description": [
+                "All payments for software. Include both purchases of software packages and license fees for systems."
+              ],
+              "id": "q4-b"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "c.",
+              "label": "Equipment",
+              "description": [
+                "Payments for movable equipment. Include ancillary costs such as delivery and setup."
+              ],
+              "id": "q4-c"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "d.",
+              "label": "Subcontracts",
+              "description": [
+                "Payments to subcontractors or subrecipients for services on R&D projects."
+              ],
+              "id": "q4-d"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "e.",
+              "label": "Other direct costs",
+              "description": [
+                "Other costs that do not fit into one of the above categories, including (but not limited to) travel, computer usage fees, and supplies."
+              ],
+              "id": "q4-e"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "f.",
+              "label": "Indirect costs",
+              "description": [
+                "Include all indirect costs (overhead) associated with R&D projects."
+              ],
+              "id": "q4-f"
+            },
+            {
+              "type": "divider"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "g.",
+              "label": "Total",
+              "description": [
+                "Should match Question 1, row f"
+              ],
+              "id": "q4-g",
+              "total": true,
+              "sumOf": [
+                "q4-a",
+                "q4-b",
+                "q4-c",
+                "q4-d",
+                "q4-e",
+                "q4-f"
+              ]
+            },
+            {
+              "type": "action-bar"
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "number": 5,
+          "title": "Total operating budget",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 5.",
+              "text": "What was the total executed operating budget of your FFRDC in FY 2025, excluding capital construction costs?"
+            },
+            {
+              "type": "currency-header",
+              "subtitle": "(Dollars in thousands)"
+            },
+            {
+              "type": "currency-row",
+              "label": "Total operating budget",
+              "id": "q5-operating-budget"
+            },
+            {
+              "type": "action-bar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "personnel",
+      "title": "Personnel",
+      "sections": [
+        {
+          "id": "q6",
+          "number": 6,
+          "title": "FTEs and headcount by R&D function",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 6.",
+              "text": "How many full-time equivalents (FTEs) worked in the functions listed below throughout FY 2025, and how many personnel (headcount) are included in that calculation?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "<strong>Functions</strong> are defined primarily by the nature of the employee's work, not the employee's level of education. <button type=\"button\" class=\"modal-link\" data-modal-target=\"q6-functions\">R&D function descriptions</button>",
+                "Exclude personnel that would be considered indirect research support such as research administration and other personnel <em>who were not paid for work on specific research projects</em>.",
+                "Exclude subcontractors.",
+                "Include all personnel paid from R&D accounts during the fiscal year in FTEs and headcount regardless of how much they were paid, how much time they spent on the project, or their current employment status.",
+                "<strong>FTEs</strong> are calculated as the total working effort <strong>spent on research</strong> during your fiscal year divided by the total effort representing one full-time schedule within the same period. <button type=\"button\" class=\"modal-link\" data-modal-target=\"q6-fte-examples\">Example FTE calculations</button>",
+                "An individual cannot be more than 1.0 FTE. If an individual exceeds 1.0 research FTE based on your standard calculations, adjust down to 1.0.",
+                "<strong>Headcount:</strong> include each person only once. If they performed work in two roles (e.g., researcher and technician), include them in the headcount for their predominate role. We expect headcount to be larger than FTE."
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "plain": true,
+              "columns": [
+                {
+                  "prefix": "(a)",
+                  "label": "Researchers"
+                },
+                {
+                  "prefix": "(b)",
+                  "label": "R&D technicians"
+                },
+                {
+                  "prefix": "(c)",
+                  "label": "R&D support staff"
+                },
+                {
+                  "prefix": "(d)",
+                  "label": "Total"
+                }
+              ],
+              "rows": [
+                {
+                  "label": "a. Full-time equivalents (FTEs) <span class=\"currency-row__label-note\">(round to 1 decimal place)</span>",
+                  "cells": [
+                    {
+                      "id": "q6-a"
+                    },
+                    {
+                      "id": "q6-b"
+                    },
+                    {
+                      "id": "q6-c"
+                    },
+                    {
+                      "id": "q6-d",
+                      "total": true,
+                      "sumOf": [
+                        "q6-a",
+                        "q6-b",
+                        "q6-c"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "b. Headcount",
+                  "cells": [
+                    {
+                      "id": "q6-hc-a"
+                    },
+                    {
+                      "id": "q6-hc-b"
+                    },
+                    {
+                      "id": "q6-hc-c"
+                    },
+                    {
+                      "id": "q6-hc-d",
+                      "total": true,
+                      "sumOf": [
+                        "q6-hc-a",
+                        "q6-hc-b",
+                        "q6-hc-c"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "action-bar"
+            },
+            {
+              "type": "modal",
+              "id": "q6-fte-examples",
+              "title": "Examples of FTE Calculations",
+              "content": [
+                {
+                  "type": "subheader",
+                  "text": "Using labor hours:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The following examples assume a 40-hour work week during a 49-week work year (1,960 hours), which excludes 3 weeks for vacation, holidays, etc. However, you should use the hours per week and weeks per year that typically represent a full-time employee at your organization."
+                },
+                {
+                  "type": "bullet-list",
+                  "items": [
+                    "10 researchers who spent a combined 13,720 hours on research: 13,720/1,960 = 7.0 FTE",
+                    "1 researcher who works on research 20% of the time for 20 weeks, 50% of the time for another 20 weeks, and full-time for 9 weeks: ((20% * 20) + (60% * 20) + 9)/ 49 = 0.5 FTE",
+                    "2 research technicians who worked exclusively on research but only for 32 weeks: (2 * (32 * 40))/1,960 = 1.3 FTE",
+                    "10 student employees during the summer who each worked on research full-time for 10 weeks: 10 * (10/49) = 2.0 FTE"
+                  ]
+                },
+                {
+                  "type": "subheader",
+                  "text": "Using salary:"
+                },
+                {
+                  "type": "paragraph",
+                  "text": "FTE must be calculated for each individual and then summed for institution reporting."
+                },
+                {
+                  "type": "bullet-list",
+                  "items": [
+                    "1 researcher with a $150,000 salary who was employed the entire year and $120,000 of salary came from R&D accounts: 120,000/150,000 = 0.8 FTE",
+                    "1 research support staff member with a $60,000 salary for a 9-month appointment, of which $40,000 came from R&D accounts: (40,000/60,000) * (9/12) = 0.5 FTE"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "modal",
+              "id": "q6-functions",
+              "label": "Description of R&D Functions",
+              "content": [
+                {
+                  "type": "table",
+                  "caption": "Description of R&D Functions",
+                  "columns": [
+                    "Researchers",
+                    "R&D technicians",
+                    "R&D support staff"
+                  ],
+                  "rows": [
+                    [
+                      "Professionals engaged in the conception or creation of new knowledge, products, processes, methods and systems and also in the management of the projects concerned. Include R&D managers in this category.",
+                      "Persons whose main tasks require technical knowledge and experience in one or more fields of science or engineering, but who contribute to R&D by performing technical tasks such as computer programming, data analysis, ensuring accurate testing, operating lab equipment, and preparing and processing samples under the supervision of researchers.",
+                      "Not directly involved with the conduct of a research project but support the researchers and technicians. These employees might include clerical staff, financial and personnel administrators, report writers, patent agents, safety trainers, equipment specialists, and other related employees."
+                    ],
+                    {
+                      "full": "Researcher versus R&D technician",
+                      "heading": true
+                    },
+                    {
+                      "full": "Researchers contribute more to the creative aspects of R&D whereas technicians provide technical support. For example, a researcher would design an experiment, and a technician would run the experiment and assist in analyzing results."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other",
+      "sections": [
+        {
+          "id": "q7",
+          "number": 7,
+          "title": "Fiscal year",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 7.",
+              "text": "In what month did your organization's 2025 fiscal year end?"
+            },
+            {
+              "type": "field",
+              "inputs": [
+                {
+                  "id": "q7-month",
+                  "size": "medium"
+                }
+              ]
+            },
+            {
+              "type": "action-bar"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

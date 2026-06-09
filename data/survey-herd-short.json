@@ -1,0 +1,1513 @@
+{
+  "title": "FY 2025 Survey",
+  "fullTitle": "Higher Education Research and Development (HERD) Survey, Short Form",
+  "year": "2025",
+  "dueDate": "January 30, 2026",
+  "surveyStatus": "Not Submitted",
+  "completedCount": 0,
+  "totalSidebarSections": 6,
+  "changesNote": "There were no changes to this questionnaire from the FY 2024 version.",
+  "issues": [
+    {
+      "severity": "not-started",
+      "title": "Review",
+      "detail": "None"
+    },
+    {
+      "severity": "not-started",
+      "title": "Unexplained Trend Variances",
+      "detail": "None"
+    },
+    {
+      "severity": "not-started",
+      "title": "Unexplained Data Quality Issues",
+      "detail": "None"
+    }
+  ],
+  "groups": [
+    {
+      "id": "getting-started",
+      "title": "Getting Started",
+      "sections": [
+        {
+          "id": "definitions",
+          "title": "Definitions & Instructions",
+          "kind": "info",
+          "showInSidebar": false,
+          "content": [
+            {
+              "type": "callout",
+              "html": "This survey collects data on research and development (R&D) activities at higher education institutions. Please report R&D activities and expenditures for your institution's <strong>2025 fiscal year</strong>."
+            },
+            {
+              "type": "heading",
+              "text": "Fiscal year (FY)"
+            },
+            {
+              "type": "paragraph",
+              "text": "Please report data for your institution's 2025 fiscal year."
+            },
+            {
+              "type": "heading",
+              "text": "Research and Development (R&D)"
+            },
+            {
+              "type": "paragraph",
+              "text": "R&D activity is creative and systematic work undertaken in order to increase the stock of knowledge — including knowledge of humankind, culture, and society — and to devise new applications of available knowledge. R&D covers three activities defined below — basic research, applied research, and experimental development."
+            },
+            {
+              "type": "definition-list",
+              "items": [
+                {
+                  "term": "Basic research",
+                  "text": "is experimental or theoretical work undertaken primarily to acquire new knowledge of the underlying foundations of phenomena and observable facts, without any particular application or use in view."
+                },
+                {
+                  "term": "Applied research",
+                  "text": "is original investigation undertaken in order to acquire new knowledge. It is directed primarily towards a specific, practical aim or objective."
+                },
+                {
+                  "term": "Experimental development",
+                  "text": "is systematic work, drawing on knowledge gained from research and practical experience and producing additional knowledge, which is directed to producing new products or processes or to improving existing products or processes."
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "R&amp;D Expenditures"
+            },
+            {
+              "type": "paragraph",
+              "text": "Include all expenditures for R&amp;D activities from your institution&#8217;s current operating funds that are separately accounted for. For purposes of this survey, R&amp;D includes expenditures for organized research as defined by 2 CFR Part 200 Appendix III and expenditures from funds designated for research."
+            },
+            {
+              "type": "table",
+              "columns": [
+                "R&amp;D <em>includes</em>:",
+                "R&amp;D does <em>not</em> include:"
+              ],
+              "rows": [
+                [
+                  "<ul class=\"content-bullets\"><li>Sponsored research (federal and nonfederal)</li><li>University research (institutional funds that are separately budgeted for individual R&amp;D projects)</li><li>Startup, bridge, or seed funding provided to researchers within your institution</li><li>Other departmental funds designated for research</li><li>Recovered and unrecovered indirect costs (see definitions in Question 1)</li><li>Equipment purchased from R&amp;D project accounts</li><li>R&amp;D funds passed through to a subrecipient organization, educational or other</li><li>Clinical trials, Phases I, II, or III (see definition in Question 5)</li><li>Research training grants funding work on organized research projects</li><li>Tuition remission provided to students working on research</li></ul>",
+                  "<ul class=\"content-bullets\"><li>Public service grants or outreach programs</li><li>Curriculum development (unless included as part of an overall research project)</li><li>R&amp;D conducted by university faculty or staff at outside institutions that is not accounted for in your financial records</li><li>Estimates of the proportion of time budgeted for instruction that is spent on research</li><li>Capital projects (i.e., construction or renovation of research facilities)</li><li>Non-research training grants</li><li>Unrecovered indirect costs that exceed your institution&#8217;s federally negotiated Facilities and Administrative (F&amp;A) rate</li></ul>"
+                ]
+              ]
+            },
+            {
+              "type": "heading",
+              "text": "Reporting Units"
+            },
+            {
+              "type": "table",
+              "columns": [
+                "Please <em>include</em> these components of your institution:",
+                "Please do <em>not</em> include:"
+              ],
+              "rows": [
+                [
+                  "<ul class=\"content-bullets\"><li>All units of your institution included in or with your financial statements, such as:<ul class=\"content-subbullets\"><li>Agricultural experiment stations</li><li>Branch campuses</li><li>Medical schools</li><li>Hospitals or clinics</li><li>Research centers and facilities</li><li>A university 501(c)3 foundation</li></ul></li></ul>",
+                  "<ul class=\"content-bullets\"><li>Federally Funded R&amp;D Centers (FFRDCs). This information is collected separately. See the list of FFRDCs: <a href=\"http://www.nsf.gov/statistics/ffrdc/\">http://www.nsf.gov/statistics/ffrdc/</a>.</li><li>Other organizations or institutions, such as teaching hospitals or research institutes, with which your institution has an affiliation or relationship, but which are <em>not</em> components of your institution.</li><li>Other campuses headed by their own president, chancellor, or equivalent within your university system. Each campus is asked to respond separately.</li></ul>"
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "id": "contact-info",
+          "title": "Contact Information & login accounts",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "warning",
+          "content": [
+            {
+              "type": "subheader",
+              "text": "Primary Contact Information"
+            },
+            {
+              "type": "paragraph",
+              "text": "Please complete the contact information for the person responsible for the survey"
+            },
+            {
+              "type": "field",
+              "label": "Name",
+              "inputs": [
+                {
+                  "id": "primary-first-name",
+                  "prefill": "Emily"
+                },
+                {
+                  "id": "primary-last-name",
+                  "prefill": "Ryan"
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Job Title",
+              "inputs": [
+                {
+                  "id": "primary-job-title",
+                  "prefill": "Director"
+                }
+              ]
+            },
+            {
+              "type": "field-row",
+              "fields": [
+                {
+                  "label": "E-mail address",
+                  "inputs": [
+                    {
+                      "id": "primary-email",
+                      "type": "email",
+                      "prefill": "Emily.Ryan@icfnext.com"
+                    }
+                  ]
+                },
+                {
+                  "label": "Phone number",
+                  "inputs": [
+                    {
+                      "id": "primary-phone",
+                      "prefill": "890-897-7777"
+                    }
+                  ],
+                  "ext": {
+                    "id": "primary-phone-ext"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Institution name",
+              "inputs": [
+                {
+                  "id": "primary-institution",
+                  "prefill": "Standard Test Reference 53"
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Office/Department",
+              "inputs": [
+                {
+                  "id": "primary-office",
+                  "prefill": "Accounting"
+                }
+              ]
+            },
+            {
+              "type": "subheader",
+              "text": "Mailing Address"
+            },
+            {
+              "type": "field",
+              "label": "Mailing address (line 1)",
+              "inputs": [
+                {
+                  "id": "primary-addr-1",
+                  "prefill": "1902 Reston Metro Plaza"
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "Mailing address (line 2)",
+              "inputs": [
+                {
+                  "id": "primary-addr-2",
+                  "prefill": "PO Box 1234"
+                }
+              ]
+            },
+            {
+              "type": "field",
+              "label": "City, state, and ZIP Code",
+              "inputs": [
+                {
+                  "id": "primary-city",
+                  "prefill": "Reston"
+                },
+                {
+                  "id": "primary-state",
+                  "prefill": "VA",
+                  "size": "small"
+                },
+                {
+                  "id": "primary-zip",
+                  "prefill": "20190"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "At the end of each survey cycle, we send a thank-you letter to the president/chancellor of each institution that completes the survey. In that letter, we acknowledge the person listed as the primary contact. If there are other individuals who should also be thanked in the letter, please let us know in the box below. Please limit to 2 individuals, and provide first and last names and job titles."
+            },
+            {
+              "type": "textarea",
+              "id": "primary-thank-you-names",
+              "maxLength": 500
+            },
+            {
+              "type": "subheader",
+              "text": "Other Contact Information"
+            },
+            {
+              "type": "paragraph",
+              "text": "List individuals who should be copied on all e-mails about the survey or can create a login account."
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Check <strong>All Email</strong> box, if this person should be copied on all e-mails.",
+                "Check <strong>Can Log In</strong> box, if this person can create a login account. After you save the information on this page, this person will receive an e-mail allowing them to create their own password.",
+                "Job Title should include information about office/department as appropriate (e.g., VP of Sponsored Programs, Department of Finance Manager, Analyst II in Grants Management)."
+              ]
+            },
+            {
+              "type": "contact-card",
+              "prefix": "other-1"
+            },
+            {
+              "type": "contact-card",
+              "prefix": "other-2"
+            },
+            {
+              "type": "contact-card",
+              "prefix": "other-3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rd-expenditures",
+      "title": "R&D Expenditures",
+      "sections": [
+        {
+          "id": "q1",
+          "number": 1,
+          "title": "R&D expenditures by source of funds",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "review",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 1.",
+              "text": "How much of your total expenditures for research and development (R&D) came from the following sources in FY 2025?",
+              "definition": {
+                "label": "Definition of R&D",
+                "modalTarget": "rd-definition"
+              }
+            },
+            {
+              "type": "modal",
+              "id": "rd-definition",
+              "title": "Research and Development (R&D)",
+              "label": "Research and Development (R&D)",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "text": "R&D activity is creative and systematic work undertaken in order to increase the stock of knowledge — including knowledge of humankind, culture, and society — and to devise new applications of available knowledge. R&D covers three activities defined below — basic research, applied research, and experimental development."
+                },
+                {
+                  "type": "definition-list",
+                  "items": [
+                    {
+                      "term": "Basic research",
+                      "text": "is experimental or theoretical work undertaken primarily to acquire new knowledge of the underlying foundations of phenomena and observable facts, without any particular application or use in view."
+                    },
+                    {
+                      "term": "Applied research",
+                      "text": "is original investigation undertaken in order to acquire new knowledge. It is directed primarily towards a specific, practical aim or objective."
+                    },
+                    {
+                      "term": "Experimental development",
+                      "text": "is systematic work, drawing on knowledge gained from research and practical experience and producing additional knowledge, which is directed to producing new products or processes or to improving existing products or processes."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "callout",
+              "html": "<ul class=\"content-bullets\"><li>In rows a, b, c, d, and f: Include both <strong>direct</strong> and <strong>recovered indirect costs</strong> (reimbursement of F&amp;A costs from external sponsors).</li><li>Report the <strong>original source</strong> of funds, when possible.</li><li>Funds coming through your institution's 501(c)3 should be reported based on the original funding source (e.g., restricted gifts in row f; unrestricted gifts in row e).</li><li>Include all fields of R&D (e.g., sciences, engineering, humanities, education, law, arts). <button type=\"button\" class=\"modal-link\" data-modal-target=\"all-fields-examples\">See full listing of all fields of R&D</button></li></ul>"
+            },
+            {
+              "type": "currency-header",
+              "title": "R&D expenditures",
+              "subtitle": "(Dollars in thousands)",
+              "hint": "(for example, report $25,342 as $25)"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "a.",
+              "label": "U.S. federal government",
+              "description": [
+                "Any agency of the United States government.",
+                "Include federal funds passed through from another institution. Funds from FFRDCs should be treated as direct federal funding."
+              ],
+              "id": "q1-a"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "b.",
+              "label": "State and local government",
+              "description": [
+                "Any state, county, municipality, or other local government entity in the United States, including state health agencies.",
+                "Include state funds that support R&D at agricultural and other experiment stations.",
+                "Public institutions should report state appropriations restricted for R&D activities here rather than in row e, Institutional funds."
+              ],
+              "id": "q1-b"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "c.",
+              "label": "Business",
+              "description": [
+                "Domestic or foreign for-profit organizations. Report funds from a company's nonprofit foundation in row d."
+              ],
+              "id": "q1-c"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "d.",
+              "label": "Nonprofit organizations",
+              "description": [
+                "Domestic or foreign nonprofit foundations and organizations, except universities and colleges. Funds from other universities and colleges should be reported in row f."
+              ],
+              "id": "q1-d"
+            },
+            {
+              "type": "currency-group",
+              "prefix": "e.",
+              "label": "Institutional funds",
+              "id": "q1-e",
+              "children": [
+                {
+                  "type": "currency-row",
+                  "prefix": "1.",
+                  "label": "Institutionally financed research",
+                  "description": [
+                    "Separately accounted for R&D funded by your institution. Do not include estimated research time. Exclude institution research administration and support (e.g., office of sponsored programs) or other indirect costs."
+                  ],
+                  "id": "q1-e1",
+                  "confidential": true,
+                  "footnoteRef": "1"
+                },
+                {
+                  "type": "checkbox-question",
+                  "number": "Question 1.1.",
+                  "text": "Did you include the following types of funding in your responses to Question 1, row e1?",
+                  "columns": {
+                    "left": "Type of funding",
+                    "right": "Included"
+                  },
+                  "showIf": {
+                    "field": "q1-e1",
+                    "op": "gt",
+                    "value": 0
+                  },
+                  "items": [
+                    {
+                      "prefix": "a.",
+                      "label": "Competitively awarded internal grants for research",
+                      "description": "Expenditures for organized research projects, involving a proposal or statement of work with expected research outcomes.",
+                      "id": "q1-1-a"
+                    },
+                    {
+                      "prefix": "b.",
+                      "label": "Startup packages/bridge funding/seed funding",
+                      "description": "Expenditures from funds provided to faculty members to begin or continue their research while seeking external sponsors.",
+                      "id": "q1-1-b"
+                    },
+                    {
+                      "prefix": "c.",
+                      "label": "Other departmental funds designated for research",
+                      "description": "Expenditures for research from other departmental or central accounts which do not match the descriptions provided in rows a or b.",
+                      "id": "q1-1-c"
+                    },
+                    {
+                      "prefix": "d.",
+                      "label": "Tuition assistance for student research personnel",
+                      "description": "University tuition assistance, waivers, or remission provided to students working on organized research. Please check \"Included\" even if these funds are reported as part of the expenditures included under rows a, b, or c.",
+                      "id": "q1-1-d"
+                    }
+                  ]
+                },
+                {
+                  "type": "currency-row",
+                  "prefix": "2.",
+                  "label": "Cost sharing",
+                  "description": [
+                    "Include committed cost sharing other than unrecovered indirect costs."
+                  ],
+                  "id": "q1-e2",
+                  "confidential": true,
+                  "footnoteRef": "1"
+                },
+                {
+                  "type": "currency-row",
+                  "prefix": "3.",
+                  "label": "Unrecovered indirect costs",
+                  "description": [
+                    "Calculate for externally funded R&D only (preferably on a project-specific basis) using the appropriate cost rate — on-campus, off-campus, etc."
+                  ],
+                  "bullets": [
+                    "First, multiply the negotiated rate by the corresponding base.",
+                    "Second, subtract recovered indirect costs."
+                  ],
+                  "id": "q1-e3",
+                  "confidential": true,
+                  "footnoteRef": "1"
+                },
+                {
+                  "type": "currency-row",
+                  "prefix": "4.",
+                  "label": "Total institutional funds",
+                  "id": "q1-e4",
+                  "total": true,
+                  "sumOf": [
+                    "q1-e1",
+                    "q1-e2",
+                    "q1-e3"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "currency-row",
+              "prefix": "f.",
+              "label": "All other sources",
+              "description": [
+                "Other sources not reported above, such as funds from foreign governments, foreign or U.S. universities, and gifts designated by the donors for research."
+              ],
+              "id": "q1-f"
+            },
+            {
+              "type": "divider"
+            },
+            {
+              "type": "currency-row",
+              "prefix": "g.",
+              "label": "Total",
+              "id": "q1-g",
+              "total": true,
+              "sumOf": [
+                "q1-a",
+                "q1-b",
+                "q1-c",
+                "q1-d",
+                "q1-e4",
+                "q1-f"
+              ]
+            },
+            {
+              "type": "footnote",
+              "marker": "1",
+              "text": "This item is confidential. Please see the <button type=\"button\" class=\"modal-link\" data-modal-target=\"confidentiality\">confidentiality statement</button>."
+            },
+            {
+              "type": "action-bar"
+            },
+            {
+              "type": "modal",
+              "id": "confidentiality",
+              "title": "Confidentiality Statement",
+              "label": "Confidentiality Statement",
+              "content": [
+                {
+                  "type": "paragraph",
+                  "text": "Responses to the confidential items are collected under a pledge of confidentiality and will only be used for statistical purposes. Information from confidential items is not published or released for individual institutions; only aggregate totals will appear in publications. In accordance with the Confidential Information Protection and Statistical Efficiency Act (CIPSEA) of 2018, 44 U.S.C. § 3561 et seq., and other applicable federal laws, your responses will not be disclosed in identifiable form to anyone other than agency employees or authorized persons. Any questionnaire item not marked as confidential will be available on a public use file. For the Federal Cybersecurity Enhancement Act of 2015, codified in relevant part at 6 U.S.C. § 663, your data are protected from cybersecurity risks through screening of the federal information systems that transmit your data, and by the information security program that protects the agency's systems and data from unauthorized access, use, disclosure, disruption, modification, or destruction, pursuant to the Federal Information Security Modernization Act of 2014 (FISMA), 44 U.S.C. § 3551 et seq."
+                },
+                {
+                  "type": "paragraph",
+                  "text": "The following items are confidential:"
+                },
+                {
+                  "type": "bullet-list",
+                  "items": [
+                    "The sub-values of institution funds on question 1: institutionally financed research (row e1), cost sharing (row e2), and unrecovered indirect costs (row e3)."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "number": 2,
+          "title": "R&D equipment expenditures by field",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 2A–C.",
+              "text": "For the R&D fields below, what portion of your FY 2025 R&D expenditures went for the purchase of capitalized R&D equipment?"
+            },
+            {
+              "type": "callout",
+              "html": "<ul class=\"content-bullets\"><li><button type=\"button\" class=\"modal-link\" data-modal-target=\"all-fields-examples\">See examples of the disciplines included under each field</button></li></ul>"
+            },
+            {
+              "type": "currency-matrix",
+              "banded": true,
+              "caption": "R&D equipment expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "lead": "R&D Fields",
+              "columns": [
+                {
+                  "prefix": "(a)",
+                  "label": "Federal"
+                },
+                {
+                  "prefix": "(b)",
+                  "label": "Nonfederal"
+                },
+                {
+                  "prefix": "(c)",
+                  "label": "Total"
+                }
+              ],
+              "rows": [
+                {
+                  "label": "A. Computer and Information Sciences",
+                  "cells": [
+                    {
+                      "id": "q2-a-federal"
+                    },
+                    {
+                      "id": "q2-a-nonfederal"
+                    },
+                    {
+                      "id": "q2-a-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-a-federal",
+                        "q2-a-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "B. Engineering",
+                  "cells": [
+                    {
+                      "id": "q2-b-federal"
+                    },
+                    {
+                      "id": "q2-b-nonfederal"
+                    },
+                    {
+                      "id": "q2-b-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-b-federal",
+                        "q2-b-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "C. Geosciences, Atmospheric Sciences, and Ocean Sciences",
+                  "cells": [
+                    {
+                      "id": "q2-c-federal"
+                    },
+                    {
+                      "id": "q2-c-nonfederal"
+                    },
+                    {
+                      "id": "q2-c-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-c-federal",
+                        "q2-c-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "D. Life Sciences",
+                  "cells": [
+                    {
+                      "id": "q2-d-federal"
+                    },
+                    {
+                      "id": "q2-d-nonfederal"
+                    },
+                    {
+                      "id": "q2-d-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-d-federal",
+                        "q2-d-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "E. Mathematics and Statistics",
+                  "cells": [
+                    {
+                      "id": "q2-e-federal"
+                    },
+                    {
+                      "id": "q2-e-nonfederal"
+                    },
+                    {
+                      "id": "q2-e-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-e-federal",
+                        "q2-e-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "F. Physical Sciences",
+                  "cells": [
+                    {
+                      "id": "q2-f-federal"
+                    },
+                    {
+                      "id": "q2-f-nonfederal"
+                    },
+                    {
+                      "id": "q2-f-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-f-federal",
+                        "q2-f-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "G. Psychology",
+                  "cells": [
+                    {
+                      "id": "q2-g-federal"
+                    },
+                    {
+                      "id": "q2-g-nonfederal"
+                    },
+                    {
+                      "id": "q2-g-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-g-federal",
+                        "q2-g-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "H. Social Sciences",
+                  "cells": [
+                    {
+                      "id": "q2-h-federal"
+                    },
+                    {
+                      "id": "q2-h-nonfederal"
+                    },
+                    {
+                      "id": "q2-h-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-h-federal",
+                        "q2-h-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "I. Other Sciences",
+                  "cells": [
+                    {
+                      "id": "q2-i-federal"
+                    },
+                    {
+                      "id": "q2-i-nonfederal"
+                    },
+                    {
+                      "id": "q2-i-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-i-federal",
+                        "q2-i-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "J. Non-S&amp;E Fields",
+                  "cells": [
+                    {
+                      "id": "q2-j-federal"
+                    },
+                    {
+                      "id": "q2-j-nonfederal"
+                    },
+                    {
+                      "id": "q2-j-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-j-federal",
+                        "q2-j-nonfederal"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "label": "K. Total for All Fields of R&amp;D",
+                  "description": "Column (a) Federal total should match Question 1, row a.<br />Column (b) Nonfederal total should match Question 1, rows b–f.",
+                  "cells": [
+                    {
+                      "id": "q2-k-federal",
+                      "total": true,
+                      "sumOf": [
+                        "q2-a-federal",
+                        "q2-b-federal",
+                        "q2-c-federal",
+                        "q2-d-federal",
+                        "q2-e-federal",
+                        "q2-f-federal",
+                        "q2-g-federal",
+                        "q2-h-federal",
+                        "q2-i-federal",
+                        "q2-j-federal"
+                      ]
+                    },
+                    {
+                      "id": "q2-k-nonfederal",
+                      "total": true,
+                      "sumOf": [
+                        "q2-a-nonfederal",
+                        "q2-b-nonfederal",
+                        "q2-c-nonfederal",
+                        "q2-d-nonfederal",
+                        "q2-e-nonfederal",
+                        "q2-f-nonfederal",
+                        "q2-g-nonfederal",
+                        "q2-h-nonfederal",
+                        "q2-i-nonfederal",
+                        "q2-j-nonfederal"
+                      ]
+                    },
+                    {
+                      "id": "q2-k-total",
+                      "total": true,
+                      "sumOf": [
+                        "q2-k-federal",
+                        "q2-k-nonfederal"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "modal",
+              "id": "all-fields-examples",
+              "title": "Examples of Disciplines by Field of R&amp;D",
+              "label": "Examples of Disciplines by Field of R&amp;D",
+              "content": [
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "A. Computer and Information Sciences",
+                      "items": [
+                        "Artificial intelligence",
+                        "Computer and information technology administration and management",
+                        "Computer science",
+                        "Computer software and media applications",
+                        "Computer systems analysis",
+                        "Computer systems networking and telecommunications",
+                        "Data processing",
+                        "Information sciences, studies",
+                        "Information technology"
+                      ]
+                    },
+                    {
+                      "heading": "B. Engineering",
+                      "subgroups": [
+                        {
+                          "heading": "1. Aerospace, Aeronautical, and Astronautical Engineering",
+                          "items": [
+                            "Aerodynamics",
+                            "Aerospace engineering",
+                            "Space technology"
+                          ]
+                        },
+                        {
+                          "heading": "2. Bioengineering and Biomedical Engineering",
+                          "items": [
+                            "Biological and biosystems engineering",
+                            "Biomaterials engineering",
+                            "Biomedical technology",
+                            "Medical engineering"
+                          ]
+                        },
+                        {
+                          "heading": "3. Chemical Engineering",
+                          "items": [
+                            "Biochemical engineering",
+                            "Chemical and biomolecular engineering",
+                            "Engineering chemistry",
+                            "Paper science",
+                            "Petroleum refining process",
+                            "Polymer, plastics engineering"
+                          ]
+                        },
+                        {
+                          "heading": "4. Civil Engineering",
+                          "items": [
+                            "Architectural engineering",
+                            "Construction engineering",
+                            "Engineering management, administration",
+                            "Environmental, environmental health engineering",
+                            "Geotechnical and geoenvironmental engineering",
+                            "Sanitary engineering",
+                            "Structural engineering",
+                            "Surveying engineering",
+                            "Transportation and highway engineering",
+                            "Water resources engineering"
+                          ]
+                        },
+                        {
+                          "heading": "5. Electrical, Electronic, and Communications Engineering",
+                          "items": [
+                            "Communications engineering",
+                            "Computer engineering",
+                            "Computer hardware engineering",
+                            "Computer software engineering",
+                            "Electrical and electronics engineering",
+                            "Laser and optical engineering",
+                            "Power",
+                            "Telecommunications engineering"
+                          ]
+                        },
+                        {
+                          "heading": "6. Industrial and Manufacturing Engineering",
+                          "items": [
+                            "Industrial engineering",
+                            "Manufacturing engineering",
+                            "Operations research",
+                            "Systems engineering"
+                          ]
+                        },
+                        {
+                          "heading": "7. Mechanical Engineering",
+                          "items": [
+                            "Electromechanical engineering",
+                            "Mechatronics, robotics, and automation engineering"
+                          ]
+                        },
+                        {
+                          "heading": "8. Metallurgical and Materials Engineering",
+                          "items": [
+                            "Ceramic sciences and engineering",
+                            "Geophysical, geological engineering",
+                            "Materials engineering",
+                            "Metallurgical engineering",
+                            "Mining and mineral engineering",
+                            "Textile sciences and engineering",
+                            "Welding"
+                          ]
+                        },
+                        {
+                          "heading": "9. Other Engineering",
+                          "items": [
+                            "Agricultural engineering",
+                            "Engineering design",
+                            "Engineering mechanics, physics, and science",
+                            "Engineering physics",
+                            "Engineering science",
+                            "Forest engineering",
+                            "Nanotechnology",
+                            "Naval architecture and marine engineering",
+                            "Nuclear engineering",
+                            "Ocean engineering",
+                            "Petroleum engineering",
+                            "Other engineering fields that cannot be classified using the fields listed above"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "C. Geosciences, Atmospheric Sciences, and Ocean Sciences",
+                      "subgroups": [
+                        {
+                          "heading": "1. Atmospheric Science and Meteorology",
+                          "items": [
+                            "Aeronomy",
+                            "Atmospheric chemistry and climatology",
+                            "Atmospheric physics and dynamics",
+                            "Extraterrestrial atmospheres",
+                            "Meteorology",
+                            "Solar",
+                            "Weather modification"
+                          ]
+                        },
+                        {
+                          "heading": "2. Geological and Earth Sciences",
+                          "items": [
+                            "Earth and planetary sciences",
+                            "Geochemistry",
+                            "Geodesy and gravity",
+                            "Geology",
+                            "Geomagnetism",
+                            "Geophysics and seismology",
+                            "Hydrology and water resources",
+                            "Minerology and petrology",
+                            "Paleomagnetism",
+                            "Paleontology",
+                            "Physical geography",
+                            "Stratigraphy and sedimentation",
+                            "Surveying"
+                          ]
+                        },
+                        {
+                          "heading": "3. Ocean Sciences and Marine Sciences",
+                          "items": [
+                            "Biological oceanography",
+                            "Geological oceanography",
+                            "Marine biology",
+                            "Marine oceanography",
+                            "Marine sciences",
+                            "Oceanography, chemical and physical"
+                          ]
+                        },
+                        {
+                          "heading": "4. Other Geosciences, Atmospheric Sciences, and Ocean Sciences",
+                          "items": [
+                            "Other fields that cannot be classified using the fields listed above"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "heading": "D. Life Sciences",
+                      "subgroups": [
+                        {
+                          "heading": "1. Agricultural Sciences",
+                          "items": [
+                            "Agricultural business and management",
+                            "Agricultural chemistry",
+                            "Agricultural engineering—report in Engineering",
+                            "Agricultural production operations",
+                            "Animal sciences",
+                            "Applied horticulture and horticultural business services",
+                            "Aquaculture",
+                            "Food science and technology",
+                            "International agriculture",
+                            "Plant sciences",
+                            "Soil sciences",
+                            "Veterinary biomedical and clinical sciences",
+                            "Veterinary medicine",
+                            "Wood science"
+                          ]
+                        },
+                        {
+                          "heading": "2. Biological and Biomedical Sciences",
+                          "items": [
+                            "Allergies and immunology",
+                            "Biochemistry, biophysics, and molecular biology",
+                            "Biogeography",
+                            "Biology and biomedical sciences, general",
+                            "Biomathematics, bioinformatics, and computational biology",
+                            "Biotechnology",
+                            "Botany and plant biology",
+                            "Cell, cellular biology, and anatomical sciences",
+                            "Epidemiology, ecology and population biology",
+                            "Food, nutrition, and wellness studies",
+                            "Genetics",
+                            "Microbiological sciences and immunology",
+                            "Molecular medicine",
+                            "Neurobiology and neuroscience",
+                            "Pharmacology and toxicology",
+                            "Physiology, pathology and related sciences",
+                            "Zoology, animal biology"
+                          ]
+                        },
+                        {
+                          "heading": "3. Health Sciences",
+                          "items": [
+                            "Advanced, graduate dentistry and oral sciences",
+                            "Allied health and medical assisting services",
+                            "Bioethics, medical ethics",
+                            "Clinical medicine research",
+                            "Clinical/medical laboratory science/research and allied professions",
+                            "Communication disorders sciences and services",
+                            "Dentistry",
+                            "Dietetics and clinical nutrition services",
+                            "Health and medical administrative services",
+                            "Health, medical preparatory programs",
+                            "Gerontology, health sciences",
+                            "Kinesiology and exercise science",
+                            "Medical clinical science, graduate medical studies",
+                            "Medical illustration and informatics",
+                            "Medicine",
+                            "Mental health",
+                            "Nursing",
+                            "Optometry",
+                            "Osteopathic medicine, osteopathy",
+                            "Pharmacy, pharmaceutical sciences, and administration",
+                            "Podiatric medicine, podiatry",
+                            "Public health",
+                            "Radiological science",
+                            "Registered nursing, nursing administration, nursing research and clinical nursing",
+                            "Rehabilitation and therapeutic professions",
+                            "Zoology"
+                          ]
+                        },
+                        {
+                          "heading": "4. Natural Resources and Conservation",
+                          "items": [
+                            "Fishing and fisheries sciences and management",
+                            "Forestry",
+                            "Natural resources conservation and research",
+                            "Natural resources management and policy",
+                            "Renewable natural resources",
+                            "Wildlife and wildlands science and management"
+                          ]
+                        },
+                        {
+                          "heading": "5. Other Life Sciences",
+                          "items": [
+                            "Other life sciences that cannot be classified using the fields listed above"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "E. Mathematics and Statistics",
+                      "items": [
+                        "Applied mathematics",
+                        "Mathematics",
+                        "Statistics"
+                      ]
+                    },
+                    {
+                      "heading": "F. Physical Sciences",
+                      "subgroups": [
+                        {
+                          "heading": "1. Astronomy and Astrophysics",
+                          "items": [
+                            "Astronomy",
+                            "Astrophysics",
+                            "Planetary astronomy and science"
+                          ]
+                        },
+                        {
+                          "heading": "2. Chemistry",
+                          "note": "(except Biochemistry—report in Biological and Biomedical Sciences)",
+                          "items": [
+                            "Analytical chemistry",
+                            "Chemical physics",
+                            "Environmental chemistry",
+                            "Forensic chemistry",
+                            "Inorganic chemistry",
+                            "Organic chemistry",
+                            "Organo-metallic chemistry",
+                            "Physical chemistry",
+                            "Polymer chemistry",
+                            "Theoretical chemistry"
+                          ]
+                        },
+                        {
+                          "heading": "3. Materials Science",
+                          "items": [
+                            "Materials chemistry",
+                            "Materials science"
+                          ]
+                        },
+                        {
+                          "heading": "4. Physics",
+                          "items": [
+                            "Acoustics",
+                            "Atomic, molecular physics",
+                            "Condensed matter and materials physics",
+                            "Elementary particle physics",
+                            "Mathematical physics",
+                            "Nuclear physics",
+                            "Optics, optical sciences",
+                            "Plasma, high-temperature physics",
+                            "Theoretical physics"
+                          ]
+                        },
+                        {
+                          "heading": "5. Other Physical Sciences",
+                          "items": [
+                            "Other physical sciences that cannot be classified using the fields listed above"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "heading": "G. Psychology",
+                      "items": [
+                        "Clinical psychology",
+                        "Counseling and applied psychology",
+                        "Human development",
+                        "Research and experimental psychology"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "H. Social Sciences",
+                      "subgroups": [
+                        {
+                          "heading": "1. Anthropology",
+                          "items": [
+                            "Cultural anthropology",
+                            "Medical anthropology",
+                            "Physical and biological anthropology"
+                          ]
+                        },
+                        {
+                          "heading": "2. Economics",
+                          "items": [
+                            "Agricultural economics",
+                            "Applied economics",
+                            "Business development",
+                            "Development economics and international development",
+                            "Econometrics and quantitative economics",
+                            "Industrial economics",
+                            "International economics",
+                            "Labor economics",
+                            "Managerial economics",
+                            "Natural resource economics",
+                            "Public finance and fiscal policy"
+                          ]
+                        },
+                        {
+                          "heading": "3. Political Science and Government",
+                          "items": [
+                            "Comparative government",
+                            "Government",
+                            "Legal systems",
+                            "Political economy",
+                            "Political science",
+                            "Political theory"
+                          ]
+                        },
+                        {
+                          "heading": "4. Sociology, Demography, and Population Studies",
+                          "items": [
+                            "Comparative and historical sociology",
+                            "Complex organizations",
+                            "Cultural and social structure",
+                            "Demography and population studies",
+                            "Group interactions",
+                            "Rural sociology",
+                            "Social problems and welfare theory",
+                            "Sociology"
+                          ]
+                        },
+                        {
+                          "heading": "5. Other Social Sciences",
+                          "items": [
+                            "Archeology",
+                            "Area, ethnic, cultural, gender, and group studies",
+                            "Cartography",
+                            "Criminal science and corrections",
+                            "Criminology",
+                            "Geography",
+                            "Gerontology, social sciences",
+                            "History and philosophy of science and technology",
+                            "International relations and national security studies",
+                            "Linguistics",
+                            "Public policy analysis",
+                            "Regional studies",
+                            "Urban studies, affairs"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "heading": "I. Other Sciences",
+                      "note": "Use this category for R&amp;D that involves at least one S&amp;E field (rows A–H) if it is impossible to report multidisciplinary or interdisciplinary R&amp;D expenditures in specific fields."
+                    }
+                  ]
+                },
+                {
+                  "type": "examples-grid",
+                  "groups": [
+                    {
+                      "heading": "J. Non-S&amp;E Fields",
+                      "subgroups": [
+                        {
+                          "heading": "1. Business Management and Business Administration",
+                          "items": [
+                            "Business administration",
+                            "Business management",
+                            "Business, managerial economics",
+                            "Management information systems and services",
+                            "Marketing management and research"
+                          ]
+                        },
+                        {
+                          "heading": "2. Communication and Communications Technologies",
+                          "items": [
+                            "Communication and media studies",
+                            "Communications technologies",
+                            "Journalism",
+                            "Radio, television, and digital communication"
+                          ]
+                        },
+                        {
+                          "heading": "3. Education",
+                          "items": [
+                            "Education administration and supervision",
+                            "Education research",
+                            "Teacher education, specific levels and methods",
+                            "Teaching fields"
+                          ]
+                        },
+                        {
+                          "heading": "4. Humanities",
+                          "items": [
+                            "English language and literature, letters",
+                            "Foreign languages and literatures",
+                            "History",
+                            "Humanities, general",
+                            "Liberal arts and sciences",
+                            "Philosophy and religious studies",
+                            "Theology and religious vocations"
+                          ]
+                        },
+                        {
+                          "heading": "5. Law",
+                          "items": [
+                            "Law",
+                            "Legal studies"
+                          ]
+                        },
+                        {
+                          "heading": "6. Social Work",
+                          "note": "(no specific examples)"
+                        },
+                        {
+                          "heading": "7. Visual and Performing Arts",
+                          "items": [
+                            "Drama, theatre arts and stagecraft",
+                            "Film, video, and photographic arts",
+                            "Fine and studio arts",
+                            "Music"
+                          ]
+                        },
+                        {
+                          "heading": "8. Other Non-S&amp;E Fields",
+                          "items": [
+                            "Architecture",
+                            "City, urban, community and regional planning",
+                            "Family, consumer sciences and human sciences",
+                            "Landscape architecture",
+                            "Library science",
+                            "Military technology and applied science",
+                            "Parks, sports, recreation, leisure and fitness",
+                            "Public administration and public affairs",
+                            "Other non-S&amp;E fields that cannot be classified using the fields listed above"
+                          ],
+                          "noteAfter": "Also, use this category for R&amp;D that involves multiple non-S&amp;E fields if it is impossible to report multidisciplinary or interdisciplinary R&amp;D expenditures in specific fields."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "number": 3,
+          "title": "Subrecipient R&D expenditures",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 3.",
+              "text": "How much of your R&D expenditures reported in Question 1 did your institution <strong><u>receive as a subrecipient</u></strong> from another U.S. university or college?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "The <strong>subrecipient</strong> for an award carries out the work but receives the funds from a pass-through entity rather than directly from the original funding source. Subrecipients tend to be the co-authors of publications, writers of technical reports discussing findings, inventors, etc.",
+                "Do <strong>not</strong> include contractor or vendor relationships. A contractor or vendor receives payment for goods and services provided. See 2 CFR Part 200 Subpart D Section 331.",
+                "Please report the original source of funds in columns (a) and (b)."
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "Originating source of R&D expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "columns": [
+                {
+                  "prefix": "(a)",
+                  "label": "Federal"
+                },
+                {
+                  "prefix": "(b)",
+                  "label": "Nonfederal"
+                },
+                {
+                  "prefix": "(c)",
+                  "label": "Total"
+                }
+              ],
+              "rows": [
+                {
+                  "label": "Funds received from other U.S. higher education institutions",
+                  "description": "Include colleges and universities and units owned, operated, and controlled by such institutions.",
+                  "cells": [
+                    {
+                      "id": "q3-federal"
+                    },
+                    {
+                      "id": "q3-nonfederal"
+                    },
+                    {
+                      "id": "q3-total",
+                      "total": true,
+                      "sumOf": [
+                        "q3-federal",
+                        "q3-nonfederal"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "action-bar"
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "number": 4,
+          "title": "R&D expenditures passed through",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 4.",
+              "text": "How much of your R&D expenditures reported in Question 1 did your institution <strong><u>pass through to subrecipients</u></strong> at other U.S. universities or colleges?"
+            },
+            {
+              "type": "bullet-list",
+              "items": [
+                "Please report the original source of funds in columns (a) and (b)."
+              ]
+            },
+            {
+              "type": "currency-matrix",
+              "caption": "Originating source of R&D expenditures",
+              "captionSub": "(Dollars in thousands)",
+              "columns": [
+                {
+                  "prefix": "(a)",
+                  "label": "Federal"
+                },
+                {
+                  "prefix": "(b)",
+                  "label": "Nonfederal"
+                },
+                {
+                  "prefix": "(c)",
+                  "label": "Total"
+                }
+              ],
+              "rows": [
+                {
+                  "label": "Funds passed through to other U.S. higher education institutions",
+                  "description": "Include colleges and universities and units owned, operated, and controlled by such institutions.",
+                  "cells": [
+                    {
+                      "id": "q4-federal"
+                    },
+                    {
+                      "id": "q4-nonfederal"
+                    },
+                    {
+                      "id": "q4-total",
+                      "total": true,
+                      "sumOf": [
+                        "q4-federal",
+                        "q4-nonfederal"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "action-bar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "title": "Other",
+      "sections": [
+        {
+          "id": "q5",
+          "number": 5,
+          "title": "Fiscal year",
+          "kind": "question",
+          "showInSidebar": true,
+          "demoStatus": "not-started",
+          "content": [
+            {
+              "type": "question-intro",
+              "number": "Question 5.",
+              "text": "In what month did your institution's 2025 fiscal year end?"
+            },
+            {
+              "type": "field",
+              "inputs": [
+                {
+                  "id": "q5-month",
+                  "size": "medium"
+                }
+              ]
+            },
+            {
+              "type": "action-bar"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
